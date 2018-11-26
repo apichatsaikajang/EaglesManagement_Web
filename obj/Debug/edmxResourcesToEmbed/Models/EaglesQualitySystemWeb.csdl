@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_EaglesInternalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prefix_thai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Name_thai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Surname_thai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Prefix_eng" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Name_eng" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Surname_eng" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dept" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Section" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Branch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="NickName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Approve1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Approve2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusID" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="DB_EaglesInternalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblUsers" EntityType="Self.tblUser" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_EaglesInternalModelStoreContainer" CdmEntityContainer="DB_EaglesInternalEntities">
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUser">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Prefix_thai" ColumnName="Prefix_thai" />
+          <ScalarProperty Name="Name_thai" ColumnName="Name_thai" />
+          <ScalarProperty Name="Surname_thai" ColumnName="Surname_thai" />
+          <ScalarProperty Name="Prefix_eng" ColumnName="Prefix_eng" />
+          <ScalarProperty Name="Name_eng" ColumnName="Name_eng" />
+          <ScalarProperty Name="Surname_eng" ColumnName="Surname_eng" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Dept" ColumnName="Dept" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="UserBy" ColumnName="UserBy" />
+          <ScalarProperty Name="UserDate" ColumnName="UserDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Approve1" ColumnName="Approve1" />
+          <ScalarProperty Name="Approve2" ColumnName="Approve2" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
