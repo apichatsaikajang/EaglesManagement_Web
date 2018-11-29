@@ -1,0 +1,817 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ITmanagementModelStoreContainer" CdmEntityContainer="ITmanagementEntities">
+    <EntitySetMapping Name="dtproperties">
+      <EntityTypeMapping TypeName="ITmanagementModel.dtproperty">
+        <MappingFragment StoreEntitySet="dtproperties">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="objectid" ColumnName="objectid" />
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+          <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunningNumbers">
+      <EntityTypeMapping TypeName="ITmanagementModel.RunningNumber">
+        <MappingFragment StoreEntitySet="RunningNumber">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RunningID" ColumnName="RunningID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAccessLists">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblAccessList">
+        <MappingFragment StoreEntitySet="tblAccessList">
+          <ScalarProperty Name="AccessNo" ColumnName="AccessNo" />
+          <ScalarProperty Name="AccessName" ColumnName="AccessName" />
+          <ScalarProperty Name="RecordDate" ColumnName="RecordDate" />
+          <ScalarProperty Name="TypeofAccess" ColumnName="TypeofAccess" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="ValueOfAccess" ColumnName="ValueOfAccess" />
+          <ScalarProperty Name="WarrantyValue" ColumnName="WarrantyValue" />
+          <ScalarProperty Name="WarrantyUnit" ColumnName="WarrantyUnit" />
+          <ScalarProperty Name="StartWarranty" ColumnName="StartWarranty" />
+          <ScalarProperty Name="EndWarranty" ColumnName="EndWarranty" />
+          <ScalarProperty Name="PlaceOfWarranty" ColumnName="PlaceOfWarranty" />
+          <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="StatusOnStock" ColumnName="StatusOnStock" />
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="AccessAccount" ColumnName="AccessAccount" />
+          <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAccessListDetails">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblAccessListDetail">
+        <MappingFragment StoreEntitySet="tblAccessListDetail">
+          <ScalarProperty Name="AccessNo" ColumnName="AccessNo" />
+          <ScalarProperty Name="ItemNo" ColumnName="ItemNo" />
+          <ScalarProperty Name="TypeOfDevice" ColumnName="TypeOfDevice" />
+          <ScalarProperty Name="NameOfDevice" ColumnName="NameOfDevice" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="WarrantyValue" ColumnName="WarrantyValue" />
+          <ScalarProperty Name="WarrantyUnit" ColumnName="WarrantyUnit" />
+          <ScalarProperty Name="StartWarranty" ColumnName="StartWarranty" />
+          <ScalarProperty Name="EndWarranty" ColumnName="EndWarranty" />
+          <ScalarProperty Name="PlaceOfWarranty" ColumnName="PlaceOfWarranty" />
+          <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyName" ColumnName="ModifyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAccessMAs">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblAccessMA">
+        <MappingFragment StoreEntitySet="tblAccessMA">
+          <ScalarProperty Name="AccessNo" ColumnName="AccessNo" />
+          <ScalarProperty Name="MAyear" ColumnName="MAyear" />
+          <ScalarProperty Name="Cycle" ColumnName="Cycle" />
+          <ScalarProperty Name="ISMA" ColumnName="ISMA" />
+          <ScalarProperty Name="MAdate" ColumnName="MAdate" />
+          <ScalarProperty Name="Observe" ColumnName="Observe" />
+          <ScalarProperty Name="Find" ColumnName="Find" />
+          <ScalarProperty Name="Improve" ColumnName="Improve" />
+          <ScalarProperty Name="UserBy" ColumnName="UserBy" />
+          <ScalarProperty Name="UserDate" ColumnName="UserDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAccessSoftwares">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblAccessSoftware">
+        <MappingFragment StoreEntitySet="tblAccessSoftware">
+          <ScalarProperty Name="AccessNo" ColumnName="AccessNo" />
+          <ScalarProperty Name="Software" ColumnName="Software" />
+          <ScalarProperty Name="Issetup" ColumnName="Issetup" />
+          <ScalarProperty Name="UserBy" ColumnName="UserBy" />
+          <ScalarProperty Name="UserDate" ColumnName="UserDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCheckBackUps">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblCheckBackUp">
+        <MappingFragment StoreEntitySet="tblCheckBackUp">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DateSave" ColumnName="DateSave" />
+          <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+          <ScalarProperty Name="Finished" ColumnName="Finished" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCheckCCTVs">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblCheckCCTV">
+        <MappingFragment StoreEntitySet="tblCheckCCTV">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DateSave" ColumnName="DateSave" />
+          <ScalarProperty Name="IpCCTV" ColumnName="IpCCTV" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="StatusConnect" ColumnName="StatusConnect" />
+          <ScalarProperty Name="StatusRecord" ColumnName="StatusRecord" />
+          <ScalarProperty Name="Browser" ColumnName="Browser" />
+          <ScalarProperty Name="BrowserStatusCon" ColumnName="BrowserStatusCon" />
+          <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
+          <ScalarProperty Name="DateTo" ColumnName="DateTo" />
+          <ScalarProperty Name="Sday" ColumnName="Sday" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCheckFireWalls">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblCheckFireWall">
+        <MappingFragment StoreEntitySet="tblCheckFireWall">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DateSave" ColumnName="DateSave" />
+          <ScalarProperty Name="Device" ColumnName="Device" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="WebBrowser" ColumnName="WebBrowser" />
+          <ScalarProperty Name="StatusWAN" ColumnName="StatusWAN" />
+          <ScalarProperty Name="StatusInternal" ColumnName="StatusInternal" />
+          <ScalarProperty Name="UtilizationCPU" ColumnName="UtilizationCPU" />
+          <ScalarProperty Name="UtilizationMemory" ColumnName="UtilizationMemory" />
+          <ScalarProperty Name="StatusCon" ColumnName="StatusCon" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCheckMeterials">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblCheckMeterial">
+        <MappingFragment StoreEntitySet="tblCheckMeterial">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DateSave" ColumnName="DateSave" />
+          <ScalarProperty Name="AirName" ColumnName="AirName" />
+          <ScalarProperty Name="AirLocation" ColumnName="AirLocation" />
+          <ScalarProperty Name="TimeAir1" ColumnName="TimeAir1" />
+          <ScalarProperty Name="TimeAir2" ColumnName="TimeAir2" />
+          <ScalarProperty Name="TemServerName" ColumnName="TemServerName" />
+          <ScalarProperty Name="ServerLocation" ColumnName="ServerLocation" />
+          <ScalarProperty Name="TemDs" ColumnName="TemDs" />
+          <ScalarProperty Name="TemVM" ColumnName="TemVM" />
+          <ScalarProperty Name="TemSAN" ColumnName="TemSAN" />
+          <ScalarProperty Name="ADSLName" ColumnName="ADSLName" />
+          <ScalarProperty Name="ADSLLocal" ColumnName="ADSLLocal" />
+          <ScalarProperty Name="StatusADSL" ColumnName="StatusADSL" />
+          <ScalarProperty Name="Modem1Name" ColumnName="Modem1Name" />
+          <ScalarProperty Name="Modem1Location" ColumnName="Modem1Location" />
+          <ScalarProperty Name="Modem1Status1" ColumnName="Modem1Status1" />
+          <ScalarProperty Name="Modem1Status2" ColumnName="Modem1Status2" />
+          <ScalarProperty Name="Modem2Name" ColumnName="Modem2Name" />
+          <ScalarProperty Name="Modem2Location" ColumnName="Modem2Location" />
+          <ScalarProperty Name="Modem2Status1" ColumnName="Modem2Status1" />
+          <ScalarProperty Name="Modem2Status2" ColumnName="Modem2Status2" />
+          <ScalarProperty Name="GsmName" ColumnName="GsmName" />
+          <ScalarProperty Name="GsmLocation" ColumnName="GsmLocation" />
+          <ScalarProperty Name="GsmStatus1" ColumnName="GsmStatus1" />
+          <ScalarProperty Name="GsmStatus2" ColumnName="GsmStatus2" />
+          <ScalarProperty Name="GsmStatus3" ColumnName="GsmStatus3" />
+          <ScalarProperty Name="GsmStatus4" ColumnName="GsmStatus4" />
+          <ScalarProperty Name="KVMName" ColumnName="KVMName" />
+          <ScalarProperty Name="KVMLocation" ColumnName="KVMLocation" />
+          <ScalarProperty Name="KVMStatus1" ColumnName="KVMStatus1" />
+          <ScalarProperty Name="KVMStatus2" ColumnName="KVMStatus2" />
+          <ScalarProperty Name="KVMStatus3" ColumnName="KVMStatus3" />
+          <ScalarProperty Name="KVMStatus4" ColumnName="KVMStatus4" />
+          <ScalarProperty Name="KVMStatus5" ColumnName="KVMStatus5" />
+          <ScalarProperty Name="KVMStatus6" ColumnName="KVMStatus6" />
+          <ScalarProperty Name="KVMStatus7" ColumnName="KVMStatus7" />
+          <ScalarProperty Name="KVMStatus8" ColumnName="KVMStatus8" />
+          <ScalarProperty Name="HDDName" ColumnName="HDDName" />
+          <ScalarProperty Name="HDDLocation" ColumnName="HDDLocation" />
+          <ScalarProperty Name="HDDStatus1" ColumnName="HDDStatus1" />
+          <ScalarProperty Name="HDDStatus2" ColumnName="HDDStatus2" />
+          <ScalarProperty Name="HDDStatus3" ColumnName="HDDStatus3" />
+          <ScalarProperty Name="HDDStatus4" ColumnName="HDDStatus4" />
+          <ScalarProperty Name="HDDStatus5" ColumnName="HDDStatus5" />
+          <ScalarProperty Name="HDDStatus6" ColumnName="HDDStatus6" />
+          <ScalarProperty Name="MobileName" ColumnName="MobileName" />
+          <ScalarProperty Name="MobileIP" ColumnName="MobileIP" />
+          <ScalarProperty Name="MobileLocation" ColumnName="MobileLocation" />
+          <ScalarProperty Name="MobileReboot" ColumnName="MobileReboot" />
+          <ScalarProperty Name="MobileConStatus" ColumnName="MobileConStatus" />
+          <ScalarProperty Name="HWName" ColumnName="HWName" />
+          <ScalarProperty Name="HWIP" ColumnName="HWIP" />
+          <ScalarProperty Name="HWLocation" ColumnName="HWLocation" />
+          <ScalarProperty Name="HWStatus1" ColumnName="HWStatus1" />
+          <ScalarProperty Name="NoteHW1" ColumnName="NoteHW1" />
+          <ScalarProperty Name="HWStatus2" ColumnName="HWStatus2" />
+          <ScalarProperty Name="NoteHW2" ColumnName="NoteHW2" />
+          <ScalarProperty Name="HWStatus3" ColumnName="HWStatus3" />
+          <ScalarProperty Name="NoteHW3" ColumnName="NoteHW3" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCheckRouters">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblCheckRouter">
+        <MappingFragment StoreEntitySet="tblCheckRouter">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DateSave" ColumnName="DateSave" />
+          <ScalarProperty Name="RouterName" ColumnName="RouterName" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="StatusLAN" ColumnName="StatusLAN" />
+          <ScalarProperty Name="StatusWAN" ColumnName="StatusWAN" />
+          <ScalarProperty Name="ResponseTime" ColumnName="ResponseTime" />
+          <ScalarProperty Name="UtilizationCPU" ColumnName="UtilizationCPU" />
+          <ScalarProperty Name="UtilizationMemory" ColumnName="UtilizationMemory" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCheckServers">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblCheckServer">
+        <MappingFragment StoreEntitySet="tblCheckServer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DateSave" ColumnName="DateSave" />
+          <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="InterfaceStatus" ColumnName="InterfaceStatus" />
+          <ScalarProperty Name="ResponseTime" ColumnName="ResponseTime" />
+          <ScalarProperty Name="Heat" ColumnName="Heat" />
+          <ScalarProperty Name="UtilizationCPU" ColumnName="UtilizationCPU" />
+          <ScalarProperty Name="UtilizationMemory" ColumnName="UtilizationMemory" />
+          <ScalarProperty Name="UtilizationDisk" ColumnName="UtilizationDisk" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCheckSwitches">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblCheckSwitch">
+        <MappingFragment StoreEntitySet="tblCheckSwitch">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DateSave" ColumnName="DateSave" />
+          <ScalarProperty Name="SwitchName" ColumnName="SwitchName" />
+          <ScalarProperty Name="SwitchLocation" ColumnName="SwitchLocation" />
+          <ScalarProperty Name="StatusConnect" ColumnName="StatusConnect" />
+          <ScalarProperty Name="NotePort" ColumnName="NotePort" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDepartments">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblDepartment">
+        <MappingFragment StoreEntitySet="tblDepartment">
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="Party" ColumnName="Party" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Manager" ColumnName="Manager" />
+          <ScalarProperty Name="A_Manager" ColumnName="A_Manager" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Userby" ColumnName="Userby" />
+          <ScalarProperty Name="Lastupdate" ColumnName="Lastupdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEmployees">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblEmployee">
+        <MappingFragment StoreEntitySet="tblEmployee">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEmployee_out">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblEmployee_out">
+        <MappingFragment StoreEntitySet="tblEmployee_out">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="position_name" ColumnName="position_name" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+          <ScalarProperty Name="date_start" ColumnName="date_start" />
+          <ScalarProperty Name="date_final" ColumnName="date_final" />
+          <ScalarProperty Name="age" ColumnName="age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEmployee_outdtl">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblEmployee_outdtl">
+        <MappingFragment StoreEntitySet="tblEmployee_outdtl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emp_card" ColumnName="emp_card" />
+          <ScalarProperty Name="other_card" ColumnName="other_card" />
+          <ScalarProperty Name="date_exp" ColumnName="date_exp" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="notebook_data" ColumnName="notebook_data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblGenAutoNoes">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblGenAutoNo">
+        <MappingFragment StoreEntitySet="tblGenAutoNo">
+          <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+          <ScalarProperty Name="RunNo" ColumnName="RunNo" />
+          <ScalarProperty Name="MountNo" ColumnName="MountNo" />
+          <ScalarProperty Name="YearNo" ColumnName="YearNo" />
+          <ScalarProperty Name="DigitNo" ColumnName="DigitNo" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInventoryItems">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblInventoryItem">
+        <MappingFragment StoreEntitySet="tblInventoryItem">
+          <ScalarProperty Name="Itemcode" ColumnName="Itemcode" />
+          <ScalarProperty Name="Itemname" ColumnName="Itemname" />
+          <ScalarProperty Name="TypeUse" ColumnName="TypeUse" />
+          <ScalarProperty Name="TypeEquipment" ColumnName="TypeEquipment" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+          <ScalarProperty Name="Userby" ColumnName="Userby" />
+          <ScalarProperty Name="Lastupdate" ColumnName="Lastupdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblITServiceSpareparts">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblITServiceSparepart">
+        <MappingFragment StoreEntitySet="tblITServiceSparepart">
+          <ScalarProperty Name="TicketNo" ColumnName="TicketNo" />
+          <ScalarProperty Name="RowID" ColumnName="RowID" />
+          <ScalarProperty Name="RequestOrderDate" ColumnName="RequestOrderDate" />
+          <ScalarProperty Name="RequestOrderBy" ColumnName="RequestOrderBy" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="RequestOrderDetail" ColumnName="RequestOrderDetail" />
+          <ScalarProperty Name="QTY" ColumnName="QTY" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="VAT" ColumnName="VAT" />
+          <ScalarProperty Name="SumTotal" ColumnName="SumTotal" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="QTYVaranty" ColumnName="QTYVaranty" />
+          <ScalarProperty Name="UnitVaranty" ColumnName="UnitVaranty" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblITServiceTickets">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblITServiceTicket">
+        <MappingFragment StoreEntitySet="tblITServiceTicket">
+          <ScalarProperty Name="TicketNo" ColumnName="TicketNo" />
+          <ScalarProperty Name="TickDate" ColumnName="TickDate" />
+          <ScalarProperty Name="BranchRequest" ColumnName="BranchRequest" />
+          <ScalarProperty Name="RequestFrom" ColumnName="RequestFrom" />
+          <ScalarProperty Name="RequestBy" ColumnName="RequestBy" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="RemoteType" ColumnName="RemoteType" />
+          <ScalarProperty Name="AssigeJobTo" ColumnName="AssigeJobTo" />
+          <ScalarProperty Name="CloseJOBDate" ColumnName="CloseJOBDate" />
+          <ScalarProperty Name="JOBStatus" ColumnName="JOBStatus" />
+          <ScalarProperty Name="ComputerName" ColumnName="ComputerName" />
+          <ScalarProperty Name="JobUserName" ColumnName="JobUserName" />
+          <ScalarProperty Name="JobPassword" ColumnName="JobPassword" />
+          <ScalarProperty Name="RequestDetail" ColumnName="RequestDetail" />
+          <ScalarProperty Name="TotalCostService" ColumnName="TotalCostService" />
+          <ScalarProperty Name="BackRepairComplete" ColumnName="BackRepairComplete" />
+          <ScalarProperty Name="Evaluation1" ColumnName="Evaluation1" />
+          <ScalarProperty Name="Evaluation2" ColumnName="Evaluation2" />
+          <ScalarProperty Name="Evaluation3" ColumnName="Evaluation3" />
+          <ScalarProperty Name="Evaluation4" ColumnName="Evaluation4" />
+          <ScalarProperty Name="Evaluation5" ColumnName="Evaluation5" />
+          <ScalarProperty Name="Evaluation6" ColumnName="Evaluation6" />
+          <ScalarProperty Name="EvaluationBy" ColumnName="EvaluationBy" />
+          <ScalarProperty Name="EvaluationDate" ColumnName="EvaluationDate" />
+          <ScalarProperty Name="EvaluationRemark" ColumnName="EvaluationRemark" />
+          <ScalarProperty Name="StatusEvaluation" ColumnName="StatusEvaluation" />
+          <ScalarProperty Name="TicketType" ColumnName="TicketType" />
+          <ScalarProperty Name="OpenDate" ColumnName="OpenDate" />
+          <ScalarProperty Name="EstimateDate" ColumnName="EstimateDate" />
+          <ScalarProperty Name="DateDiffEstimate" ColumnName="DateDiffEstimate" />
+          <ScalarProperty Name="CloseDate" ColumnName="CloseDate" />
+          <ScalarProperty Name="DateDiff" ColumnName="DateDiff" />
+          <ScalarProperty Name="DepartmentRequest" ColumnName="DepartmentRequest" />
+          <ScalarProperty Name="RepairNo" ColumnName="RepairNo" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblITServiceTicketDetails">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblITServiceTicketDetail">
+        <MappingFragment StoreEntitySet="tblITServiceTicketDetail">
+          <ScalarProperty Name="TicketNo" ColumnName="TicketNo" />
+          <ScalarProperty Name="RowID" ColumnName="RowID" />
+          <ScalarProperty Name="AnalyDetail" ColumnName="AnalyDetail" />
+          <ScalarProperty Name="RepairDetail" ColumnName="RepairDetail" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMasterCodes">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblMasterCode">
+        <MappingFragment StoreEntitySet="tblMasterCode">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="FilterInd" ColumnName="FilterInd" />
+          <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+          <ScalarProperty Name="LisenceSum" ColumnName="LisenceSum" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMenus">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblMenu">
+        <MappingFragment StoreEntitySet="tblMenu">
+          <ScalarProperty Name="Program" ColumnName="Program" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UserBy" ColumnName="UserBy" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOutSiteServices">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblOutSiteService">
+        <MappingFragment StoreEntitySet="tblOutSiteService">
+          <ScalarProperty Name="ServiceTicketNo" ColumnName="ServiceTicketNo" />
+          <ScalarProperty Name="ServiceDate" ColumnName="ServiceDate" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="ITName" ColumnName="ITName" />
+          <ScalarProperty Name="PlaceOfService" ColumnName="PlaceOfService" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOutSiteServiceDetails">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblOutSiteServiceDetail">
+        <MappingFragment StoreEntitySet="tblOutSiteServiceDetail">
+          <ScalarProperty Name="ServiceTicketNo" ColumnName="ServiceTicketNo" />
+          <ScalarProperty Name="ItemNo" ColumnName="ItemNo" />
+          <ScalarProperty Name="Description1" ColumnName="Description1" />
+          <ScalarProperty Name="Description2" ColumnName="Description2" />
+          <ScalarProperty Name="Description3" ColumnName="Description3" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOutSourceServices">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblOutSourceService">
+        <MappingFragment StoreEntitySet="tblOutSourceService">
+          <ScalarProperty Name="TicketNo" ColumnName="TicketNo" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="ServiceDate" ColumnName="ServiceDate" />
+          <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+          <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+          <ScalarProperty Name="Description1" ColumnName="Description1" />
+          <ScalarProperty Name="Description2" ColumnName="Description2" />
+          <ScalarProperty Name="EstimateDate" ColumnName="EstimateDate" />
+          <ScalarProperty Name="ActualDate" ColumnName="ActualDate" />
+          <ScalarProperty Name="QtyOfWaranty" ColumnName="QtyOfWaranty" />
+          <ScalarProperty Name="UnitWaranty" ColumnName="UnitWaranty" />
+          <ScalarProperty Name="StartWaranty" ColumnName="StartWaranty" />
+          <ScalarProperty Name="EndWaranty" ColumnName="EndWaranty" />
+          <ScalarProperty Name="EstimatePrice" ColumnName="EstimatePrice" />
+          <ScalarProperty Name="ActualPrice" ColumnName="ActualPrice" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOutSourceServiceDetails">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblOutSourceServiceDetail">
+        <MappingFragment StoreEntitySet="tblOutSourceServiceDetail">
+          <ScalarProperty Name="TicketNo" ColumnName="TicketNo" />
+          <ScalarProperty Name="ServiceNo" ColumnName="ServiceNo" />
+          <ScalarProperty Name="ItemNo" ColumnName="ItemNo" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="QTY" ColumnName="QTY" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="VAT" ColumnName="VAT" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPurchaseRequistionDtls">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblPurchaseRequistionDtl">
+        <MappingFragment StoreEntitySet="tblPurchaseRequistionDtl">
+          <ScalarProperty Name="PRPHNO" ColumnName="PRPHNO" />
+          <ScalarProperty Name="Itemcode" ColumnName="Itemcode" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="QtyUnit" ColumnName="QtyUnit" />
+          <ScalarProperty Name="Userby" ColumnName="Userby" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPurchaseRequistionHdrs">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblPurchaseRequistionHdr">
+        <MappingFragment StoreEntitySet="tblPurchaseRequistionHdr">
+          <ScalarProperty Name="PRPHNo" ColumnName="PRPHNo" />
+          <ScalarProperty Name="IsPR" ColumnName="IsPR" />
+          <ScalarProperty Name="ApproveDate" ColumnName="ApproveDate" />
+          <ScalarProperty Name="DateBuy" ColumnName="DateBuy" />
+          <ScalarProperty Name="DateRequire" ColumnName="DateRequire" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Party" ColumnName="Party" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="UserApp1" ColumnName="UserApp1" />
+          <ScalarProperty Name="UserApp2" ColumnName="UserApp2" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Createby" ColumnName="Createby" />
+          <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+          <ScalarProperty Name="Userby" ColumnName="Userby" />
+          <ScalarProperty Name="Lastupdate" ColumnName="Lastupdate" />
+          <ScalarProperty Name="StatusMail" ColumnName="StatusMail" />
+          <ScalarProperty Name="ApproveBy" ColumnName="ApproveBy" />
+          <ScalarProperty Name="StatusCancel" ColumnName="StatusCancel" />
+          <ScalarProperty Name="UserNameApp1" ColumnName="UserNameApp1" />
+          <ScalarProperty Name="UserNameApp2" ColumnName="UserNameApp2" />
+          <ScalarProperty Name="UserApp3" ColumnName="UserApp3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRecordProducts">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblRecordProduct">
+        <MappingFragment StoreEntitySet="tblRecordProduct">
+          <ScalarProperty Name="SNNo" ColumnName="SNNo" />
+          <ScalarProperty Name="Ishw" ColumnName="Ishw" />
+          <ScalarProperty Name="IsStock" ColumnName="IsStock" />
+          <ScalarProperty Name="ItemCodeNO" ColumnName="ItemCodeNO" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="StartGuarantee" ColumnName="StartGuarantee" />
+          <ScalarProperty Name="EndGuarantee" ColumnName="EndGuarantee" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CreatBy" ColumnName="CreatBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRecordProductDtls">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblRecordProductDtl">
+        <MappingFragment StoreEntitySet="tblRecordProductDtl">
+          <ScalarProperty Name="SNno" ColumnName="SNno" />
+          <ScalarProperty Name="RepairNo" ColumnName="RepairNo" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="RepairDate" ColumnName="RepairDate" />
+          <ScalarProperty Name="StatusRepair" ColumnName="StatusRepair" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRentDevices">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblRentDevice">
+        <MappingFragment StoreEntitySet="tblRentDevice">
+          <ScalarProperty Name="RentNo" ColumnName="RentNo" />
+          <ScalarProperty Name="RentDate" ColumnName="RentDate" />
+          <ScalarProperty Name="RentOwner" ColumnName="RentOwner" />
+          <ScalarProperty Name="DeptOwner" ColumnName="DeptOwner" />
+          <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+          <ScalarProperty Name="IssuedDate" ColumnName="IssuedDate" />
+          <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+          <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+          <ScalarProperty Name="ObjectiveofRent" ColumnName="ObjectiveofRent" />
+          <ScalarProperty Name="PlaceOfUsed" ColumnName="PlaceOfUsed" />
+          <ScalarProperty Name="StatusFinish" ColumnName="StatusFinish" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="StatusOfRent" ColumnName="StatusOfRent" />
+          <ScalarProperty Name="CreatBy" ColumnName="CreatBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRentDeviceDetails">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblRentDeviceDetail">
+        <MappingFragment StoreEntitySet="tblRentDeviceDetail">
+          <ScalarProperty Name="RentNo" ColumnName="RentNo" />
+          <ScalarProperty Name="ItemNo" ColumnName="ItemNo" />
+          <ScalarProperty Name="TypeDevice" ColumnName="TypeDevice" />
+          <ScalarProperty Name="AccessCode" ColumnName="AccessCode" />
+          <ScalarProperty Name="AccessName" ColumnName="AccessName" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="AccessoryOfDevice" ColumnName="AccessoryOfDevice" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="StatusOfRent" ColumnName="StatusOfRent" />
+          <ScalarProperty Name="CreatBy" ColumnName="CreatBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="FirstRent" ColumnName="FirstRent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRepairs">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblRepair">
+        <MappingFragment StoreEntitySet="tblRepair">
+          <ScalarProperty Name="RepairNo" ColumnName="RepairNo" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="Depart" ColumnName="Depart" />
+          <ScalarProperty Name="Asset" ColumnName="Asset" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="PlaceUse" ColumnName="PlaceUse" />
+          <ScalarProperty Name="Ruined" ColumnName="Ruined" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Approve" ColumnName="Approve" />
+          <ScalarProperty Name="ApproveName" ColumnName="ApproveName" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRepairDetails">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblRepairDetail">
+        <MappingFragment StoreEntitySet="tblRepairDetail">
+          <ScalarProperty Name="RepairNo" ColumnName="RepairNo" />
+          <ScalarProperty Name="DateCompany" ColumnName="DateCompany" />
+          <ScalarProperty Name="DateRepair" ColumnName="DateRepair" />
+          <ScalarProperty Name="TimeRepair" ColumnName="TimeRepair" />
+          <ScalarProperty Name="CompanyRepair" ColumnName="CompanyRepair" />
+          <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+          <ScalarProperty Name="RepairMan" ColumnName="RepairMan" />
+          <ScalarProperty Name="RepairManPhone" ColumnName="RepairManPhone" />
+          <ScalarProperty Name="TypePrice" ColumnName="TypePrice" />
+          <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+          <ScalarProperty Name="PriceAll" ColumnName="PriceAll" />
+          <ScalarProperty Name="AppPrice" ColumnName="AppPrice" />
+          <ScalarProperty Name="DateRepairMan" ColumnName="DateRepairMan" />
+          <ScalarProperty Name="TimeRepairMan" ColumnName="TimeRepairMan" />
+          <ScalarProperty Name="Normal" ColumnName="Normal" />
+          <ScalarProperty Name="AbNormal" ColumnName="AbNormal" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="ManCheck" ColumnName="ManCheck" />
+          <ScalarProperty Name="DateCheck" ColumnName="DateCheck" />
+          <ScalarProperty Name="UserBy" ColumnName="UserBy" />
+          <ScalarProperty Name="UserDate" ColumnName="UserDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUser">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Dept" ColumnName="Dept" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="Party" ColumnName="Party" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserMenus">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblUserMenu">
+        <MappingFragment StoreEntitySet="tblUserMenu">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Program" ColumnName="Program" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="UserBy" ColumnName="UserBy" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblParties">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblParty">
+        <MappingFragment StoreEntitySet="tblParty">
+          <ScalarProperty Name="PartyCode" ColumnName="PartyCode" />
+          <ScalarProperty Name="PartyFullName" ColumnName="PartyFullName" />
+          <ScalarProperty Name="PartyLocalCode" ColumnName="PartyLocalCode" />
+          <ScalarProperty Name="PartyLocalName" ColumnName="PartyLocalName" />
+          <ScalarProperty Name="PartyLocation" ColumnName="PartyLocation" />
+          <ScalarProperty Name="PartyCountry" ColumnName="PartyCountry" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="PartyTypeCode" ColumnName="PartyTypeCode" />
+          <ScalarProperty Name="PartyTypeName" ColumnName="PartyTypeName" />
+          <ScalarProperty Name="CommissionToSales" ColumnName="CommissionToSales" />
+          <ScalarProperty Name="IATACode" ColumnName="IATACode" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="PartyStatus" ColumnName="PartyStatus" />
+          <ScalarProperty Name="MessageHubID" ColumnName="MessageHubID" />
+          <ScalarProperty Name="OtherSystemPartyID" ColumnName="OtherSystemPartyID" />
+          <ScalarProperty Name="FormID" ColumnName="FormID" />
+          <ScalarProperty Name="Shipper" ColumnName="Shipper" />
+          <ScalarProperty Name="Consignee" ColumnName="Consignee" />
+          <ScalarProperty Name="Branch_Agent" ColumnName="Branch_Agent" />
+          <ScalarProperty Name="Co_Loader" ColumnName="Co_Loader" />
+          <ScalarProperty Name="Trucking" ColumnName="Trucking" />
+          <ScalarProperty Name="ShippingLine" ColumnName="ShippingLine" />
+          <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+          <ScalarProperty Name="ContainerYard" ColumnName="ContainerYard" />
+          <ScalarProperty Name="Warehouse" ColumnName="Warehouse" />
+          <ScalarProperty Name="Bank" ColumnName="Bank" />
+          <ScalarProperty Name="Factory" ColumnName="Factory" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="Broker" ColumnName="Broker" />
+          <ScalarProperty Name="AirLine" ColumnName="AirLine" />
+          <ScalarProperty Name="EndCustomer" ColumnName="EndCustomer" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPartyAddresses">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblPartyAddress">
+        <MappingFragment StoreEntitySet="tblPartyAddress">
+          <ScalarProperty Name="PartyAddressCode" ColumnName="PartyAddressCode" />
+          <ScalarProperty Name="PartyCode" ColumnName="PartyCode" />
+          <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address4" ColumnName="Address4" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+          <ScalarProperty Name="Attn" ColumnName="Attn" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserGroups">
+      <EntityTypeMapping TypeName="ITmanagementModel.tblUserGroup">
+        <MappingFragment StoreEntitySet="tblUserGroup">
+          <ScalarProperty Name="UserGroupCode" ColumnName="UserGroupCode" />
+          <ScalarProperty Name="UserGroupName" ColumnName="UserGroupName" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

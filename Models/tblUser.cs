@@ -11,29 +11,17 @@ namespace EaglesManagement_Web.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tblUser
     {
-        public string UserId { get; set; }
-        public string Password { get; set; }
-        public string Prefix_thai { get; set; }
-        public string Name_thai { get; set; }
-        public string Surname_thai { get; set; }
-        public string Prefix_eng { get; set; }
-        public string Name_eng { get; set; }
-        public string Surname_eng { get; set; }
-        public string Email { get; set; }
-        public string Position { get; set; }
+        public string UserName { get; set; }
+        public string Name { get; set; }
         public string Dept { get; set; }
-        public string Section { get; set; }
         public string Branch { get; set; }
-        public string UserBy { get; set; }
-        public Nullable<System.DateTime> UserDate { get; set; }
-        public string CreateBy { get; set; }
-        public Nullable<System.DateTime> CreateDate { get; set; }
-        public string NickName { get; set; }
-        public string Approve1 { get; set; }
-        public string Approve2 { get; set; }
-        public Nullable<int> StatusID { get; set; }
+        public string Party { get; set; }
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+        public string Mail { get; set; }
     }
 }

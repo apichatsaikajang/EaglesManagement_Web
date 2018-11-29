@@ -27,10 +27,10 @@
         </div>
         <div class="login-box-body">
             <p class="login-box-msg"><i class="fa fa-archive"></i> Eagles QualitySystem Web</p>
-            @using (Html.BeginForm("Autherize", "Login", FormMethod.Post))
+            @using (Html.BeginForm("Authorize", "Login", FormMethod.Post))
             {
                 <div class="form-group has-feedback">
-                    @Html.TextBoxFor(model => model.UserId, new { @class = "form-control", placeholder = "Username" })
+                    @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @placeholder = "Username", @autocomplete = "off" })
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">

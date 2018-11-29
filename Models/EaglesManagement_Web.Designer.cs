@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\test\EaglesManagement_Web\Models\EaglesQualitySystemWeb.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\EaglesManagement_Web\EaglesManagement_Web\Models\EaglesManagement_Web.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

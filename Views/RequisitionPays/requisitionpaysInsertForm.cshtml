@@ -1,0 +1,400 @@
+﻿@model dynamic
+@{
+    //ViewBag.Title = "insertForm";
+    Layout = "~/Views/Home/Index.cshtml";
+
+
+    var BranchListItemsListItems = new SelectList(
+new List<SelectListItem>{
+
+            new SelectListItem { Selected = false, Text = "", Value = "" },
+            new SelectListItem { Selected = false, Text = "CKT", Value = "CKT" },
+            new SelectListItem { Selected = false, Text = "LKB", Value = "LKB" },
+            new SelectListItem { Selected = false, Text = "OTK", Value = "OTK" },
+            new SelectListItem { Selected = false, Text = "PTN", Value = "PTN" },
+            new SelectListItem { Selected = false, Text = "SBIA", Value = "SBIA" },
+
+
+        }, "Value", "Text", 1);
+
+    var SelctionListItemsListItems = new SelectList(
+new List<SelectListItem>{
+
+            new SelectListItem { Selected = false, Text = "", Value = "" },
+            new SelectListItem { Selected = false, Text = "SPM Distribution", Value = "SPM Distribution" },
+            new SelectListItem { Selected = false, Text = "SPM Executive Office", Value = "SPM Executive Office" },
+            new SelectListItem { Selected = false, Text = "SPM Financial & Accounting", Value = "SPM Financial & Accounting" },
+            new SelectListItem { Selected = false, Text = "SPM Forwarding Pricing", Value = "SPM Forwarding Pricing" },
+            new SelectListItem { Selected = false, Text = "SPM Forwarding Sales", Value = "SPM Forwarding Sales" },
+            new SelectListItem { Selected = false, Text = "ตรวจสอบ/ทำลาย", Value = "ตรวจสอบ/ทำลาย" },
+
+
+        }, "Value", "Text", 1);
+
+
+    var DeptListItemsListItems = new SelectList(
+new List<SelectListItem>{
+
+            new SelectListItem { Selected = false, Text = "", Value = "" },
+            new SelectListItem { Selected = false, Text = "Information Technology", Value = "Information Technology" },
+            new SelectListItem { Selected = false, Text = "Purchase", Value = "Purchase" },
+            new SelectListItem { Selected = false, Text = "Quanlity Management", Value = "Quanlity Management" },
+
+
+        }, "Value", "Text", 1);
+        
+    var EquipmentListItems = new SelectList(
+new List<SelectListItem>{
+
+            new SelectListItem { Selected = false, Text = "", Value = "" },
+            new SelectListItem { Selected = false, Text = "อุปกรณ์สำนักงานที่มีใน Stock", Value = "อุปกรณ์สำนักงานที่มีใน Stock" },
+            new SelectListItem { Selected = false, Text = "อุปกรณ์สำหรับแพ็ค", Value = "อุปกรณ์สำหรับแพ็ค" },
+            new SelectListItem { Selected = false, Text = "อุปกรณ์ เครื่องมือต่งๆ", Value = "อุปกรณ์ เครื่องมือต่งๆ" },
+            new SelectListItem { Selected = false, Text = "เครื่องอุปโภค-บริโภค", Value = "Windows" },
+
+
+        }, "Value", "Text", 1);
+
+       
+    var MaterialItemsListItems = new SelectList(
+new List<SelectListItem>{
+
+            new SelectListItem { Selected = false, Text = "", Value = "" },
+            new SelectListItem { Selected = false, Text = "BL Coppy", Value = "BL Coppy" },
+            new SelectListItem { Selected = false, Text = "BL orginal", Value = "BL orginal" },
+            new SelectListItem { Selected = false, Text = "HAWB 2 ชั้น", Value = "HAWB 2 ชั้น" },
+            new SelectListItem { Selected = false, Text = "HAWB 6 ชั้น", Value = "HAWB 6 ชั้น" },
+            new SelectListItem { Selected = false, Text = "TAG", Value = "TAG" },
+            new SelectListItem { Selected = false, Text = "Temporary Receipt", Value = "Temporary Receipt" },
+            new SelectListItem { Selected = false, Text = "กรรไกร", Value = "กรรไกร" },
+            new SelectListItem { Selected = false, Text = "กระดาษ A4", Value = "กระดาษ A4" },
+            new SelectListItem { Selected = false, Text = "กระดาษคาร์บอนสีน้ำเงิน", Value = "กระดาษคาร์บอนสีน้ำเงิน" },
+            new SelectListItem { Selected = false, Text = "กระดาษคิดเลข", Value = "กระดาษคิดเลข" },
+            new SelectListItem { Selected = false, Text = "กระดาษเคมี 3 ชั้น", Value = "กระดาษเคมี 3 ชั้น" },
+            new SelectListItem { Selected = false, Text = "กระดาษเคมี 4 ชั้น", Value = "กระดาษเคมี 4 ชั้น" },
+            new SelectListItem { Selected = false, Text = "กระดาษเคมี 5 ชั้น", Value = "กระดาษเคมี 5 ชั้น" },
+            new SelectListItem { Selected = false, Text = "กระดาษเคมี 9.5 x5.5 3 ชั้น", Value = "กระดาษเคมี 9.5 x5.5 3 ชั้น" },
+            new SelectListItem { Selected = false, Text = "กระดาษเคมีสีขาว 3 ชั้น", Value = "กระดาษเคมีสีขาว 3 ชั้น" },
+            new SelectListItem { Selected = false, Text = "กระดาษเคมีสีขาว 4 ชั้น", Value = "กระดาษเคมีสีขาว 4 ชั้น" },
+            new SelectListItem { Selected = false, Text = "กระดาษต่อเนื่อง 1 ชั้น", Value = "กระดาษต่อเนื่อง 1 ชั้น" },
+            new SelectListItem { Selected = false, Text = "กระดาษต่อเนื่อง 1 ชั้น 9.5 x 5.5", Value = "กระดาษต่อเนื่อง 1 ชั้น 9.5 x 5.5" },
+            new SelectListItem { Selected = false, Text = "กระดาษต่อเนื่อง 2 ชั้น", Value = "กระดาษต่อเนื่อง 2 ชั้น" },
+            new SelectListItem { Selected = false, Text = "กระดาษต่อเนื่อง 3 ชั้น", Value = "กระดาษต่อเนื่อง 3 ชั้น" },
+            new SelectListItem { Selected = false, Text = "กระดาษต่อเนื่อง 4 ชั้น", Value = "กระดาษต่อเนื่อง 4 ชั้น" },
+            new SelectListItem { Selected = false, Text = "ก้ามปู", Value = "ก้ามปู" },
+            new SelectListItem { Selected = false, Text = "กาวแท่ง", Value = "กาวแท่ง" },
+            new SelectListItem { Selected = false, Text = "กาวน้ำ", Value = "กาวน้ำ" },
+            new SelectListItem { Selected = false, Text = "ขี้ผึ้งนับแบ้งค์", Value = "ขี้ผึ้งนับแบ้งค์" },
+            new SelectListItem { Selected = false, Text = "คลิปดำเบอร์ 108", Value = "คลิปดำเบอร์ 108" },
+            new SelectListItem { Selected = false, Text = "คลิปดำเบอร์ 109", Value = "คลิปดำเบอร์ 109" },
+            new SelectListItem { Selected = false, Text = "คลิปดำเบอร์ 110", Value = "คลิปดำเบอร์ 110" },
+            new SelectListItem { Selected = false, Text = "คลิปดำเบอร์ 111", Value = "คลิปดำเบอร์ 111" },
+            new SelectListItem { Selected = false, Text = "คลิปดำเบอร์ 112", Value = "คลิปดำเบอร์ 112" },
+            new SelectListItem { Selected = false, Text = "คีย์บอร์ด", Value = "คีย์บอร์ด" },
+            new SelectListItem { Selected = false, Text = "ซองจดหมาย หน้าต่าง", Value = "ซองจดหมาย หน้าต่าง" },
+            new SelectListItem { Selected = false, Text = "ซองจดหมาย ใหญ่", Value = "ซองจดหมาย ใหญ่" },
+            new SelectListItem { Selected = false, Text = "ซองจดหมายทึบ", Value = "ซองจดหมายทึบ" },
+            new SelectListItem { Selected = false, Text = "ซองใส่ CD", Value = "ซองใส่ CD" },
+            new SelectListItem { Selected = false, Text = "ซองใส่บัตรพนักงาน", Value = "ซองใส่บัตรพนักงาน" },
+            new SelectListItem { Selected = false, Text = "ซองเอนกประสงค์", Value = "ซองเอนกประสงค์" },
+            new SelectListItem { Selected = false, Text = "ซีดี", Value = "ซีดี" },
+            new SelectListItem { Selected = false, Text = "ดินสอ", Value = "ดินสอ" },
+            new SelectListItem { Selected = false, Text = "ดีวีดี", Value = "ดีวีดี" },
+            new SelectListItem { Selected = false, Text = "ตลับหมึก 2170", Value = "ตลับหมึก 2170" },
+            new SelectListItem { Selected = false, Text = "ตลับหมึก +300", Value = "ตลับหมึก +300" },
+            new SelectListItem { Selected = false, Text = "ตลับหมึก 590", Value = "ตลับหมึก 590" },
+            new SelectListItem { Selected = false, Text = "ตลับหมึกเครื่องพิมพ์ดีดไฟฟ้า OLYMPIA รุ่น 9400 C", Value = "ตลับหมึกเครื่องพิมพ์ดีดไฟฟ้า OLYMPIA รุ่น 9400 C" },
+            new SelectListItem { Selected = false, Text = "ตาไก่", Value = "ตาไก่" },
+            new SelectListItem { Selected = false, Text = "ถ่าน AAA", Value = "ถ่าน AAA" },
+            new SelectListItem { Selected = false, Text = "ถ่าน AA", Value = "ถ่าน AA" },
+            new SelectListItem { Selected = false, Text = "เทปใส่", Value = "เทปใส่" },
+            new SelectListItem { Selected = false, Text = "แท่นตัดเทป", Value = "แท่นตัดเทป" },
+            new SelectListItem { Selected = false, Text = "แท่นประทับ แดง", Value = "แท่นประทับ แดง" },
+            new SelectListItem { Selected = false, Text = "แท่นประทับ น้ำเงิน", Value = "แท่นประทับ น้ำเงิน" },
+            new SelectListItem { Selected = false, Text = "แท่นประทับ สีดำ", Value = "แท่นประทับ สีดำ" },
+            new SelectListItem { Selected = false, Text = "แบบฟอร์มใบรับสินค้า", Value = "แบบฟอร์มใบรับสินค้า" },
+            new SelectListItem { Selected = false, Text = "ใบมีดคัดเตอร์ เล็ก", Value = "ใบมีดคัดเตอร์ เล็ก" },
+            new SelectListItem { Selected = false, Text = "ใบมีดคัดเตอร์ ใหญ่", Value = "ใบมีดคัดเตอร์ ใหญ่" },
+            new SelectListItem { Selected = false, Text = "ใบรับรอง", Value = "ใบรับรอง" },
+            new SelectListItem { Selected = false, Text = "ใบเสร็จรับเงิน Nest", Value = "ใบเสร็จรับเงิน Nest" },
+            new SelectListItem { Selected = false, Text = "ปากกา 2 หัว ดำ", Value = "ปากกา 2 หัว ดำ" },
+            new SelectListItem { Selected = false, Text = "ปากกา 2 หัว แดง", Value = "ปากกา 2 หัว แดง" },
+            new SelectListItem { Selected = false, Text = "ปากกา 2 หัว น้ำเงิน", Value = "ปากกา 2 หัว น้ำเงิน" },
+            new SelectListItem { Selected = false, Text = "ปากกาดำ", Value = "ปากกาดำ" },
+            new SelectListItem { Selected = false, Text = "ปากกา แดง", Value = "ปากกา แดง" },
+            new SelectListItem { Selected = false, Text = "ปากกา น้ำเงิน", Value = "ปากกา น้ำเงิน" },
+            new SelectListItem { Selected = false, Text = "ปากกาเน้นข้อความ ชมพู", Value = "ปากกาเน้นข้อความ ชมพู" },
+            new SelectListItem { Selected = false, Text = "ปากกาเน้นข้อความ เขียว", Value = "ปากกาเน้นข้อความ เขียว" },
+            new SelectListItem { Selected = false, Text = "ปากกาเน้นข้อความ สีฟ้า", Value = "ปากกาเน้นข้อความ สีฟ้า" },
+            new SelectListItem { Selected = false, Text = "ปากกาเน้นข้อความ สีส้ม", Value = "ปากกาเน้นข้อความ สีส้ม" },
+            new SelectListItem { Selected = false, Text = "ปากกาเน้นข้อความ สีเหลือง", Value = "ปากกาเน้นข้อความ สีเหลือง" },
+            new SelectListItem { Selected = false, Text = "ปากกาเมจิก เขียว", Value = "ปากกาเมจิก เขียว" },
+            new SelectListItem { Selected = false, Text = "ปากกาเมจิก ดำ", Value = "ปากกาเมจิก ดำ" },
+            new SelectListItem { Selected = false, Text = "ปากกาเมจิก แดง", Value = "ปากกาเมจิก แดง" },
+            new SelectListItem { Selected = false, Text = "ปากกาเมจิก น้ำเงิน", Value = "ปากกาเมจิก น้ำเงิน" },
+            new SelectListItem { Selected = false, Text = "ปากกาเมจิก สีม่วง", Value = "ปากกาเมจิก สีม่วง" },
+            new SelectListItem { Selected = false, Text = "ปากกาไวท์บอร์ด สีดำ", Value = "ปากกาไวท์บอร์ด สีดำ" },
+            new SelectListItem { Selected = false, Text = "ปากกาไวท์บอร์ด สีแดง", Value = "ปากกาไวท์บอร์ด สีแดง" },
+            new SelectListItem { Selected = false, Text = "ปากกาไวท์บอร์ด สีน้ำเงิน", Value = "ปากกาไวท์บอร์ด สีน้ำเงิน" },
+            new SelectListItem { Selected = false, Text = "แฟ้มแขวน", Value = "แฟ้มแขวน" },
+            new SelectListItem { Selected = false, Text = "มีดคัดเตอร์ เล็ก", Value = "มีดคัดเตอร์ เล็ก" },
+            new SelectListItem { Selected = false, Text = "มีดคัดเตอร์ ใหญ่", Value = "มีดคัดเตอร์ ใหญ่" },
+            new SelectListItem { Selected = false, Text = "เมาส์", Value = "เมาส์" },
+            new SelectListItem { Selected = false, Text = "แม็ก เล็ก", Value = "แม็ก เล็ก" },
+            new SelectListItem { Selected = false, Text = "แม็ก ใหญ่", Value = "แม็ก ใหญ่" },
+            new SelectListItem { Selected = false, Text = "ไม้บรรทัด", Value = "ไม้บรรทัด" },
+            new SelectListItem { Selected = false, Text = "ยางลบดินสอ", Value = "ยางลบดินสอ" },
+            new SelectListItem { Selected = false, Text = "รีฟิว 2170", Value = "รีฟิว 2170" },
+            new SelectListItem { Selected = false, Text = "ลวดเสียบ", Value = "ลวดเสียบ" },
+            new SelectListItem { Selected = false, Text = "ลิขวิด", Value = "ลิขวิด" },
+            new SelectListItem { Selected = false, Text = "ลูกแม็ก เบอร์ 10", Value = "ลูกแม็ก เบอร์ 10" },
+            new SelectListItem { Selected = false, Text = "ลูกแม็ก เบอร์ 35", Value = "ลูกแม็ก เบอร์ 35" },
+            new SelectListItem { Selected = false, Text = "ลูกแม็ก เบอร์ 8", Value = "ลูกแม็ก เบอร์ 8" },
+            new SelectListItem { Selected = false, Text = "ลูกแม็ก 23/13", Value = "ลูกแม็ก 23/13" },
+            new SelectListItem { Selected = false, Text = "สมุดบันทึกมุมมัน เล่มใหญ่", Value = "สมุดบันทึกมุมมัน เล่มใหญ่" },
+            new SelectListItem { Selected = false, Text = "สมุดปกแข็ง", Value = "สมุดปกแข็ง" },
+            new SelectListItem { Selected = false, Text = "สมุดปกอ่อน", Value = "สมุดปกอ่อน" },
+            new SelectListItem { Selected = false, Text = "สายคล้องคอ", Value = "สายคล้องคอ" },
+            new SelectListItem { Selected = false, Text = "เสื้อ Messenger", Value = "เสื้อ Messenger" },
+            new SelectListItem { Selected = false, Text = "เสื้อ Tiger", Value = "เสื้อ Tiger" },
+            new SelectListItem { Selected = false, Text = "หมึกเดิมตรายาง สีแดง", Value = "หมึกเดิมตรายาง สีแดง" },
+            new SelectListItem { Selected = false, Text = "หมึกเดิมตรายาง สีน้ำเงิน", Value = "หมึกเดิมตรายาง สีน้ำเงิน" },
+            new SelectListItem { Selected = false, Text = "หมึกเดิมแท่นประทับ สีแดง", Value = "หมึกเดิมแท่นประทับ สีแดง" },
+            new SelectListItem { Selected = false, Text = "หมึกเดิมแท่นประทับ สีน้ำเงิน", Value = "หมึกเดิมแท่นประทับ สีน้ำเงิน" },
+            new SelectListItem { Selected = false, Text = "หมึกเดิมแท่นประทับ สีดำ", Value = "หมึกเดิมแท่นประทับ สีดำ" },
+
+
+        }, "Value", "Text", 1);
+
+
+
+
+
+}
+
+@section custom_css{
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css")">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/plugins/timepicker/bootstrap-timepicker.min.css")">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/select2/dist/css/select2.min.css")">
+}
+
+@section custom_js{
+    <!-- bootstrap datepicker -->
+    <script src="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")"></script>
+    <!-- bootstrap time picker -->
+    <script src="@Url.Content("~/Content/AdminLTE-2.4.5/plugins/timepicker/bootstrap-timepicker.min.js")"></script>
+    <!-- Select2 -->
+    <script src="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/select2/dist/js/select2.full.min.js")"></script>
+}
+
+@section custom_script{
+    <script>
+        $(document).ready(function () {
+            //Date picker
+            $('.datepicker').datepicker({
+                autoclose: true,
+                //todayBtn: true,
+                todayHighlight: true,
+                format: 'dd-mm-yyyy',
+                startDate: Date()
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            //Timepicker
+            $('.timepicker').timepicker({
+                showInputs: false,
+                defaultTime: 'current',
+                showMeridian: false,
+                minuteStep: 1,
+            });
+        });
+    </script>
+
+
+
+}
+
+@section header{
+    <h1>
+        RequisitionPays
+        <small>Insert Form</small>
+    </h1>
+}
+
+@section content{
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <div class="col-md-6" style="padding:initial;">
+                        <h3></h3>
+                    </div>
+                    <div class="col-md-6 text-right" style="padding:initial;">
+                        <a href="@Url.Action("Index", "RequisitionPays")" class="btn btn-primary"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
+                    </div>
+                </div>
+                <div class="box-body">
+
+                    @using (Html.BeginForm("requisitionpaysInsertForm", "RequisitionPays", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+
+
+                        <div class="form-group">
+                            @Html.Label("CUSTOMER", "กรุณาเลือกระเภท : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                <div class="radio">
+                                    <label>
+                                        @Html.RadioButton("CUS_PART", 1, true, new { @onchange = "chgComPart()" }) ขอเบิก
+                                    </label>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <label>
+                                        @Html.RadioButton("CUS_PART", 2, new { @onchange = "chgComPart()" }) ขอซื้อ
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("", " ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-4">
+
+                                <div class="form-inline">
+                                    @Html.CheckBox("อนุมัต/รับทราบ", false)
+                                    <label for="Field1">อนุมัต/รับทราบ</label>
+                                </div>
+
+                                <div class="form-inline">
+                                    @Html.CheckBox("ส่งของแล้ว", false)
+                                    <label for="Field1">ส่งของแล้ว</label>
+                                </div>
+
+                                <div class="form-inline">
+                                    @Html.CheckBox("ส่งต่อให้พี่วัลพิจารณาอนุมัติโดยจัดซื้อ", false)
+                                    <label for="Field1"> ส่งต่อให้พี่วัลพิจารณาอนุมัติโดยจัดซื้อ</label>
+                                </div>
+
+                                <div class="form-inline">
+                                    @Html.CheckBox("พี่วัลอนุมัตจัดซื้อ", false)
+                                    <label for="Field1">พี่วัลอนุมัตจัดซื้อ</label>
+                                </div>
+
+                                <div class="form-inline">
+                                    @Html.CheckBox("กำลังซื้อของ", false)
+                                    <label for="Field1">กำลังซื้อของ</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="form-group">
+                            @Html.Label("MILE_IN", "เลขที่เอกสาร : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("AS_DATE", "วันที่ ขอเบิก/ซื้อ : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("AS_DATE", null, new { @class = "form-control datepicker", @autocomplete = "off" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("AS_DATE", "วันที่ต้องการ : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("AS_DATE", null, new { @class = "form-control datepicker", @autocomplete = "off" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("AS_MESSENGER", "สาขา : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.DropDownList("AS_MESSENGER", BranchListItemsListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("AS_MESSENGER", "ฝ่าย : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.DropDownList("AS_MESSENGER", SelctionListItemsListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("AS_MESSENGER", "แผนก : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.DropDownList("AS_MESSENGER", DeptListItemsListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            @Html.Label("MILE_IN", "ประเภทอุปกรณ์ : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.DropDownList("AS_MESSENGER", EquipmentListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="form-group">
+                            @Html.Label("MILE_IN", "วัสดุอุปกรณ์ : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.DropDownList("AS_MESSENGER", MaterialItemsListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("AS_DATE", "จำนวน : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("AS_DATE", null, new { @class = "form-control datepicker", @autocomplete = "off" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("MILE_IN", "ราคาต่อชั้น : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.Label("", new { @class = "control-label col-md-4" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("AS_DATE", "หมายเหตุ : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextArea("AS_DATE", null, new { @class = "form-control datepicker", @autocomplete = "off" })
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="col-md-4 col-md-offset-4">
+                                <button type="submit" class="btn btn-success" id="btnSubmit">Save</button>&nbsp;
+                                <button type="reset" class="btn btn-default" id="btnReset">Reset</button>
+                            </div>
+                        </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+        v>
+
+}

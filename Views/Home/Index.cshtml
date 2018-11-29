@@ -109,7 +109,12 @@
                         <li class="header">Humman Resource</li>
                         <li class="header">PayDay</li>
                         <li @if (@seg_url == "payday") { @(new { @class = "active" })  }><a href="@Url.Action("Index", "PayDay")"><i class="fa fa-archive text-yellow"></i> <span>PayDay</span></a></li>
-                        
+                        <li class="header">Miantenance Resource</li>
+                        <li @if (@seg_url == "requisitionpays") { @(new { @class = "active" })   }><a href="@Url.Action("Index", "RequisitionPays")"><i class="fa fa-archive text-yellow"></i> <span>RequisitionPay</span></a></li>
+                        <li class="header">Repair</li>
+                        <li @if (@seg_url == "institution") { @(new { @class = "active" })     }><a href="@Url.Action("Index", "Institution")"><i class="fa fa-archive text-yellow"></i> <span>สำหรับหน่วยงาน</span></a></li>
+                        <li @if (@seg_url == "administration") { @(new { @class = "active" })    }><a href="@Url.Action("Index", "Administration")"><i class="fa fa-archive text-yellow"></i> <span>ส่วนธุรการ</span></a></li>
+
 
                     <li class="header">SYSTEM</li>
                     <li><a href="@Url.Action("Logout", "Login")"><i class="fa fa-sign-out text-red"></i> <span>Logout</span></a></li>

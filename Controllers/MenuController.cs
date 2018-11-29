@@ -14,18 +14,14 @@ namespace EaglesManagement_Web.Controllers
         public ActionResult Index()
         {
 
-            using (DB_EaglesInternalEntities db = new DB_EaglesInternalEntities())
+            using (ITmanagementEntities1 db = new ITmanagementEntities1())
             {
 
                 TempData.Keep("username");
-                TempData.Keep("name_th");
-                TempData.Keep("position");
-                TempData.Keep("dept");
-
                 string user_by = TempData["username"].ToString();
 
                 dynamic model = new ExpandoObject();
-                model.Working = db.tblUsers.Where(x => x.UserBy == user_by).OrderByDescending(y => y.UserId).ToList();
+                model.Working = db.tblUsers.Where(x => x.UserName == user_by).OrderByDescending(y => y.UserName).ToList();
 
                 return View(model);
             }
@@ -33,17 +29,13 @@ namespace EaglesManagement_Web.Controllers
 
         public ActionResult menuInsertForm()
         {
-            using (DB_EaglesInternalEntities db = new DB_EaglesInternalEntities())
+            using (ITmanagementEntities1 db = new ITmanagementEntities1())
             {
                 TempData.Keep("username");
-                TempData.Keep("name_th");
-                TempData.Keep("position");
-                TempData.Keep("dept");
-
                 string user_by = TempData["username"].ToString();
 
                 dynamic model = new ExpandoObject();
-                model.Customer = db.tblUsers.Where(x => x.UserBy == user_by).ToList();
+                model.Customer = db.tblUsers.Where(x => x.UserName == user_by).ToList();
 
                 return View(model);
             }

@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ITmanagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="objectid" Type="int" />
+    <Property Name="property" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+    <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+    <Property Name="lvalue" Type="image" />
+    <Property Name="version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RunningNumber">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RunningID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblAccessList">
+    <Key>
+      <PropertyRef Name="AccessNo" />
+    </Key>
+    <Property Name="AccessNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AccessName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="RecordDate" Type="datetime" />
+    <Property Name="TypeofAccess" Type="varchar" MaxLength="50" />
+    <Property Name="OrderNo" Type="varchar" MaxLength="50" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="ValueOfAccess" Type="float" />
+    <Property Name="WarrantyValue" Type="varchar" MaxLength="50" />
+    <Property Name="WarrantyUnit" Type="varchar" MaxLength="50" />
+    <Property Name="StartWarranty" Type="datetime" />
+    <Property Name="EndWarranty" Type="datetime" />
+    <Property Name="PlaceOfWarranty" Type="varchar" MaxLength="100" />
+    <Property Name="SupplierCode" Type="varchar" MaxLength="50" />
+    <Property Name="SupplierName" Type="varchar" MaxLength="200" />
+    <Property Name="Remark" Type="varchar" MaxLength="250" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusOnStock" Type="char" MaxLength="5" />
+    <Property Name="SN" Type="varchar" MaxLength="50" />
+    <Property Name="Branch" Type="varchar" MaxLength="50" />
+    <Property Name="Department" Type="varchar" MaxLength="50" />
+    <Property Name="Owner" Type="varchar" MaxLength="50" />
+    <Property Name="AccessAccount" Type="varchar" MaxLength="50" />
+    <Property Name="ReceiveDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblAccessListDetail">
+    <Key>
+      <PropertyRef Name="AccessNo" />
+      <PropertyRef Name="ItemNo" />
+    </Key>
+    <Property Name="AccessNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TypeOfDevice" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NameOfDevice" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="float" />
+    <Property Name="OrderNo" Type="varchar" MaxLength="50" />
+    <Property Name="WarrantyValue" Type="float" />
+    <Property Name="WarrantyUnit" Type="varchar" MaxLength="50" />
+    <Property Name="StartWarranty" Type="datetime" />
+    <Property Name="EndWarranty" Type="datetime" />
+    <Property Name="PlaceOfWarranty" Type="varchar" MaxLength="200" />
+    <Property Name="SupplierCode" Type="varchar" MaxLength="50" />
+    <Property Name="SupplierName" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblAccessMA">
+    <Key>
+      <PropertyRef Name="AccessNo" />
+      <PropertyRef Name="MAyear" />
+      <PropertyRef Name="Cycle" />
+    </Key>
+    <Property Name="AccessNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MAyear" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="Cycle" Type="int" Nullable="false" />
+    <Property Name="ISMA" Type="int" />
+    <Property Name="MAdate" Type="datetime" />
+    <Property Name="Observe" Type="varchar" MaxLength="1000" />
+    <Property Name="Find" Type="varchar" MaxLength="1000" />
+    <Property Name="Improve" Type="varchar" MaxLength="1000" />
+    <Property Name="UserBy" Type="varchar" MaxLength="50" />
+    <Property Name="UserDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblAccessSoftware">
+    <Key>
+      <PropertyRef Name="AccessNo" />
+      <PropertyRef Name="Software" />
+    </Key>
+    <Property Name="AccessNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Software" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Issetup" Type="int" />
+    <Property Name="UserBy" Type="varchar" MaxLength="50" />
+    <Property Name="UserDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCheckBackUp">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ServerName" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateSave" Type="varchar" MaxLength="50" />
+    <Property Name="ServerName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Finished" Type="int" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCheckCCTV">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="IpCCTV" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateSave" Type="varchar" MaxLength="50" />
+    <Property Name="IpCCTV" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Location" Type="char" MaxLength="10" />
+    <Property Name="StatusConnect" Type="char" MaxLength="10" />
+    <Property Name="StatusRecord" Type="char" MaxLength="10" />
+    <Property Name="Browser" Type="varchar" MaxLength="100" />
+    <Property Name="BrowserStatusCon" Type="char" MaxLength="10" />
+    <Property Name="DateFrom" Type="datetime" />
+    <Property Name="DateTo" Type="datetime" />
+    <Property Name="Sday" Type="int" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCheckFireWall">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="IP" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateSave" Type="varchar" MaxLength="50" />
+    <Property Name="Device" Type="varchar" MaxLength="50" />
+    <Property Name="IP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Location" Type="char" MaxLength="10" />
+    <Property Name="WebBrowser" Type="varchar" MaxLength="100" />
+    <Property Name="StatusWAN" Type="char" MaxLength="10" />
+    <Property Name="StatusInternal" Type="char" MaxLength="10" />
+    <Property Name="UtilizationCPU" Type="char" MaxLength="10" />
+    <Property Name="UtilizationMemory" Type="char" MaxLength="10" />
+    <Property Name="StatusCon" Type="char" MaxLength="10" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCheckMeterial">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateSave" Type="varchar" MaxLength="50" />
+    <Property Name="AirName" Type="varchar" MaxLength="50" />
+    <Property Name="AirLocation" Type="char" MaxLength="50" />
+    <Property Name="TimeAir1" Type="char" MaxLength="50" />
+    <Property Name="TimeAir2" Type="char" MaxLength="50" />
+    <Property Name="TemServerName" Type="varchar" MaxLength="50" />
+    <Property Name="ServerLocation" Type="char" MaxLength="50" />
+    <Property Name="TemDs" Type="char" MaxLength="10" />
+    <Property Name="TemVM" Type="char" MaxLength="10" />
+    <Property Name="TemSAN" Type="char" MaxLength="10" />
+    <Property Name="ADSLName" Type="varchar" MaxLength="50" />
+    <Property Name="ADSLLocal" Type="char" MaxLength="50" />
+    <Property Name="StatusADSL" Type="char" MaxLength="10" />
+    <Property Name="Modem1Name" Type="varchar" MaxLength="50" />
+    <Property Name="Modem1Location" Type="char" MaxLength="50" />
+    <Property Name="Modem1Status1" Type="char" MaxLength="50" />
+    <Property Name="Modem1Status2" Type="char" MaxLength="50" />
+    <Property Name="Modem2Name" Type="varchar" MaxLength="50" />
+    <Property Name="Modem2Location" Type="char" MaxLength="50" />
+    <Property Name="Modem2Status1" Type="char" MaxLength="50" />
+    <Property Name="Modem2Status2" Type="char" MaxLength="50" />
+    <Property Name="GsmName" Type="varchar" MaxLength="50" />
+    <Property Name="GsmLocation" Type="char" MaxLength="50" />
+    <Property Name="GsmStatus1" Type="char" MaxLength="10" />
+    <Property Name="GsmStatus2" Type="char" MaxLength="10" />
+    <Property Name="GsmStatus3" Type="char" MaxLength="10" />
+    <Property Name="GsmStatus4" Type="char" MaxLength="10" />
+    <Property Name="KVMName" Type="varchar" MaxLength="50" />
+    <Property Name="KVMLocation" Type="char" MaxLength="10" />
+    <Property Name="KVMStatus1" Type="char" MaxLength="10" />
+    <Property Name="KVMStatus2" Type="char" MaxLength="10" />
+    <Property Name="KVMStatus3" Type="char" MaxLength="10" />
+    <Property Name="KVMStatus4" Type="char" MaxLength="10" />
+    <Property Name="KVMStatus5" Type="char" MaxLength="10" />
+    <Property Name="KVMStatus6" Type="char" MaxLength="10" />
+    <Property Name="KVMStatus7" Type="char" MaxLength="10" />
+    <Property Name="KVMStatus8" Type="char" MaxLength="10" />
+    <Property Name="HDDName" Type="varchar" MaxLength="50" />
+    <Property Name="HDDLocation" Type="char" MaxLength="10" />
+    <Property Name="HDDStatus1" Type="char" MaxLength="10" />
+    <Property Name="HDDStatus2" Type="char" MaxLength="10" />
+    <Property Name="HDDStatus3" Type="char" MaxLength="10" />
+    <Property Name="HDDStatus4" Type="char" MaxLength="10" />
+    <Property Name="HDDStatus5" Type="char" MaxLength="10" />
+    <Property Name="HDDStatus6" Type="char" MaxLength="10" />
+    <Property Name="MobileName" Type="varchar" MaxLength="50" />
+    <Property Name="MobileIP" Type="varchar" MaxLength="50" />
+    <Property Name="MobileLocation" Type="char" MaxLength="10" />
+    <Property Name="MobileReboot" Type="char" MaxLength="10" />
+    <Property Name="MobileConStatus" Type="char" MaxLength="10" />
+    <Property Name="HWName" Type="varchar" MaxLength="50" />
+    <Property Name="HWIP" Type="varchar" MaxLength="50" />
+    <Property Name="HWLocation" Type="char" MaxLength="10" />
+    <Property Name="HWStatus1" Type="char" MaxLength="10" />
+    <Property Name="NoteHW1" Type="varchar" MaxLength="50" />
+    <Property Name="HWStatus2" Type="char" MaxLength="10" />
+    <Property Name="NoteHW2" Type="varchar" MaxLength="50" />
+    <Property Name="HWStatus3" Type="char" MaxLength="10" />
+    <Property Name="NoteHW3" Type="varchar" MaxLength="50" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCheckRouter">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="IP" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateSave" Type="varchar" MaxLength="50" />
+    <Property Name="RouterName" Type="varchar" MaxLength="50" />
+    <Property Name="IP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Location" Type="char" MaxLength="10" />
+    <Property Name="StatusLAN" Type="char" MaxLength="10" />
+    <Property Name="StatusWAN" Type="char" MaxLength="10" />
+    <Property Name="ResponseTime" Type="char" MaxLength="10" />
+    <Property Name="UtilizationCPU" Type="char" MaxLength="10" />
+    <Property Name="UtilizationMemory" Type="char" MaxLength="10" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCheckServer">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="IP" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateSave" Type="varchar" MaxLength="50" />
+    <Property Name="ServerName" Type="varchar" MaxLength="50" />
+    <Property Name="IP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Location" Type="char" MaxLength="10" />
+    <Property Name="InterfaceStatus" Type="char" MaxLength="10" />
+    <Property Name="ResponseTime" Type="char" MaxLength="10" />
+    <Property Name="Heat" Type="char" MaxLength="10" />
+    <Property Name="UtilizationCPU" Type="char" MaxLength="10" />
+    <Property Name="UtilizationMemory" Type="char" MaxLength="10" />
+    <Property Name="UtilizationDisk" Type="char" MaxLength="10" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCheckSwitch">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SwitchName" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateSave" Type="varchar" MaxLength="50" />
+    <Property Name="SwitchName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SwitchLocation" Type="char" MaxLength="10" />
+    <Property Name="StatusConnect" Type="char" MaxLength="10" />
+    <Property Name="NotePort" Type="varchar" MaxLength="50" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblDepartment">
+    <Key>
+      <PropertyRef Name="Branch" />
+      <PropertyRef Name="Party" />
+      <PropertyRef Name="Department" />
+    </Key>
+    <Property Name="Branch" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Party" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Department" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Manager" Type="varchar" MaxLength="50" />
+    <Property Name="A_Manager" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Userby" Type="varchar" MaxLength="50" />
+    <Property Name="Lastupdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblEmployee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="lastname" Type="varchar" MaxLength="50" />
+    <Property Name="department" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="int" />
+    <Property Name="branch" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblEmployee_out">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="position_name" Type="varchar" MaxLength="50" />
+    <Property Name="department" Type="varchar" MaxLength="50" />
+    <Property Name="branch" Type="varchar" MaxLength="50" />
+    <Property Name="date_start" Type="datetime" />
+    <Property Name="date_final" Type="datetime" />
+    <Property Name="age" Type="int" />
+  </EntityType>
+  <EntityType Name="tblEmployee_outdtl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="emp_card" Type="int" />
+    <Property Name="other_card" Type="int" />
+    <Property Name="date_exp" Type="datetime" />
+    <Property Name="tel" Type="int" />
+    <Property Name="notebook_data" Type="int" />
+  </EntityType>
+  <EntityType Name="tblGenAutoNo">
+    <Key>
+      <PropertyRef Name="TypeCode" />
+      <PropertyRef Name="MountNo" />
+      <PropertyRef Name="YearNo" />
+      <PropertyRef Name="DigitNo" />
+    </Key>
+    <Property Name="TypeCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RunNo" Type="varchar" MaxLength="100" />
+    <Property Name="MountNo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="YearNo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DigitNo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblInventoryItem">
+    <Key>
+      <PropertyRef Name="Itemcode" />
+    </Key>
+    <Property Name="Itemcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Itemname" Type="varchar" MaxLength="50" />
+    <Property Name="TypeUse" Type="varchar" MaxLength="50" />
+    <Property Name="TypeEquipment" Type="varchar" MaxLength="50" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Vendor" Type="varchar" MaxLength="50" />
+    <Property Name="Userby" Type="varchar" MaxLength="50" />
+    <Property Name="Lastupdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblITServiceSparepart">
+    <Key>
+      <PropertyRef Name="TicketNo" />
+      <PropertyRef Name="RowID" />
+    </Key>
+    <Property Name="TicketNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RowID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RequestOrderDate" Type="datetime" />
+    <Property Name="RequestOrderBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="RequestOrderDetail" Type="varchar" MaxLength="200" />
+    <Property Name="QTY" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="VAT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="SumTotal" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="SupplierName" Type="varchar" MaxLength="200" />
+    <Property Name="QTYVaranty" Type="varchar" MaxLength="50" />
+    <Property Name="UnitVaranty" Type="varchar" MaxLength="50" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="ToDate" Type="datetime" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblITServiceTicket">
+    <Key>
+      <PropertyRef Name="TicketNo" />
+    </Key>
+    <Property Name="TicketNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TickDate" Type="datetime" />
+    <Property Name="BranchRequest" Type="varchar" MaxLength="50" />
+    <Property Name="RequestFrom" Type="varchar" MaxLength="50" />
+    <Property Name="RequestBy" Type="varchar" MaxLength="50" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="50" />
+    <Property Name="RemoteType" Type="varchar" MaxLength="50" />
+    <Property Name="AssigeJobTo" Type="varchar" MaxLength="50" />
+    <Property Name="CloseJOBDate" Type="datetime" />
+    <Property Name="JOBStatus" Type="varchar" MaxLength="50" />
+    <Property Name="ComputerName" Type="varchar" MaxLength="50" />
+    <Property Name="JobUserName" Type="varchar" MaxLength="50" />
+    <Property Name="JobPassword" Type="varchar" MaxLength="50" />
+    <Property Name="RequestDetail" Type="varchar" MaxLength="1000" />
+    <Property Name="TotalCostService" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="BackRepairComplete" Type="varchar" MaxLength="200" />
+    <Property Name="Evaluation1" Type="varchar" MaxLength="100" />
+    <Property Name="Evaluation2" Type="varchar" MaxLength="100" />
+    <Property Name="Evaluation3" Type="varchar" MaxLength="100" />
+    <Property Name="Evaluation4" Type="varchar" MaxLength="100" />
+    <Property Name="Evaluation5" Type="varchar" MaxLength="100" />
+    <Property Name="Evaluation6" Type="varchar" MaxLength="100" />
+    <Property Name="EvaluationBy" Type="varchar" MaxLength="50" />
+    <Property Name="EvaluationDate" Type="datetime" />
+    <Property Name="EvaluationRemark" Type="varchar" MaxLength="200" />
+    <Property Name="StatusEvaluation" Type="varchar" MaxLength="50" />
+    <Property Name="TicketType" Type="varchar" MaxLength="50" />
+    <Property Name="OpenDate" Type="datetime" />
+    <Property Name="EstimateDate" Type="datetime" />
+    <Property Name="DateDiffEstimate" Type="int" />
+    <Property Name="CloseDate" Type="datetime" />
+    <Property Name="DateDiff" Type="int" />
+    <Property Name="DepartmentRequest" Type="varchar" MaxLength="50" />
+    <Property Name="RepairNo" Type="varchar" MaxLength="10" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblITServiceTicketDetail">
+    <Key>
+      <PropertyRef Name="TicketNo" />
+      <PropertyRef Name="RowID" />
+    </Key>
+    <Property Name="TicketNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RowID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnalyDetail" Type="varchar" MaxLength="200" />
+    <Property Name="RepairDetail" Type="varchar" MaxLength="300" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblMasterCode">
+    <Key>
+      <PropertyRef Name="Type" />
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="Note" Type="varchar" MaxLength="200" />
+    <Property Name="FilterInd" Type="varchar" MaxLength="50" />
+    <Property Name="TypeCode" Type="varchar" MaxLength="50" />
+    <Property Name="LisenceSum" Type="int" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblMenu">
+    <Key>
+      <PropertyRef Name="Program" />
+    </Key>
+    <Property Name="Program" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="UserBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblOutSiteService">
+    <Key>
+      <PropertyRef Name="ServiceTicketNo" />
+    </Key>
+    <Property Name="ServiceTicketNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiceDate" Type="datetime" Nullable="false" />
+    <Property Name="OwnerName" Type="varchar" MaxLength="250" />
+    <Property Name="ITName" Type="varchar" MaxLength="250" />
+    <Property Name="PlaceOfService" Type="varchar" MaxLength="250" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblOutSiteServiceDetail">
+    <Key>
+      <PropertyRef Name="ServiceTicketNo" />
+      <PropertyRef Name="ItemNo" />
+    </Key>
+    <Property Name="ServiceTicketNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description1" Type="varchar" MaxLength="250" />
+    <Property Name="Description2" Type="varchar" MaxLength="250" />
+    <Property Name="Description3" Type="varchar" MaxLength="250" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblOutSourceService">
+    <Key>
+      <PropertyRef Name="TicketNo" />
+      <PropertyRef Name="ServiceNo" />
+    </Key>
+    <Property Name="TicketNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiceDate" Type="datetime" />
+    <Property Name="SupplierCode" Type="varchar" MaxLength="50" />
+    <Property Name="SupplierName" Type="varchar" MaxLength="200" />
+    <Property Name="ReceivedDate" Type="datetime" />
+    <Property Name="ReceivedBy" Type="varchar" MaxLength="100" />
+    <Property Name="Description1" Type="varchar" MaxLength="250" />
+    <Property Name="Description2" Type="varchar" MaxLength="250" />
+    <Property Name="EstimateDate" Type="datetime" />
+    <Property Name="ActualDate" Type="datetime" />
+    <Property Name="QtyOfWaranty" Type="int" />
+    <Property Name="UnitWaranty" Type="varchar" MaxLength="50" />
+    <Property Name="StartWaranty" Type="datetime" />
+    <Property Name="EndWaranty" Type="datetime" />
+    <Property Name="EstimatePrice" Type="float" />
+    <Property Name="ActualPrice" Type="float" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblOutSourceServiceDetail">
+    <Key>
+      <PropertyRef Name="TicketNo" />
+      <PropertyRef Name="ServiceNo" />
+      <PropertyRef Name="ItemNo" />
+    </Key>
+    <Property Name="TicketNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiceNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+    <Property Name="QTY" Type="int" />
+    <Property Name="Price" Type="float" />
+    <Property Name="VAT" Type="int" />
+    <Property Name="Amount" Type="float" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ITmanagement.dbo.tblParty' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblParty">
+    <Key>
+      <PropertyRef Name="PartyCode" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="PartyCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PartyFullName" Type="varchar" MaxLength="200" />
+    <Property Name="PartyLocalCode" Type="varchar" MaxLength="50" />
+    <Property Name="PartyLocalName" Type="varchar" MaxLength="200" />
+    <Property Name="PartyLocation" Type="varchar" MaxLength="50" />
+    <Property Name="PartyCountry" Type="varchar" MaxLength="50" />
+    <Property Name="RegistrationNo" Type="varchar" MaxLength="50" />
+    <Property Name="PartyTypeCode" Type="varchar" MaxLength="50" />
+    <Property Name="PartyTypeName" Type="varchar" MaxLength="200" />
+    <Property Name="CommissionToSales" Type="varchar" MaxLength="50" />
+    <Property Name="IATACode" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="varchar" MaxLength="200" />
+    <Property Name="PartyStatus" Type="varchar" MaxLength="50" />
+    <Property Name="MessageHubID" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSystemPartyID" Type="varchar" MaxLength="50" />
+    <Property Name="FormID" Type="varchar" MaxLength="50" />
+    <Property Name="Shipper" Type="varchar" MaxLength="50" />
+    <Property Name="Consignee" Type="varchar" MaxLength="50" />
+    <Property Name="Branch_Agent" Type="varchar" MaxLength="50" />
+    <Property Name="Co_Loader" Type="varchar" MaxLength="50" />
+    <Property Name="Trucking" Type="varchar" MaxLength="50" />
+    <Property Name="ShippingLine" Type="varchar" MaxLength="50" />
+    <Property Name="Vendor" Type="varchar" MaxLength="50" />
+    <Property Name="ContainerYard" Type="varchar" MaxLength="50" />
+    <Property Name="Warehouse" Type="varchar" MaxLength="50" />
+    <Property Name="Bank" Type="varchar" MaxLength="50" />
+    <Property Name="Factory" Type="varchar" MaxLength="50" />
+    <Property Name="Customer" Type="varchar" MaxLength="50" />
+    <Property Name="Broker" Type="varchar" MaxLength="50" />
+    <Property Name="AirLine" Type="varchar" MaxLength="50" />
+    <Property Name="EndCustomer" Type="varchar" MaxLength="50" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ITmanagement.dbo.tblPartyAddress' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblPartyAddress">
+    <Key>
+      <PropertyRef Name="PartyAddressCode" />
+      <PropertyRef Name="PartyCode" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="PartyAddressCode" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="PartyCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AddressType" Type="varchar" MaxLength="50" />
+    <Property Name="Address1" Type="varchar" MaxLength="200" />
+    <Property Name="Address2" Type="varchar" MaxLength="200" />
+    <Property Name="Address3" Type="varchar" MaxLength="200" />
+    <Property Name="Address4" Type="varchar" MaxLength="200" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="AreaCode" Type="varchar" MaxLength="50" />
+    <Property Name="Attn" Type="varchar" MaxLength="200" />
+    <Property Name="Tel" Type="varchar" MaxLength="100" />
+    <Property Name="Fax" Type="varchar" MaxLength="100" />
+    <Property Name="Web" Type="varchar" MaxLength="100" />
+    <Property Name="email" Type="varchar" MaxLength="200" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblPurchaseRequistionDtl">
+    <Key>
+      <PropertyRef Name="PRPHNO" />
+      <PropertyRef Name="Itemcode" />
+    </Key>
+    <Property Name="PRPHNO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Itemcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Qty" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="QtyUnit" Type="varchar" MaxLength="50" />
+    <Property Name="Userby" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdate" Type="datetime" />
+    <Property Name="Detail" Type="varchar" MaxLength="300" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tblPurchaseRequistionHdr">
+    <Key>
+      <PropertyRef Name="PRPHNo" />
+    </Key>
+    <Property Name="PRPHNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsPR" Type="int" />
+    <Property Name="ApproveDate" Type="datetime" />
+    <Property Name="DateBuy" Type="datetime" />
+    <Property Name="DateRequire" Type="datetime" />
+    <Property Name="Department" Type="varchar" MaxLength="50" />
+    <Property Name="Party" Type="varchar" MaxLength="50" />
+    <Property Name="Branch" Type="varchar" MaxLength="50" />
+    <Property Name="UserApp1" Type="varchar" MaxLength="50" />
+    <Property Name="UserApp2" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="int" />
+    <Property Name="Createby" Type="varchar" MaxLength="50" />
+    <Property Name="Createdate" Type="datetime" />
+    <Property Name="Userby" Type="varchar" MaxLength="50" />
+    <Property Name="Lastupdate" Type="datetime" />
+    <Property Name="StatusMail" Type="int" />
+    <Property Name="ApproveBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusCancel" Type="int" />
+    <Property Name="UserNameApp1" Type="varchar" MaxLength="50" />
+    <Property Name="UserNameApp2" Type="varchar" MaxLength="50" />
+    <Property Name="UserApp3" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblRecordProduct">
+    <Key>
+      <PropertyRef Name="SNNo" />
+    </Key>
+    <Property Name="SNNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ishw" Type="int" />
+    <Property Name="IsStock" Type="int" />
+    <Property Name="ItemCodeNO" Type="varchar" MaxLength="50" />
+    <Property Name="Type" Type="char" MaxLength="20" />
+    <Property Name="Location" Type="char" MaxLength="20" />
+    <Property Name="Detail" Type="varchar" MaxLength="200" />
+    <Property Name="StartGuarantee" Type="datetime" />
+    <Property Name="EndGuarantee" Type="datetime" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="CreatBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="30" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblRecordProductDtl">
+    <Key>
+      <PropertyRef Name="SNno" />
+      <PropertyRef Name="RepairNo" />
+    </Key>
+    <Property Name="SNno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RepairNo" Type="int" Nullable="false" />
+    <Property Name="ServiceName" Type="varchar" MaxLength="50" />
+    <Property Name="RepairDate" Type="datetime" />
+    <Property Name="StatusRepair" Type="int" />
+  </EntityType>
+  <EntityType Name="tblRentDevice">
+    <Key>
+      <PropertyRef Name="RentNo" />
+    </Key>
+    <Property Name="RentNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RentDate" Type="datetime" />
+    <Property Name="RentOwner" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DeptOwner" Type="varchar" MaxLength="50" />
+    <Property Name="IssuedBy" Type="varchar" MaxLength="100" />
+    <Property Name="IssuedDate" Type="datetime" />
+    <Property Name="ReceivedBy" Type="varchar" MaxLength="100" />
+    <Property Name="ReceivedDate" Type="datetime" />
+    <Property Name="ObjectiveofRent" Type="varchar" MaxLength="250" />
+    <Property Name="PlaceOfUsed" Type="varchar" MaxLength="200" />
+    <Property Name="StatusFinish" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+    <Property Name="StatusOfRent" Type="varchar" MaxLength="50" />
+    <Property Name="CreatBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="30" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblRentDeviceDetail">
+    <Key>
+      <PropertyRef Name="RentNo" />
+      <PropertyRef Name="ItemNo" />
+    </Key>
+    <Property Name="RentNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TypeDevice" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="AccessCode" Type="varchar" MaxLength="50" />
+    <Property Name="AccessName" Type="varchar" MaxLength="200" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="AccessoryOfDevice" Type="varchar" MaxLength="250" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+    <Property Name="StatusOfRent" Type="varchar" MaxLength="50" />
+    <Property Name="CreatBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="30" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="FirstRent" Type="int" />
+  </EntityType>
+  <EntityType Name="tblRepair">
+    <Key>
+      <PropertyRef Name="RepairNo" />
+    </Key>
+    <Property Name="RepairNo" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Branch" Type="varchar" MaxLength="15" />
+    <Property Name="Depart" Type="varchar" MaxLength="20" />
+    <Property Name="Asset" Type="varchar" MaxLength="20" />
+    <Property Name="Qty" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="PlaceUse" Type="varchar" MaxLength="100" />
+    <Property Name="Ruined" Type="varchar" MaxLength="200" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Approve" Type="int" />
+    <Property Name="ApproveName" Type="varchar" MaxLength="30" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblRepairDetail">
+    <Key>
+      <PropertyRef Name="RepairNo" />
+    </Key>
+    <Property Name="RepairNo" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="DateCompany" Type="datetime" />
+    <Property Name="DateRepair" Type="datetime" />
+    <Property Name="TimeRepair" Type="varchar" MaxLength="10" />
+    <Property Name="CompanyRepair" Type="varchar" MaxLength="50" />
+    <Property Name="CompanyPhone" Type="varchar" MaxLength="10" />
+    <Property Name="RepairMan" Type="varchar" MaxLength="30" />
+    <Property Name="RepairManPhone" Type="varchar" MaxLength="10" />
+    <Property Name="TypePrice" Type="int" />
+    <Property Name="Warranty" Type="int" />
+    <Property Name="PriceAll" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="AppPrice" Type="varchar" MaxLength="30" />
+    <Property Name="DateRepairMan" Type="datetime" />
+    <Property Name="TimeRepairMan" Type="varchar" MaxLength="10" />
+    <Property Name="Normal" Type="int" />
+    <Property Name="AbNormal" Type="varchar" MaxLength="200" />
+    <Property Name="Note" Type="varchar" MaxLength="200" />
+    <Property Name="ManCheck" Type="varchar" MaxLength="20" />
+    <Property Name="DateCheck" Type="datetime" />
+    <Property Name="UserBy" Type="varchar" MaxLength="20" />
+    <Property Name="UserDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Dept" Type="varchar" MaxLength="100" />
+    <Property Name="Branch" Type="varchar" MaxLength="100" />
+    <Property Name="Party" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="100" />
+    <Property Name="Mail" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ITmanagement.dbo.tblUserGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblUserGroup">
+    <Key>
+      <PropertyRef Name="UserGroupCode" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="UserGroupCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserGroupName" Type="varchar" MaxLength="100" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUserMenu">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Program" />
+    </Key>
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Program" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="int" />
+    <Property Name="UserBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdate" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="ITmanagementModelStoreContainer">
+    <EntitySet Name="dtproperties" EntityType="Self.dtproperties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RunningNumber" EntityType="Self.RunningNumber" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAccessList" EntityType="Self.tblAccessList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAccessListDetail" EntityType="Self.tblAccessListDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAccessMA" EntityType="Self.tblAccessMA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAccessSoftware" EntityType="Self.tblAccessSoftware" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCheckBackUp" EntityType="Self.tblCheckBackUp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCheckCCTV" EntityType="Self.tblCheckCCTV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCheckFireWall" EntityType="Self.tblCheckFireWall" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCheckMeterial" EntityType="Self.tblCheckMeterial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCheckRouter" EntityType="Self.tblCheckRouter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCheckServer" EntityType="Self.tblCheckServer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCheckSwitch" EntityType="Self.tblCheckSwitch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDepartment" EntityType="Self.tblDepartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployee_out" EntityType="Self.tblEmployee_out" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployee_outdtl" EntityType="Self.tblEmployee_outdtl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblGenAutoNo" EntityType="Self.tblGenAutoNo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblInventoryItem" EntityType="Self.tblInventoryItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblITServiceSparepart" EntityType="Self.tblITServiceSparepart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblITServiceTicket" EntityType="Self.tblITServiceTicket" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblITServiceTicketDetail" EntityType="Self.tblITServiceTicketDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMasterCode" EntityType="Self.tblMasterCode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMenu" EntityType="Self.tblMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOutSiteService" EntityType="Self.tblOutSiteService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOutSiteServiceDetail" EntityType="Self.tblOutSiteServiceDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOutSourceService" EntityType="Self.tblOutSourceService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOutSourceServiceDetail" EntityType="Self.tblOutSourceServiceDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPurchaseRequistionDtl" EntityType="Self.tblPurchaseRequistionDtl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPurchaseRequistionHdr" EntityType="Self.tblPurchaseRequistionHdr" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRecordProduct" EntityType="Self.tblRecordProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRecordProductDtl" EntityType="Self.tblRecordProductDtl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRentDevice" EntityType="Self.tblRentDevice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRentDeviceDetail" EntityType="Self.tblRentDeviceDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRepair" EntityType="Self.tblRepair" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRepairDetail" EntityType="Self.tblRepairDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUserMenu" EntityType="Self.tblUserMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblParty" EntityType="Self.tblParty" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[tblParty].[PartyCode] AS [PartyCode], 
+[tblParty].[PartyFullName] AS [PartyFullName], 
+[tblParty].[PartyLocalCode] AS [PartyLocalCode], 
+[tblParty].[PartyLocalName] AS [PartyLocalName], 
+[tblParty].[PartyLocation] AS [PartyLocation], 
+[tblParty].[PartyCountry] AS [PartyCountry], 
+[tblParty].[RegistrationNo] AS [RegistrationNo], 
+[tblParty].[PartyTypeCode] AS [PartyTypeCode], 
+[tblParty].[PartyTypeName] AS [PartyTypeName], 
+[tblParty].[CommissionToSales] AS [CommissionToSales], 
+[tblParty].[IATACode] AS [IATACode], 
+[tblParty].[Remarks] AS [Remarks], 
+[tblParty].[PartyStatus] AS [PartyStatus], 
+[tblParty].[MessageHubID] AS [MessageHubID], 
+[tblParty].[OtherSystemPartyID] AS [OtherSystemPartyID], 
+[tblParty].[FormID] AS [FormID], 
+[tblParty].[Shipper] AS [Shipper], 
+[tblParty].[Consignee] AS [Consignee], 
+[tblParty].[Branch_Agent] AS [Branch_Agent], 
+[tblParty].[Co_Loader] AS [Co_Loader], 
+[tblParty].[Trucking] AS [Trucking], 
+[tblParty].[ShippingLine] AS [ShippingLine], 
+[tblParty].[Vendor] AS [Vendor], 
+[tblParty].[ContainerYard] AS [ContainerYard], 
+[tblParty].[Warehouse] AS [Warehouse], 
+[tblParty].[Bank] AS [Bank], 
+[tblParty].[Factory] AS [Factory], 
+[tblParty].[Customer] AS [Customer], 
+[tblParty].[Broker] AS [Broker], 
+[tblParty].[AirLine] AS [AirLine], 
+[tblParty].[EndCustomer] AS [EndCustomer], 
+[tblParty].[CreateBy] AS [CreateBy], 
+[tblParty].[CreateDate] AS [CreateDate], 
+[tblParty].[UpdateBy] AS [UpdateBy], 
+[tblParty].[UpdateDate] AS [UpdateDate], 
+[tblParty].[rowguid] AS [rowguid]
+FROM [dbo].[tblParty] AS [tblParty]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblPartyAddress" EntityType="Self.tblPartyAddress" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[tblPartyAddress].[PartyAddressCode] AS [PartyAddressCode], 
+[tblPartyAddress].[PartyCode] AS [PartyCode], 
+[tblPartyAddress].[AddressType] AS [AddressType], 
+[tblPartyAddress].[Address1] AS [Address1], 
+[tblPartyAddress].[Address2] AS [Address2], 
+[tblPartyAddress].[Address3] AS [Address3], 
+[tblPartyAddress].[Address4] AS [Address4], 
+[tblPartyAddress].[ZipCode] AS [ZipCode], 
+[tblPartyAddress].[AreaCode] AS [AreaCode], 
+[tblPartyAddress].[Attn] AS [Attn], 
+[tblPartyAddress].[Tel] AS [Tel], 
+[tblPartyAddress].[Fax] AS [Fax], 
+[tblPartyAddress].[Web] AS [Web], 
+[tblPartyAddress].[email] AS [email], 
+[tblPartyAddress].[CreateBy] AS [CreateBy], 
+[tblPartyAddress].[CreateDate] AS [CreateDate], 
+[tblPartyAddress].[UpdateBy] AS [UpdateBy], 
+[tblPartyAddress].[UpdateDate] AS [UpdateDate], 
+[tblPartyAddress].[rowguid] AS [rowguid]
+FROM [dbo].[tblPartyAddress] AS [tblPartyAddress]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblUserGroup" EntityType="Self.tblUserGroup" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[tblUserGroup].[UserGroupCode] AS [UserGroupCode], 
+[tblUserGroup].[UserGroupName] AS [UserGroupName], 
+[tblUserGroup].[rowguid] AS [rowguid]
+FROM [dbo].[tblUserGroup] AS [tblUserGroup]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
