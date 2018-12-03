@@ -3,6 +3,10 @@
 @{
     Layout = "~/Views/Home/Index.cshtml";
     int i = 0;
+    string app_path = HttpContext.Current.Request.Url.AbsoluteUri;
+    Uri uriAddress = new Uri(app_path);
+    string seg_url = uriAddress.Segments[1];
+
 }
 
 @section custom_css{
@@ -79,12 +83,20 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
+                    <ul class="nav nav-tabs pull-left">
+                        <li @if (@seg_url == "information") { @(new { @class = "active" })     }><a href="@Url.Action("Index", "Infomation")"><i class="fa fa-building-o"></i> <span>Information</span></a></li>
+                        <li @if (@seg_url == "address") { @(new { @class = "active" })     }><a href="@Url.Action("Index", "Address")"><i class="fa fa-building-o"></i> <span>Address</span></a></li>
+                        <li @if (@seg_url == "#") { @(new { @class = "active" })      }><a href="@Url.Action("Index", "#")"><i class="fa fa-building-o"></i> <span>Relation/ Sales/ Pic</span></a></li>
+                        <li @if (@seg_url == "#") { @(new { @class = "active" })     }><a href="@Url.Action("Index", "#")"><i class="fa fa-building-o"></i> <span>Account</span></a></li>
+                    </ul>
                     <div class="col-md-6" style="padding:initial;">
                         <h3></h3>
                     </div>
                 </div>
 
-                <div class="box-body table-responsive">
+
+
+               <!-- <div class="box-body table-responsive">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -113,7 +125,7 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 

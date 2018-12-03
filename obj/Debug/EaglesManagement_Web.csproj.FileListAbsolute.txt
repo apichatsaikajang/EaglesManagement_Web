@@ -34,6 +34,6 @@ D:\EaglesManagement_Web\EaglesManagement_Web\bin\System.Web.Webpages.Deployment.
 D:\EaglesManagement_Web\EaglesManagement_Web\bin\System.Web.Webpages.Razor.xml
 D:\EaglesManagement_Web\EaglesManagement_Web\bin\System.Web.Helpers.xml
 D:\EaglesManagement_Web\EaglesManagement_Web\bin\System.Web.Mvc.xml
-D:\EaglesManagement_Web\EaglesManagement_Web\obj\Debug\EaglesManagement_Web.csprojResolveAssemblyReference.cache
 D:\EaglesManagement_Web\EaglesManagement_Web\obj\Debug\EaglesManagement_Web.dll
 D:\EaglesManagement_Web\EaglesManagement_Web\obj\Debug\EaglesManagement_Web.pdb
+D:\EaglesManagement_Web\EaglesManagement_Web\obj\Debug\EaglesManagement_Web.csprojResolveAssemblyReference.cache

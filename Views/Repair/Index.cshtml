@@ -3,6 +3,10 @@
 @{
     Layout = "~/Views/Home/Index.cshtml";
     int i = 0;
+    string app_path = HttpContext.Current.Request.Url.AbsoluteUri;
+    Uri uriAddress = new Uri(app_path);
+    string seg_url = uriAddress.Segments[1];
+
 }
 
 @section custom_css{
@@ -69,7 +73,7 @@
 
 @section header{
     <h1>
-        User Profile
+        Repair
         <small>Table</small>
     </h1>
 }
@@ -79,41 +83,33 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
+                    <ul class="nav nav-tabs pull-left">
+                        <li @if (@seg_url == "institution") { @(new { @class = "active" })      }><a href="@Url.Action("Index", "Institution")"><i class="fa fa-archive text-yellow"></i> <span>สำหรับหน่วยงาน</span></a></li>
+                        <li @if (@seg_url == "administration") { @(new { @class = "active" })     }><a href="@Url.Action("Index", "Administration")"><i class="fa fa-archive text-yellow"></i> <span>ส่วนธุรการ</span></a></li>
+                    </ul>
                     <div class="col-md-6" style="padding:initial;">
                         <h3></h3>
-                    </div>
-                    <div class="col-md-6 text-right" style="padding:initial;">
-                        <a href="@Url.Action("userprofileInsertForm", "UserProfile")" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp;&nbsp;Add</a>
                     </div>
                 </div>
 
 
-                <div class="box-body table-responsive">
-                    <table id="example1" class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th class="text-center">#</th>
-                                <th class="text-center">UserID</th>
-                                <th class="text-center">PassWord</th>
-                                <th class="text-center">Prefix</th>
-                                <th class="text-center">Name</th>
-                                <th class="text-center">Surname</th>
-                                <th class="text-center">E-mail</th>
-                                <th class="text-center">Dept</th>
-                                <th class="text-center">Position</th>
-                                <th class="text-center">Section</th>
-                                <th class="text-center">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        
+
+                <!-- <div class="box-body table-responsive">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th class="text-center">Program</th>
+                                    <th class="text-center">Description</th>
+                                    <th class="text-center">UserBy</th>
+                                    <th class="text-center">Last Update</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
                                 <tr>
                                     <td class="text-center">@{ i++; }@i</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
                                     <td class="text-center"></td>
                                     <td class="text-center"></td>
                                     <td class="text-center"></td>
@@ -123,13 +119,13 @@
                                         <a href="javascript:void(0);" class="btn btn-danger btn-xs" onclick="delData()"><i class="fa fa-trash"></i> Delete</a>
                                     </td>
                                 </tr>
-                            
-                        </tbody>
-                    </table>
-                </div>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>-->
             </div>
         </div>
-    </div>
 
-    <div id="frm-load"></div>
+        <div id="frm-load"></div>
 }

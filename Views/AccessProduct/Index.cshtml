@@ -1,0 +1,454 @@
+﻿@model dynamic
+@using EaglesManagement_Web.Controllers
+@{
+    Layout = "~/Views/Home/Index.cshtml";
+
+    var BranchListItemsListItems = new SelectList(
+    new List<SelectListItem>{
+            new SelectListItem { Selected = false, Text = " ", Value = " " },
+            new SelectListItem { Selected = false, Text = "AD", Value = "AD" },
+            new SelectListItem { Selected = false, Text = "AE", Value = "AE" },
+            new SelectListItem { Selected = false, Text = "AF", Value = "AF" },
+            new SelectListItem { Selected = false, Text = "AG", Value = "AG" },
+            new SelectListItem { Selected = false, Text = "AL", Value = "AL" },
+            new SelectListItem { Selected = false, Text = "AM", Value = "AM" },
+            new SelectListItem { Selected = false, Text = "AO", Value = "AO" },
+            new SelectListItem { Selected = false, Text = "AR", Value = "AR" },
+            new SelectListItem { Selected = false, Text = "AT", Value = "AT" },
+            new SelectListItem { Selected = false, Text = "AU", Value = "AU" },
+            new SelectListItem { Selected = false, Text = "AZ", Value = "AZ" },
+            new SelectListItem { Selected = false, Text = "BB", Value = "BB" },
+            new SelectListItem { Selected = false, Text = "BD", Value = "BD" },
+            new SelectListItem { Selected = false, Text = "BE", Value = "BE" },
+            new SelectListItem { Selected = false, Text = "BG", Value = "BG" },
+            new SelectListItem { Selected = false, Text = "BH", Value = "BH" },
+            new SelectListItem { Selected = false, Text = "BND", Value = "BND" },
+            new SelectListItem { Selected = false, Text = "BR", Value = "BR" },
+            new SelectListItem { Selected = false, Text = "BS", Value = "BS" },
+            new SelectListItem { Selected = false, Text = "CA", Value = "CA" },
+            new SelectListItem { Selected = false, Text = "CH", Value = "CH" },
+            new SelectListItem { Selected = false, Text = "CL", Value = "CL" },
+            new SelectListItem { Selected = false, Text = "CN", Value = "CN" },
+            new SelectListItem { Selected = false, Text = "CZK", Value = "CZK" },
+            new SelectListItem { Selected = false, Text = "DE", Value = "DE" },
+            new SelectListItem { Selected = false, Text = "DK", Value = "DK" },
+            new SelectListItem { Selected = false, Text = "DZ", Value = "DZ" },
+            new SelectListItem { Selected = false, Text = "EG", Value = "EG" },
+            new SelectListItem { Selected = false, Text = "ES", Value = "ES" },
+            new SelectListItem { Selected = false, Text = "FI", Value = "FI" },
+            new SelectListItem { Selected = false, Text = "FR", Value = "FR" },
+            new SelectListItem { Selected = false, Text = "HK", Value = "HK" },
+            new SelectListItem { Selected = false, Text = "ID", Value = "ID" },
+            new SelectListItem { Selected = false, Text = "IL", Value = "IL" },
+            new SelectListItem { Selected = false, Text = "IN", Value = "IN" },
+            new SelectListItem { Selected = false, Text = "IT", Value = "IT" },
+            new SelectListItem { Selected = false, Text = "JO", Value = "JO" },
+            new SelectListItem { Selected = false, Text = "JP", Value = "JP" },
+            new SelectListItem { Selected = false, Text = "KE", Value = "KE" },
+            new SelectListItem { Selected = false, Text = "KP", Value = "KP" },
+            new SelectListItem { Selected = false, Text = "KZ", Value = "KZ" },
+            new SelectListItem { Selected = false, Text = "MM", Value = "MM" },
+            new SelectListItem { Selected = false, Text = "MX", Value = "MX" },
+            new SelectListItem { Selected = false, Text = "MY", Value = "MY" },
+            new SelectListItem { Selected = false, Text = "NL", Value = "NL" },
+            new SelectListItem { Selected = false, Text = "NO", Value = "NO" },
+            new SelectListItem { Selected = false, Text = "NZ", Value = "NZ" },
+            new SelectListItem { Selected = false, Text = "PH", Value = "PH" },
+            new SelectListItem { Selected = false, Text = "SE", Value = "SE" },
+            new SelectListItem { Selected = false, Text = "SG", Value = "SG" },
+            new SelectListItem { Selected = false, Text = "TH", Value = "TH" },
+            new SelectListItem { Selected = false, Text = "TW", Value = "TW" },
+            new SelectListItem { Selected = false, Text = "UK", Value = "UK" },
+            new SelectListItem { Selected = false, Text = "US", Value = "US" },
+            new SelectListItem { Selected = false, Text = "VN", Value = "VN" },
+
+        }, "Value", "Text", 1);
+
+    var PartyListItems = new SelectList(
+    new List<SelectListItem>{
+
+            new SelectListItem { Selected = false, Text = "BKK", Value = "BKK" },
+
+
+        }, "Value", "Text", 1);
+
+    var DeptListItems = new SelectList(
+    new List<SelectListItem>{
+
+            new SelectListItem { Selected = false, Text = "Admin", Value = "Admin" },
+            new SelectListItem { Selected = false, Text = "WareHouse", Value = "WareHouse" },
+
+
+        }, "Value", "Text", 1);
+
+}
+
+@section custom_css{
+        <!-- bootstrap datepicker -->
+        <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css")">
+        <!-- Bootstrap time Picker -->
+        <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/plugins/timepicker/bootstrap-timepicker.min.css")">
+
+        <!-- DataTables -->
+        <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css")">
+        <!-- SweetAlert2 -->
+        <link rel='stylesheet' href="@Url.Content("https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/5.3.8/sweetalert2.min.css")">
+}
+
+@section custom_js{
+        <!-- bootstrap datepicker -->
+        <script src="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")"></script>
+        <!-- bootstrap time picker -->
+        <script src="@Url.Content("~/Content/AdminLTE-2.4.5/plugins/timepicker/bootstrap-timepicker.min.js")"></script>
+
+        <!-- DataTables -->
+        <script src="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/datatables.net/js/jquery.dataTables.min.js")"></script>
+        <script src="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js")"></script>
+        <!-- SweetAlert2 -->
+        <script src="@Url.Content("https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/5.3.8/sweetalert2.min.js")"></script>
+}
+
+@section custom_script{
+
+    <script>
+        $(document).ready(function () {
+            //Date picker
+            $('.datepicker').datepicker({
+                autoclose: true,
+                //todayBtn: true,
+                todayHighlight: true,
+                format: 'dd-mm-yyyy',
+                startDate: Date()
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            //Timepicker
+            $('.timepicker').timepicker({
+                showInputs: false,
+                defaultTime: 'current',
+                showMeridian: false,
+                minuteStep: 1,
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#example1').DataTable();
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            if ('@TempData["alert_msg"]') {
+                swal({
+                    title: '@TempData["alert_msg"]',
+                    type: 'success',
+                    timer: 2000,
+                    showConfirmButton: false
+                }).then(function () {
+                    TempData.Remove("alert_msg");
+                }, function (dismiss) {
+                    TempData.Remove("alert_msg");
+                });
+            }
+        });
+    </script>
+
+}
+
+@section header{
+    <h1>
+        Access Produt
+        <small>Table</small>
+    </h1>
+}
+
+@section content{
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#access" data-toggle="tab">Access</a></li>
+                    <li><a href="#maintenance" data-toggle="tab">Maintenance</a></li>
+                    <li><a href="#software" data-toggle="tab">Software</a></li>
+                </ul>
+                <div class="tab-content">
+
+                    <div class="tab-pane active" id="access">
+                        <section id="new">
+                            <h4 class="page-header">access</h4>
+                        </section>
+                        @using (Html.BeginForm("requisitionpaysInsertForm", "RequisitionPays", FormMethod.Post, new { @class = "form-horizontal" }))
+                        {
+
+
+                            <div class="form-group">
+                                @Html.Label("MILE_IN", "รหัสทรัพย์สิน Account : ", new { @class = "control-label col-md-4" })
+                                <div class="col-md-5">
+                                    @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                @Html.Label("AS_MESSENGER", "ประเภททรัพย์สิน : ", new { @class = "control-label col-md-4" })
+                                <div class="col-md-5">
+                                    @Html.DropDownList("AS_MESSENGER", BranchListItemsListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                @Html.Label("MILE_IN", "ชื่อทรัพย์สิน : ", new { @class = "control-label col-md-4" })
+                                <div class="col-md-5">
+                                    @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                @Html.Label("AS_DATE", "วันที่บันทึก : ", new { @class = "control-label col-md-4" })
+                                <div class="col-md-5">
+                                    @Html.TextBox("AS_DATE", null, new { @class = "form-control datepicker", @autocomplete = "off" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.Label("AS_DATE", "วันที่สั่งชื้อ : ", new { @class = "control-label col-md-4" })
+                                <div class="col-md-5">
+                                    @Html.TextBox("AS_DATE", null, new { @class = "form-control datepicker", @autocomplete = "off" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.Label("MILE_IN", "มูลค่าทรัพย์สิน : ", new { @class = "control-label col-md-4" })
+                                <div class="col-md-5">
+                                    @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.Label("MILE_IN", "จำนวนที่ประกัน : ", new { @class = "control-label col-md-4" })
+                                <div class="col-md-5">
+                                    @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("MILE_IN", "เลขที่สั่งซื้อ : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("MILE_IN", "สถานที่รับประกัน : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("AS_DATE", "วันเริ่มประกัน : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("AS_DATE", null, new { @class = "form-control datepicker", @autocomplete = "off" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("AS_DATE", "วันหมดประกัน : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("AS_DATE", null, new { @class = "form-control datepicker", @autocomplete = "off" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("MILE_IN", "รหัสผู้ขาย : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("MILE_IN", "ชื่อผู้ขาย : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("AS_DATE", "วันที่รับของ : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("AS_DATE", null, new { @class = "form-control datepicker", @autocomplete = "off" })
+                            </div>
+                        </div>
+
+                    <div class="form-group">
+                        @Html.Label("MILE_IN", "หมายเหตุ : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.TextArea("MILE_IN", null, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.Label("AS_MESSENGER", "สาขา : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.DropDownList("AS_MESSENGER", BranchListItemsListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.Label("AS_MESSENGER", "แผนก : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.DropDownList("AS_MESSENGER", BranchListItemsListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("MILE_IN", "S/N : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.Label("MILE_IN", "S/N : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("MILE_IN", "ผู้ครอบครอง : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("AS_MESSENGER", "หน่วยที่ประกัน : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.DropDownList("AS_MESSENGER", BranchListItemsListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("MILE_IN", "รายละเอียด : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.TextArea("MILE_IN", null, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("MILE_IN", "ลับดับที่ : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.Label("", new { @class = "control-label col-md-4" })
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="form-group">
+                        <div class="col-md-4 col-md-offset-4">
+                            <button type="submit" class="btn btn-success" id="btnSubmit">Save</button>&nbsp;
+                            <button type="reset" class="btn btn-default" id="btnReset">Reset</button>
+                        </div>
+                    </div>
+
+                        }
+                        </div>
+
+                            <div class="tab-pane" id="maintenance">
+                                <div class="tab-pane active" id="maintenance">
+                                    <section id="new">
+                                        <h4 class="page-header">maintenance</h4>
+                                    </section>
+
+                                    @using (Html.BeginForm("requisitionpaysInsertForm", "RequisitionPays", FormMethod.Post, new { @class = "form-horizontal" }))
+                                    {
+
+                                        <div class="form-group">
+                                            @Html.Label("AS_DATE", "วันที่ ขอเบิก/ซื้อ : ", new { @class = "control-label col-md-4" })
+                                            <div class="col-md-5">
+                                                @Html.TextBox("AS_DATE", null, new { @class = "form-control datepicker", @autocomplete = "off" })
+                                            </div>
+                                        </div>
+
+
+
+
+                                    <div class="form-group">
+                                        <div class="col-md-4 col-md-offset-4">
+                                            <button type="submit" class="btn btn-success" id="btnSubmit">Save</button>&nbsp;
+                                            <button type="reset" class="btn btn-default" id="btnReset">Reset</button>
+                                        </div>
+                                    </div>
+
+
+
+                                    }
+
+                                </div>
+                                </div>
+
+                                <div class="tab-pane" id="software">
+                                    <div class="tab-pane active" id="software">
+                                        <section id="new">
+                                            <h4 class="page-header">software</h4>
+                                        </section>
+
+                                        @using (Html.BeginForm("requisitionpaysInsertForm", "RequisitionPays", FormMethod.Post, new { @class = "form-horizontal" }))
+                                        {
+
+                                            <div class="form-group">
+                                                @Html.Label("AS_DATE", "วันที่ ขอเบิก/ซื้อ : ", new { @class = "control-label col-md-4" })
+                                                <div class="col-md-5">
+                                                    @Html.TextBox("AS_DATE", null, new { @class = "form-control datepicker", @autocomplete = "off" })
+                                                </div>
+                                            </div>
+
+
+                                    <div class="form-group">
+                                        <div class="col-md-4 col-md-offset-4">
+                                            <button type="submit" class="btn btn-success" id="btnSubmit">Save</button>&nbsp;
+                                            <button type="reset" class="btn btn-default" id="btnReset">Reset</button>
+                                        </div>
+                                    </div>
+
+
+
+                                        }
+
+                                    </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                    </div>
+                </div>
+
+}

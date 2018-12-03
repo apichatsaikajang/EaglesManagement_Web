@@ -102,7 +102,7 @@ new List<SelectListItem>{
                         <h3></h3>
                     </div>
                     <div class="col-md-6 text-right" style="padding:initial;">
-                        <a href="@Url.Action("Index", "Institution")" class="btn btn-primary"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
+                        <a href="@Url.Action("Index", "Repair")" class="btn btn-primary"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
                     </div>
                 </div>
                 <div class="box-body">
@@ -111,16 +111,16 @@ new List<SelectListItem>{
                     {
 
                         <div class="form-group">
-                            @Html.Label("MILE_IN", "แจ้งสำนักงานใหญ่ทราบเพื่อดำเนินการแจ้งซ่อมเมื่อวันที่ : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("MILE_IN", "แจ้งสำนักงานใหญ่ทราบเพื่อดำเนินการแจ้งซ่อมเมื่อวันที่ : ", new { @class = "control-label col-md-5" })
                             <div class="col-md-5">
-                                @Html.Label("", new { @class = "control-label col-md-4" })
+                                @Html.TextBox("AS_DATE", null, new { @class = "form-control datepicker", @autocomplete = "off" })
                             </div>
                         </div>
 
                      
 
                         <div class="form-group">
-                            @Html.Label("CUSTOMER", "ดำเนินการแจ้งซ่อมแล้ว เมื่อวันที่ : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("CUSTOMER", "ดำเนินการแจ้งซ่อมแล้ว เมื่อวันที่ : ", new { @class = "control-label col-md-5" })
                             <div class="col-md-5">
                                 <div class="radio">
                                     <label>
@@ -135,7 +135,7 @@ new List<SelectListItem>{
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "สาขา : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("AS_MESSENGER", "สาขา : ", new { @class = "control-label col-md-5" })
                             <div class="col-md-5">
                                 @Html.DropDownList("AS_MESSENGER", BranchListItemsListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
                             </div>
@@ -144,7 +144,7 @@ new List<SelectListItem>{
 
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "แผนก : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("AS_MESSENGER", "แผนก : ", new { @class = "control-label col-md-5" })
                             <div class="col-md-5">
                                 @Html.DropDownList("AS_MESSENGER", SelctionListItemsListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
                             </div>
@@ -153,35 +153,35 @@ new List<SelectListItem>{
 
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "เลขที่ทรัพย์สิน : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("AS_MESSENGER", "เลขที่ทรัพย์สิน : ", new { @class = "control-label col-md-5" })
                             <div class="col-md-5">
                                 @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "จำนวน : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("AS_MESSENGER", "จำนวน : ", new { @class = "control-label col-md-5" })
                             <div class="col-md-5">
                                 @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "สถานะผู้ใช่งาน : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("AS_MESSENGER", "สถานะผู้ใช่งาน : ", new { @class = "control-label col-md-5" })
                             <div class="col-md-5">
                                 @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "อาการชำรุด : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("AS_MESSENGER", "อาการชำรุด : ", new { @class = "control-label col-md-5" })
                             <div class="col-md-5">
                                 @Html.TextArea("MILE_OUT", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("MILE_IN", "ชื่อผู้แจ้ง : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("MILE_IN", "ชื่อผู้แจ้ง : ", new { @class = "control-label col-md-5" })
                             <div class="col-md-5">
                                 @Html.Label("", new { @class = "control-label col-md-4" })
                             </div>
@@ -190,7 +190,7 @@ new List<SelectListItem>{
 
 
                         <div class="form-group">
-                            <div class="col-md-4 col-md-offset-4">
+                            <div class="col-md-5 col-md-offset-5">
                                 <button type="submit" class="btn btn-success" id="btnSubmit">Save</button>&nbsp;
                                 <button type="reset" class="btn btn-default" id="btnReset">Reset</button>
                             </div>

@@ -12,11 +12,7 @@ namespace EaglesManagement_Web.Controllers
         // GET: Address
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult addressInsertForm()
-        {
+        
             using (ITmanagementEntities1 db = new ITmanagementEntities1())
             {
                 TempData.Keep("username");
@@ -26,7 +22,7 @@ namespace EaglesManagement_Web.Controllers
                 dynamic model = new ExpandoObject();
                 model.Customer = db.tblUsers.Where(x => x.UserName == user_by).ToList();
 
-                return View(model);
+                return View();
             }
         }
 

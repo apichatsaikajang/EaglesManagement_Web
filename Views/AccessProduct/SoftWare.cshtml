@@ -137,7 +137,7 @@ new List<SelectListItem>{
 
 @section header{
     <h1>
-        Infomation
+        SoftWare
         <small>Insert Form</small>
     </h1>
 }
@@ -151,12 +151,12 @@ new List<SelectListItem>{
                         <h3></h3>
                     </div>
                     <div class="col-md-6 text-right" style="padding:initial;">
-                        <a href="@Url.Action("Index", "MasterParty")" class="btn btn-primary"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
+                        <a href="@Url.Action("Index", "AccessProduct")" class="btn btn-primary"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
                     </div>
                 </div>
                 <div class="box-body">
 
-                    @using (Html.BeginForm("Index", "Information", FormMethod.Post, new { @class = "form-horizontal" }))
+                    @using (Html.BeginForm("AccessProduct", "SoftWare", FormMethod.Post, new { @class = "form-horizontal" }))
                     {
 
 
@@ -221,7 +221,7 @@ new List<SelectListItem>{
                                 <div class="col-md-2">
                                     @Html.CheckBox("Commission to sales", false)
                                 </div>
-                                </div>
+                            </div>
 
                         </div>
 
@@ -296,7 +296,7 @@ new List<SelectListItem>{
                                 <div class="form-inline">
                                     @Html.CheckBox("Supplier", false)
                                     <label for="Field1">Supplier</label>
-                                    </div>
+                                </div>
 
                                 <div class="form-inline">
                                     @Html.CheckBox("Consignee", false)
@@ -316,9 +316,9 @@ new List<SelectListItem>{
                                 <div class="form-inline">
                                     @Html.CheckBox("Trucking", false)
                                     <label for="Field1">Trucking</label>
-                                    </div>
-
                                 </div>
+
+                            </div>
 
                             <div class="col-md-2">
 
@@ -347,7 +347,7 @@ new List<SelectListItem>{
                                     @Html.CheckBox("Bank", false)
                                     <label for="Field1">Bank</label>
                                 </div>
-                                </div>
+                            </div>
                             <div class="col-md-2">
                                 <div class="form-inline">
                                     @Html.CheckBox("Factory", false)
@@ -368,12 +368,12 @@ new List<SelectListItem>{
                                 <div class="form-inline">
                                     @Html.CheckBox("End Customer", false)
                                     <label for="Field1">End Customer</label>
-                                    </div>
                                 </div>
                             </div>
+                        </div>
 
-                        
-            
+
+
 
                         <div class="form-group">
                             <div class="col-md-4 col-md-offset-4">
@@ -384,10 +384,10 @@ new List<SelectListItem>{
 
 
                     }
-
                     </div>
                 </div>
             </div>
         </div>
-    }
+
+}
 }

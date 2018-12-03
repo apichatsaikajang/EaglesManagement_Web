@@ -38,7 +38,7 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="@Url.Content("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic")">
 </head>
-<body class="hold-transition skin-green-light sidebar-mini">
+<body class="hold-transition skin-purple-light sidebar-mini">
     <div class="wrapper">
         <header class="main-header">
             <!-- Logo -->
@@ -91,29 +91,78 @@
                 <!-- /.search form -->
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
-                        <li class="header">User</li>
-                        <li @if (@seg_url == "userprofile") { @(new { @class = "active" })  }><a href="@Url.Action("Index", "UserProfile")"><i class="fa fa-map-pin text-green"></i> <span>User Profile</span></a></li>
-                        <li @if (@seg_url == "user") { @(new { @class = "active" })   }><a href="@Url.Action("Index", "User")"><i class="fa fa-tachometer text-red" aria-hidden="true"></i> <span>User</span></a></li>
-                        <li @if (@seg_url == "menu") { @(new { @class = "active" })  }><a href="@Url.Action("Index", "Menu")"><i class="fa fa-tachometer text-red" aria-hidden="true"></i> <span>Menu</span></a></li>
-                        <li class="header">MasterData</li>
-                        <li class="header">MasterParty</li>
-                        <li @if (@seg_url == "masterparty") { @(new { @class = "active" })  }><a href="@Url.Action("Index", "MasterParty")"><i class="fa fa-archive text-yellow"></i> <span>Master Party</span></a></li>
-                        <li @if (@seg_url == "information") { @(new { @class = "active" })  }><a href="@Url.Action("Index", "Infomation")"><i class="fa fa-building-o"></i> <span>Information</span></a></li>
-                        <li @if (@seg_url == "address") { @(new { @class = "active" })  }><a href="@Url.Action("Index", "Address")"><i class="fa fa-building-o"></i> <span>Address</span></a></li>
-                        <li class="header">MasterCode</li>
-                        <li @if (@seg_url == "mastercode") { @(new { @class = "active" })   }><a href="@Url.Action("Index", "MasterCode")"><i class="fa fa-building-o"></i> <span>MasterCode</span></a></li>
-                        <li class="header">MasterItemCode</li>
-                        <li @if (@seg_url == "masteritemcode") { @(new { @class = "active" })  }><a href="@Url.Action("Index", "MasterItemCode")"><i class="fa fa-archive text-yellow"></i> <span>MasterItemCode</span></a></li> 
-                        <li class="header">Master Department</li>
-                        <li @if (@seg_url == "masterdepartment") { @(new { @class = "active" })  }><a href="@Url.Action("Index", "MasterDepartment")"><i class="fa fa-archive text-yellow"></i> <span>Master Department</span></a></li>
-                        <li class="header">Humman Resource</li>
-                        <li class="header">PayDay</li>
-                        <li @if (@seg_url == "payday") { @(new { @class = "active" })  }><a href="@Url.Action("Index", "PayDay")"><i class="fa fa-archive text-yellow"></i> <span>PayDay</span></a></li>
-                        <li class="header">Miantenance Resource</li>
-                        <li @if (@seg_url == "requisitionpays") { @(new { @class = "active" })   }><a href="@Url.Action("Index", "RequisitionPays")"><i class="fa fa-archive text-yellow"></i> <span>RequisitionPay</span></a></li>
-                        <li class="header">Repair</li>
-                        <li @if (@seg_url == "institution") { @(new { @class = "active" })     }><a href="@Url.Action("Index", "Institution")"><i class="fa fa-archive text-yellow"></i> <span>สำหรับหน่วยงาน</span></a></li>
-                        <li @if (@seg_url == "administration") { @(new { @class = "active" })    }><a href="@Url.Action("Index", "Administration")"><i class="fa fa-archive text-yellow"></i> <span>ส่วนธุรการ</span></a></li>
+                        <li class="header">Menu</li>
+                        <li class="active treeview">
+                            <a href="#">
+                                <i class="fa fa-users"></i> <span>User</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li @if (@seg_url == "userprofile") { @(new { @class = "active" })   }><a href="@Url.Action("Index", "UserProfile")"><i class="fa fa-map-pin text-green"></i> <span>User Profile</span></a></li>
+                                <li @if (@seg_url == "user") { @(new { @class = "active" })    }><a href="@Url.Action("Index", "User")"><i class="fa fa-tachometer text-red" aria-hidden="true"></i> <span>User</span></a></li>
+                                <li @if (@seg_url == "menu") { @(new { @class = "active" })   }><a href="@Url.Action("Index", "Menu")"><i class="fa fa-tachometer text-red" aria-hidden="true"></i> <span>Menu</span></a></li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-share"></i> <span>MasterData</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li @if (@seg_url == "masterparty") { @(new { @class = "active" })   }><a href="@Url.Action("Index", "MasterParty")"><i class="fa fa-archive text-yellow"></i> <span>Master Party</span></a></li>
+                                <li @if (@seg_url == "mastercode") { @(new { @class = "active" })    }><a href="@Url.Action("Index", "MasterCode")"><i class="fa fa-building-o"></i> <span>MasterCode</span></a></li>
+                                <li @if (@seg_url == "masteritemcode") { @(new { @class = "active" })   }><a href="@Url.Action("Index", "MasterItemCode")"><i class="fa fa-archive text-yellow"></i> <span>MasterItemCode</span></a></li>
+                                <li @if (@seg_url == "masterdepartment") { @(new { @class = "active" })   }><a href="@Url.Action("Index", "MasterDepartment")"><i class="fa fa-archive text-yellow"></i> <span>Master Department</span></a></li>
+                            </ul>
+                        </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-share"></i> <span>Humman Resource</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li @if (@seg_url == "payday") { @(new { @class = "active" })   }><a href="@Url.Action("Index", "PayDay")"><i class="fa fa-archive text-yellow"></i> <span>PayDay</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-share"></i> <span>Miantenance Resource</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li @if (@seg_url == "requisitionpays") { @(new { @class = "active" })     }><a href="@Url.Action("Index", "RequisitionPays")"><i class="fa fa-archive text-yellow"></i> <span>RequisitionPay</span></a></li>
+                            <li @if (@seg_url == "repair") { @(new { @class = "active" })     }><a href="@Url.Action("Index", "Repair")"><i class="fa fa-archive text-yellow"></i> <span>Repair</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-share"></i> <span>IT Management</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li @if (@seg_url == "accessproduct") { @(new { @class = "active" }) }><a href="@Url.Action("Index", "AccessProduct")"><i class="fa fa-archive text-yellow"></i> <span>Access Prodecut</span></a></li>
+                            <li @if (@seg_url == "workorder") { @(new { @class = "active" }) }><a href="@Url.Action("Index", "WorkOrder")"><i class="fa fa-archive text-yellow"></i> <span>Work Order</span></a></li>
+                            <li @if (@seg_url == "service") { @(new { @class = "active" }) }><a href="@Url.Action("Index", "Service")"><i class="fa fa-archive text-yellow"></i> <span>Service</span></a></li>
+                            <li @if (@seg_url == "checkdaily") { @(new { @class = "active" }) }><a href="@Url.Action("Index", "CheckDaily")"><i class="fa fa-archive text-yellow"></i> <span>Check Daily</span></a></li>
+                            <li @if (@seg_url == "rent") { @(new { @class = "active" }) }><a href="@Url.Action("Index", "Rent")"><i class="fa fa-archive text-yellow"></i> <span>Rent</span></a></li>
+                        </ul>
+                    </li>
+
+
 
 
                     <li class="header">SYSTEM</li>

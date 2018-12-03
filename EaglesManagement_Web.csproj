@@ -6686,21 +6686,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccessProductController.cs" />
     <Compile Include="Controllers\AddressController.cs" />
     <Compile Include="Controllers\AdministrationController.cs" />
+    <Compile Include="Controllers\CheckDailyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InfomationController.cs" />
     <Compile Include="Controllers\InstitutionController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MaintenanceController.cs" />
     <Compile Include="Controllers\MasterCodeController.cs" />
     <Compile Include="Controllers\MasterDepartmentController.cs" />
     <Compile Include="Controllers\MasterItemCodeController.cs" />
     <Compile Include="Controllers\MasterPartyController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\PayDayController.cs" />
+    <Compile Include="Controllers\RentController.cs" />
+    <Compile Include="Controllers\RepairController.cs" />
     <Compile Include="Controllers\RequisitionPaysController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\SoftWareController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="Controllers\WorkOrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -7480,7 +7488,6 @@
     <Content Include="Views\MasterParty\Index.cshtml" />
     <Content Include="Views\Infomation\Index.cshtml" />
     <Content Include="Views\Address\Index.cshtml" />
-    <Content Include="Views\Address\addressInsertForm.cshtml" />
     <Content Include="Views\MasterCode\Index.cshtml" />
     <Content Include="Views\MasterCode\mastercodeInsertForm.cshtml" />
     <Content Include="Views\MasterItemCode\Index.cshtml" />
@@ -7491,6 +7498,15 @@
     <Content Include="Views\RequisitionPays\requisitionpaysInsertForm.cshtml" />
     <Content Include="Views\Institution\Index.cshtml" />
     <Content Include="Views\Administration\Index.cshtml" />
+    <Content Include="Views\Repair\Index.cshtml" />
+    <Content Include="Views\AccessProduct\Index.cshtml" />
+    <Content Include="Views\WorkOrder\Index.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\CheckDaily\Index.cshtml" />
+    <Content Include="Views\Rent\Index.cshtml" />
+    <Content Include="Views\AccessProduct\Access.cshtml" />
+    <Content Include="Views\AccessProduct\Maintenance.cshtml" />
+    <Content Include="Views\AccessProduct\SoftWare.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -7507,7 +7523,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Content\AdminLTE-2.4.5\bower_components\fullcalendar\dist\fullcalendar.d.ts" />
     <TypeScriptCompile Include="Content\AdminLTE-2.4.5\bower_components\moment\moment.d.ts" />
-    <TypeScriptCompile Include="typings\jqote2.d.ts" />
+    <TypeScriptCompile Include="Views\typings\jqote2.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
