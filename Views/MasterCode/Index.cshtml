@@ -28,7 +28,7 @@
     </script>
 
     <script>
-        function delData(id, i) {
+        function delData(id,id1, i) {
             swal({
                 title: 'Delete data in #' + i + ' ?',
                 //text: "You won't be able to revert this!",
@@ -39,8 +39,9 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then(function () {
                 var html = "";
-                html += '<form id="frm-delete" action="@Url.Action("deleteMile", "Mile")" method="post">';
-                html += '<input type="hidden" name="MILE_ID" value="' + id + '">';
+                html += '<form id="frm-delete" action="@Url.Action("deletemastercode", "MasterCode")" method="post">';
+                html += '<input type="hidden" name="Type" value="' + id + '">';
+                html += '<input type="hidden" name="Code" value="' + id1 + '">';
                 html += '</form>';
                 $("#frm-load").html(html);
                 $("#frm-delete").submit();
@@ -98,25 +99,34 @@
                                 <th class="text-center">Filterlnd</th>
                                 <th class="text-center">Typecode</th>
                                 <th class="text-center">LisenceSum</th>
-                                <th class="text-center">Action</th>
+                                <th class="text-center">Edit</th>
+                                <th class="text-center">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
 
+
+                        @foreach (var item in Model.mastercode)
+                        {
+
                             <tr>
                                 <td class="text-center">@{ i++; }@i</td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
+                                <td class="text-center">@item.Type</td>
+                                <td class="text-center">@item.Code</td>
+                                <td class="text-center">@item.Description</td>
+                                <td class="text-center">@item.FilterInd</td>
+                                <td class="text-center">@item.TypeCode</td>
+                                <td class="text-center">@item.LisenceSum</td>
                                 <td class="text-center">
-                                    <a href="@Url.Action("mileEditForm", "Mile", new { })" class="btn btn-warning btn-xs"><i class="fa fa-pencil-square-o"></i> Edit</a>
-                                    <a href="javascript:void(0);" class="btn btn-danger btn-xs" onclick="delData()"><i class="fa fa-trash"></i> Delete</a>
+                                    <a href="@Url.Action("mastercodeEditForm", "MasterCode", new { @item.Type, @item.Code})" class="btn btn-warning btn-xs"><i class="fa fa-pencil-square-o"></i> Edit</a>
                                 </td>
-                            </tr>
+                                <td class="text-center">
+                                    <a href="javascript:void(0);" class="btn btn-danger btn-xs" onclick="delData('@item.Type','@item.Code',@i)"><i class="fa fa-trash"></i> Delete</a>
+                                </td>
 
+                                </tr>
+
+                        }
                         </tbody>
                     </table>
                 </div>

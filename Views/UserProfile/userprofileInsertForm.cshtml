@@ -110,66 +110,66 @@
                 </div>
                 <div class="box-body">
 
-                    @using (Html.BeginForm("userprofileInsertForm", "Userprofile", FormMethod.Post, new { @class = "form-horizontal" }))
+                    @using (Html.BeginForm("insertUserProfile", "Userprofile", FormMethod.Post, new { @class = "form-horizontal" }))
                     {
                       
                
                         <div class="form-group">
-                            @Html.Label("MILE_IN", "UserID : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("UserName", "UserName : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_IN", null, new { @class = "form-control", @autocomplete = "off" })
+                                @Html.TextBox("UserName", null, new { @class = "form-control", @autocomplete = "off" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("MILE_OUT", "Name : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Name", "Name : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control", @autocomplete = "off" })
+                                @Html.TextBox("Name", null, new { @class = "form-control", @autocomplete = "off" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("MILE_OUT", "Mail : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Mail", "Mail : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control", @autocomplete = "off" })
+                                @Html.TextBox("Mail", null, new { @class = "form-control", @autocomplete = "off" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "Branch : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Branch", "Branch : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.DropDownList("AS_MESSENGER", BranchListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2", @autocomplete = "off" })
+                                @Html.DropDownList("Branch", BranchListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2", @autocomplete = "off" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "Party : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Party", "Party : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.DropDownList("AS_MESSENGER", PartyListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2", @autocomplete = "off" })
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "Dept : ", new { @class = "control-label col-md-4" })
-                            <div class="col-md-5">
-                                @Html.DropDownList("AS_MESSENGER", DeptListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2", @autocomplete = "off" })
+                                @Html.DropDownList("Party", PartyListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2", @autocomplete = "off" })
                             </div>
                         </div>
 
 
                         <div class="form-group">
-                            @Html.Label("MILE_OUT", "Password : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Dept", "Dept : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control", @autocomplete = "off" })
+                                @Html.DropDownList("Dept", DeptListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2", @autocomplete = "off" })
                             </div>
                         </div>
 
 
                         <div class="form-group">
-                            @Html.Label("MILE_OUT", "Password Confirm : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Password", "Password : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control", @autocomplete = "off"})
+                                @Html.TextBox("Password", null, new { @class = "form-control", @autocomplete = "off" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("Password", "Password Confirm : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("Password", null, new { @class = "form-control", @autocomplete = "off" })
                             </div>
                         </div>
 

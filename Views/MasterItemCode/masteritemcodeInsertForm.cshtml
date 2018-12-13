@@ -7,7 +7,6 @@
     var TypeUseListItems = new SelectList(
 new List<SelectListItem>{
 
-            new SelectListItem { Selected = false, Text = "", Value = "" },
             new SelectListItem { Selected = false, Text = "ขอเบิก", Value = "ขอเบิก" },
             new SelectListItem { Selected = false, Text = "ขอซื้อ", Value = "ขอซื้อ" },
 
@@ -17,7 +16,6 @@ new List<SelectListItem>{
     var TypeProduceListItems = new SelectList(
 new List<SelectListItem>{
 
-            new SelectListItem { Selected = false, Text = "", Value = "" },
             new SelectListItem { Selected = false, Text = "อุปกรณ์นักงานที่ไม่มีใน Stock", Value = "อุปกรณ์นักงานที่ไม่มีใน Stock" },
             new SelectListItem { Selected = false, Text = "อุปกรณ์สำหรับแพ็ค", Value = "อุปกรณ์สำหรับแพ็ค" },
             new SelectListItem { Selected = false, Text = "อุปกรณ์ เครื่องมือต่างๆ", Value = "อุปกรณ์ เครื่องมือต่างๆ" },
@@ -32,7 +30,6 @@ new List<SelectListItem>{
     var VendorListItems = new SelectList(
 new List<SelectListItem>{
 
-            new SelectListItem { Selected = false, Text = "", Value = "" },
             new SelectListItem { Selected = false, Text = "A.C.C.SUPPLY LIMITED PARTNERSHIP", Value = "A.C.C.SUPPLY LIMITED PARTNERSHIP" },
             new SelectListItem { Selected = false, Text = "A.S.WINNER CO.,LTD.", Value = "A.S.WINNER CO.,LTD." },
             new SelectListItem { Selected = false, Text = "APJ (S) TRADING PARTNERSHIP", Value = "APJ (S) TRADING PARTNERSHIP" },
@@ -137,7 +134,7 @@ new List<SelectListItem>{
                 </div>
                 <div class="box-body">
 
-                    @using (Html.BeginForm("masteritemcodeInsertForm", "MasterItemCode", FormMethod.Post, new { @class = "form-horizontal" }))
+                    @using (Html.BeginForm("editMasterItemcode", "MasterItemCode", FormMethod.Post, new { @class = "form-horizontal" }))
                     {
 
 

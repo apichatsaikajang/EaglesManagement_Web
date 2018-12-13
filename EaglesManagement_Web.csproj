@@ -40,12 +40,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -6661,22 +6664,22 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\EaglesManagement_Web.edmx">
+    <EntityDeploy Include="Models\EaglesMannagementModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EaglesManagement_Web.Designer.cs</LastGenOutput>
+      <LastGenOutput>EaglesMannagementModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\EaglesManagement_Web.Context.tt">
+    <Content Include="Models\EaglesMannagementModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EaglesManagement_Web.edmx</DependentUpon>
-      <LastGenOutput>EaglesManagement_Web.Context.cs</LastGenOutput>
+      <DependentUpon>EaglesMannagementModel.edmx</DependentUpon>
+      <LastGenOutput>EaglesMannagementModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\EaglesManagement_Web.edmx.diagram">
-      <DependentUpon>EaglesManagement_Web.edmx</DependentUpon>
+    <Content Include="Models\EaglesMannagementModel.edmx.diagram">
+      <DependentUpon>EaglesMannagementModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\EaglesManagement_Web.tt">
+    <Content Include="Models\EaglesMannagementModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EaglesManagement_Web.edmx</DependentUpon>
-      <LastGenOutput>EaglesManagement_Web.cs</LastGenOutput>
+      <DependentUpon>EaglesMannagementModel.edmx</DependentUpon>
+      <LastGenOutput>EaglesMannagementModel.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -6687,11 +6690,9 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccessProductController.cs" />
-    <Compile Include="Controllers\AddressController.cs" />
     <Compile Include="Controllers\AdministrationController.cs" />
     <Compile Include="Controllers\CheckDailyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\InfomationController.cs" />
     <Compile Include="Controllers\InstitutionController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MaintenanceController.cs" />
@@ -6699,156 +6700,155 @@
     <Compile Include="Controllers\MasterDepartmentController.cs" />
     <Compile Include="Controllers\MasterItemCodeController.cs" />
     <Compile Include="Controllers\MasterPartyController.cs" />
-    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\PayDayController.cs" />
     <Compile Include="Controllers\RentController.cs" />
     <Compile Include="Controllers\RepairController.cs" />
     <Compile Include="Controllers\RequisitionPaysController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\SoftWareController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserMenuController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Controllers\WorkOrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\dtproperty.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EaglesManagement_Web.Context.cs">
+    <Compile Include="Models\EaglesMannagementModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EaglesManagement_Web.Context.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EaglesManagement_Web.cs">
+    <Compile Include="Models\EaglesMannagementModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EaglesManagement_Web.Designer.cs">
+    <Compile Include="Models\EaglesMannagementModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EaglesManagement_Web.edmx</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\RunningNumber.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblAccessList.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblAccessListDetail.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblAccessMA.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblAccessSoftware.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblCheckBackUp.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblCheckCCTV.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblCheckFireWall.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblCheckMeterial.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblCheckRouter.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblCheckServer.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblCheckSwitch.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblDepartment.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblEmployee.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblEmployee_out.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblEmployee_outdtl.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblGenAutoNo.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblInventoryItem.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblITServiceSparepart.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblITServiceTicket.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblITServiceTicketDetail.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblMasterCode.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblMenu.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblOutSiteService.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblOutSiteServiceDetail.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblOutSourceService.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblOutSourceServiceDetail.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblParty.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblPartyAddress.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblPurchaseRequistionDtl.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblPurchaseRequistionHdr.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblRecordProduct.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblRecordProductDtl.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblRentDevice.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblRentDeviceDetail.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblRepair.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblRepairDetail.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblUser.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblUserGroup.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblUserMenu.cs">
-      <DependentUpon>EaglesManagement_Web.tt</DependentUpon>
+      <DependentUpon>EaglesMannagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="_Providers\DefaultProvider.cs" />
@@ -7481,13 +7481,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\UserProfile\Index.cshtml" />
     <Content Include="Views\UserProfile\userprofileInsertForm.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\User\userInsertForm.cshtml" />
-    <Content Include="Views\Menu\Index.cshtml" />
-    <Content Include="Views\Menu\menuInsertForm.cshtml" />
     <Content Include="Views\MasterParty\Index.cshtml" />
-    <Content Include="Views\Infomation\Index.cshtml" />
-    <Content Include="Views\Address\Index.cshtml" />
     <Content Include="Views\MasterCode\Index.cshtml" />
     <Content Include="Views\MasterCode\mastercodeInsertForm.cshtml" />
     <Content Include="Views\MasterItemCode\Index.cshtml" />
@@ -7507,6 +7501,24 @@
     <Content Include="Views\AccessProduct\Access.cshtml" />
     <Content Include="Views\AccessProduct\Maintenance.cshtml" />
     <Content Include="Views\AccessProduct\SoftWare.cshtml" />
+    <Content Include="Views\UserProfile\userprofileEditForm.cshtml" />
+    <Content Include="Views\UserMenu\Index.cshtml" />
+    <Content Include="Views\UserMenu\User.cshtml" />
+    <Content Include="Views\UserMenu\Menu.cshtml" />
+    <Content Include="Views\UserMenu\userInsertForm.cshtml" />
+    <Content Include="Views\UserMenu\userEditForm.cshtml" />
+    <Content Include="Views\UserMenu\menuInsertForm.cshtml" />
+    <Content Include="Views\UserMenu\menuEditForm.cshtml" />
+    <Content Include="Views\MasterParty\informationInsertForm.cshtml" />
+    <Content Include="Views\MasterParty\Information.cshtml" />
+    <Content Include="Views\MasterParty\Address.cshtml" />
+    <Content Include="Views\MasterParty\addressInsertForm.cshtml" />
+    <Content Include="Views\MasterParty\informationEditForm.cshtml" />
+    <Content Include="Views\MasterParty\addressEditForm.cshtml" />
+    <Content Include="Views\MasterDepartment\masterdepartmentInsertForm.cshtml" />
+    <Content Include="Views\MasterDepartment\masterdepartmentEditForm.cshtml" />
+    <Content Include="Views\MasterCode\mastercodeEditForm.cshtml" />
+    <Content Include="Views\MasterItemCode\masteritemcodeEditForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

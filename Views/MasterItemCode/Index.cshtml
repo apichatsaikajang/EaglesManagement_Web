@@ -39,8 +39,8 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then(function () {
                 var html = "";
-                html += '<form id="frm-delete" action="@Url.Action("deleteMile", "Mile")" method="post">';
-                html += '<input type="hidden" name="MILE_ID" value="' + id + '">';
+                html += '<form id="frm-delete" action="@Url.Action("deletemasteritemcode", "MasterItemCode")" method="post">';
+                html += '<input type="hidden" name="Itemcode" value="' + id + '">';
                 html += '</form>';
                 $("#frm-load").html(html);
                 $("#frm-delete").submit();
@@ -69,7 +69,7 @@
 
 @section header{
     <h1>
-        Master Item Code
+        Master ItemCode
         <small>Table</small>
     </h1>
 }
@@ -98,25 +98,36 @@
                                 <th class="text-center">Type Equipment</th>
                                 <th class="text-center">Price</th>
                                 <th class="text-center">Vendor</th>
-                                <th class="text-center">Action</th>
+                                <th class="text-center">Edit</th>
+                                <th class="text-center">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
 
+                        @foreach (var item in Model.masteritemcode)
+                        {
+
+
                             <tr>
                                 <td class="text-center">@{ i++; }@i</td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
+                                <td class="text-center">@item.Itemcode</td>
+                                <td class="text-center">@item.Itemname</td>
+                                <td class="text-center">@item.TypeUse</td>
+                                <td class="text-center">@item.TypeEquipment</td>
+                                <td class="text-center">@item.Price</td>
+                                <td class="text-center">@item.Vendor</td>
+
                                 <td class="text-center">
-                                    <a href="@Url.Action("mileEditForm", "Mile", new { })" class="btn btn-warning btn-xs"><i class="fa fa-pencil-square-o"></i> Edit</a>
-                                    <a href="javascript:void(0);" class="btn btn-danger btn-xs" onclick="delData()"><i class="fa fa-trash"></i> Delete</a>
+                                    <a href="@Url.Action("masteritemcodeEditForm", "MasterItemCode", new { @item.Itemcode })" class="btn btn-warning btn-xs"><i class="fa fa-pencil-square-o"></i> Edit</a>
                                 </td>
+
+                                <td class="text-center">
+                                    <a href="javascript:void(0);" class="btn btn-danger btn-xs" onclick="delData('@item.Itemcode',@i)"><i class="fa fa-trash"></i> Delete</a>
+                                </td>
+
                             </tr>
 
+                        }
                         </tbody>
                     </table>
                 </div>

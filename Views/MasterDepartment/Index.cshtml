@@ -20,6 +20,7 @@
     <script src="@Url.Content("https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/5.3.8/sweetalert2.min.js")"></script>
 }
 
+
 @section custom_script{
     <script>
         $(document).ready(function () {
@@ -28,7 +29,7 @@
     </script>
 
     <script>
-        function delData(id, i) {
+        function delData(id1,id2,id3, i) {
             swal({
                 title: 'Delete data in #' + i + ' ?',
                 //text: "You won't be able to revert this!",
@@ -39,8 +40,10 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then(function () {
                 var html = "";
-                html += '<form id="frm-delete" action="@Url.Action("deleteMile", "Mile")" method="post">';
-                html += '<input type="hidden" name="MILE_ID" value="' + id + '">';
+                html += '<form id="frm-delete" action="@Url.Action("deletemasterdepartment", "MasterDepartment")" method="post">';
+                html += '<input type="hidden" name="Branch" value="' + id1 + '">';
+                html += '<input type="hidden" name="Party" value="' + id2 + '">';
+                html += '<input type="hidden" name="Department" value="' + id3 + '">';
                 html += '</form>';
                 $("#frm-load").html(html);
                 $("#frm-delete").submit();
@@ -83,7 +86,7 @@
                         <h3></h3>
                     </div>
                     <div class="col-md-6 text-right" style="padding:initial;">
-                        <a href="@Url.Action("masteritemcodeInsertForm", "MasterItemCode")" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp;&nbsp;Add</a>
+                        <a href="@Url.Action("masterdepartmentInsertForm", "MasterDepartment")" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp;&nbsp;Add</a>
                     </div>
                 </div>
 
@@ -92,7 +95,7 @@
                         <thead>
                             <tr>
                                 <th class="text-center">#</th>
-                                <th class="text-center">Brance</th>
+                                <th class="text-center">Branch</th>
                                 <th class="text-center">Party</th>
                                 <th class="text-center">Department</th>
                                 <th class="text-center">Manager</th>
@@ -103,26 +106,29 @@
                         </thead>
                         <tbody>
 
+                    @foreach (var item in Model.masterdepartment)
+                    {
+
+
                             <tr>
                                 <td class="text-center">@{ i++; }@i</td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
+                                <td class="text-center">@item.Branch</td>
+                                <td class="text-center">@item.Party</td>
+                                <td class="text-center">@item.Department</td>
+                                <td class="text-center">@item.Manager</td>
+                                <td class="text-center">@item.A_Manager</td>
+                                <td class="text-center">@item.Status</td>
                                 <td class="text-center">
-                                    <a href="@Url.Action("mileEditForm", "Mile", new { })" class="btn btn-warning btn-xs"><i class="fa fa-pencil-square-o"></i> Edit</a>
-                                    <a href="javascript:void(0);" class="btn btn-danger btn-xs" onclick="delData()"><i class="fa fa-trash"></i> Delete</a>
+                                    <a href="@Url.Action("masterdepartmentEditForm", "MasterDepartment", new { @item.Branch, @item.Party, @item.Department })" class="btn btn-warning btn-xs"><i class="fa fa-pencil-square-o"></i> Edit</a>
+                                    <a href="javascript:void(0);" class="btn btn-danger btn-xs" onclick="delData('@item.Branch', '@item.Party', '@item.Department',@i)"><i class="fa fa-trash"></i> Delete</a>
                                 </td>
                             </tr>
-
+                    }
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-
-    <div id="frm-load"></div>
+<div id="frm-load"></div>
 }

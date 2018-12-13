@@ -28,7 +28,7 @@
     </script>
 
     <script>
-        function delData(id, i) {
+        function deletedata(id, i) {
             swal({
                 title: 'Delete data in #' + i + ' ?',
                 //text: "You won't be able to revert this!",
@@ -39,8 +39,8 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then(function () {
                 var html = "";
-                html += '<form id="frm-delete" action="@Url.Action("deleteMile", "Mile")" method="post">';
-                html += '<input type="hidden" name="MILE_ID" value="' + id + '">';
+                html += '<form id="frm-delete" action="@Url.Action("deleteUser", "UserProfile")" method="post">';
+                html += '<input type="hidden" name="UserName" value="' + id + '">';
                 html += '</form>';
                 $("#frm-load").html(html);
                 $("#frm-delete").submit();
@@ -93,37 +93,40 @@
                         <thead>
                             <tr>
                                 <th class="text-center">#</th>
-                                <th class="text-center">UserID</th>
-                                <th class="text-center">PassWord</th>
-                                <th class="text-center">Prefix</th>
+                                <th class="text-center">UserName</th>
                                 <th class="text-center">Name</th>
-                                <th class="text-center">Surname</th>
-                                <th class="text-center">E-mail</th>
                                 <th class="text-center">Dept</th>
-                                <th class="text-center">Position</th>
-                                <th class="text-center">Section</th>
-                                <th class="text-center">Action</th>
+                                <th class="text-center">Branch</th>
+                                <th class="text-center">Party</th>
+                                <th class="text-center">E-mail</th>
+                                <th class="text-center">Edit</th>
+                                <th class="text-center">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
-                        
+                    @foreach (var item in Model.userprofiles)
+                    {
+
+
                                 <tr>
                                     <td class="text-center">@{ i++; }@i</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
+                                    <td class="text-center">@item.UserName</td>
+                                    <td class="text-center">@item.Name</td>
+                                    <td class="text-center">@item.Dept</td>
+                                    <td class="text-center">@item.Branch</td>
+                                    <td class="text-center">@item.Party</td>
+                                    <td class="text-center">@item.Mail</td>
+
                                     <td class="text-center">
-                                        <a href="@Url.Action("mileEditForm", "Mile", new { })" class="btn btn-warning btn-xs"><i class="fa fa-pencil-square-o"></i> Edit</a>
-                                        <a href="javascript:void(0);" class="btn btn-danger btn-xs" onclick="delData()"><i class="fa fa-trash"></i> Delete</a>
+                                        <a href="@Url.Action("userprofileEditForm", "UserProfile", new { @item.UserName })" class="btn btn-warning btn-xs"><i class="fa fa-pencil-square-o"></i> Edit</a>
                                     </td>
+
+                                    <td class="text-center">
+                                        <a href="javascript:void(0);" class="btn btn-danger btn-xs" onclick="deletedata('@item.UserName', @i)"><i class="fa fa-trash"></i> Delete</a>
+                                    </td>
+
                                 </tr>
-                            
+                    }
                         </tbody>
                     </table>
                 </div>

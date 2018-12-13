@@ -87,65 +87,65 @@ new List<SelectListItem>{
                 </div>
                 <div class="box-body">
 
-                    @using (Html.BeginForm("mastercodeInsertForm", "MasterCode", FormMethod.Post, new { @class = "form-horizontal" }))
+                    @using (Html.BeginForm("insertMasterCode", "MasterCode", FormMethod.Post, new { @class = "form-horizontal" }))
                     {
 
 
                         <div class="form-group">
-                            @Html.Label("MILE_IN", "Type : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Type", "Type : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                                @Html.TextBox("Type", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("MILE_OUT", "Code : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Code", "Code : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("Code", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("MILE_IN", "Description : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Description", "Description : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                                @Html.TextBox("Description", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("MILE_IN", "Note : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Note", "Note : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextArea("MILE_IN", null, new { @class = "form-control" })
+                                @Html.TextArea("Note", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("MILE_IN", "Filterring lndcator : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("FilterInd", "Filterring lndcator : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "TypeCode : ", new { @class = "control-label col-md-4" })
-                            <div class="col-md-5">
-                                @Html.DropDownList("AS_MESSENGER", TypeCodeListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.Label("MILE_IN", "LisenceSum : ", new { @class = "control-label col-md-4" })
-                            <div class="col-md-5">
-                                @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                                @Html.TextBox("FilterInd", null, new { @class = "form-control" })
                             </div>
                         </div>
 
 
                         <div class="form-group">
-                            @Html.Label("MILE_IN", "LisenceUse : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("TypeCode", "TypeCode : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.Label("" ,new { @class = "control-label col-md-4" })
+                                @Html.DropDownList("TypeCode", TypeCodeListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("LisenceSum", "LisenceSum : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("LisenceSum", null, new { @class = "form-control" ,@Value ="0"})
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("LisenceUse", "LisenceUse : ", new { @class = "control-label col-md-4",@value ="0" })
+                            <div class="col-md-5">
+                                @Html.Label("0", new { @class = "control-label col-md-1"})
                             </div>
                         </div>
 

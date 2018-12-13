@@ -18,7 +18,7 @@ namespace EaglesManagement_Web.Controllers
 
                 public ActionResult requisitionpaysInsertForm()
         {
-            using (ITmanagementEntities1 db = new ITmanagementEntities1())
+            using (ITmanagementEntities db = new ITmanagementEntities())
             {
                 TempData.Keep("username");
                 string user_by = TempData["username"].ToString();

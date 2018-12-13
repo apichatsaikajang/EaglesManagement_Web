@@ -49,7 +49,7 @@ namespace EaglesManagement_Web._Providers
         public override string[] GetRolesForUser(string username)
         {
             //throw new NotImplementedException();
-            ITmanagementEntities1 db = new ITmanagementEntities1();
+            ITmanagementEntities db = new ITmanagementEntities();
             string data = db.tblUsers.Where(x => x.UserName == username).FirstOrDefault().Dept;
            
             string[] result = { data };

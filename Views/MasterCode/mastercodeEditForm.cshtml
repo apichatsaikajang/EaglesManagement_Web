@@ -1,0 +1,183 @@
+﻿@model dynamic
+@{
+    //ViewBag.Title = "insertForm";
+    Layout = "~/Views/Home/Index.cshtml";
+
+    string Type = Model.editmastercode.Type;
+    string Code = Model.editmastercode.Code;
+    string Description = Model.editmastercode.Description;
+    string Note = Model.editmastercode.Note;
+    string FilterInd = Model.editmastercode.FilterInd;
+    string TypeCode = Model.editmastercode.TypeCode;
+    string LisenceSum = Model.editmastercode.LisenceSum;
+
+   
+
+    var TypeCodeListItems = new SelectList(
+new List<SelectListItem>{
+
+            new SelectListItem { Selected = false, Text = "Anti Virus", Value = "Anti Virus" },
+            new SelectListItem { Selected = false, Text = "Windows", Value = "Windows" },
+
+
+        }, "Value", "Text", 1);
+
+
+
+}
+
+@section custom_css{
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css")">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/plugins/timepicker/bootstrap-timepicker.min.css")">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/select2/dist/css/select2.min.css")">
+}
+
+@section custom_js{
+    <!-- bootstrap datepicker -->
+    <script src="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")"></script>
+    <!-- bootstrap time picker -->
+    <script src="@Url.Content("~/Content/AdminLTE-2.4.5/plugins/timepicker/bootstrap-timepicker.min.js")"></script>
+    <!-- Select2 -->
+    <script src="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/select2/dist/js/select2.full.min.js")"></script>
+}
+
+@section custom_script{
+    <script>
+        $(document).ready(function () {
+            //Date picker
+            $('.datepicker').datepicker({
+                autoclose: true,
+                //todayBtn: true,
+                todayHighlight: true,
+                format: 'dd-mm-yyyy',
+                startDate: Date()
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            //Timepicker
+            $('.timepicker').timepicker({
+                showInputs: false,
+                defaultTime: 'current',
+                showMeridian: false,
+                minuteStep: 1,
+            });
+        });
+    </script>
+
+
+
+}
+
+@section header{
+    <h1>
+        Master Code
+        <small>Insert Form</small>
+    </h1>
+}
+
+@section content{
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <div class="col-md-6" style="padding:initial;">
+                        <h3></h3>
+                    </div>
+                    <div class="col-md-6 text-right" style="padding:initial;">
+                        <a href="@Url.Action("Index", "MasterCode")" class="btn btn-primary"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
+                    </div>
+                </div>
+                <div class="box-body">
+
+                    @using (Html.BeginForm("editMasterCode", "MasterCode", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+
+
+
+                        @Html.Hidden("Type", @Type)
+                        @Html.Hidden("Code", @Code)
+
+
+
+
+                        <div class="form-group">
+                            @Html.Label("Type", "Type : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("Type", @Type, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Code", "Code : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("Code", @Code, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Description", "Description : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("Description", @Description, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Note", "Note : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextArea("Note", @Note, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("FilterInd", "Filterring lndcator : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("FilterInd", @FilterInd, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("TypeCode", "TypeCode : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.DropDownList("TypeCode", TypeCodeListItems.OrderBy(x => x.Text), @TypeCode, new { @class = "form-control select2" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("LisenceSum", "LisenceSum : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("LisenceSum", @LisenceSum, new { @class = "form-control", @Value = "0" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("LisenceUse", "LisenceUse : ", new { @class = "control-label col-md-4", @value = "0" })
+                            <div class="col-md-5">
+                                @Html.Label("0", new { @class = "control-label col-md-1" })
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group">
+                            <div class="col-md-4 col-md-offset-4">
+                                <button type="submit" class="btn btn-success" id="btnSubmit">Save</button>&nbsp;
+                                <button type="reset" class="btn btn-default" id="btnReset">Reset</button>
+                            </div>
+                        </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+}

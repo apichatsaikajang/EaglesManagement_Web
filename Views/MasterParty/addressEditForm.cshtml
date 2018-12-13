@@ -5,7 +5,7 @@
 
 
 
-    var PartyTypeListItems = new SelectList(
+    var AddressTypeListItems = new SelectList(
     new List<SelectListItem>{
             new SelectListItem { Selected = false, Text = " ", Value = " " },
             new SelectListItem { Selected = false, Text = "PARTYTYPE1", Value = "PARTYTYPE1" },
@@ -90,86 +90,86 @@ new List<SelectListItem>{
                         <h3></h3>
                     </div>
                     <div class="col-md-6 text-right" style="padding:initial;">
-                        <a href="@Url.Action("Index", "MasterParty")" class="btn btn-primary"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
+                        <a href="@Url.Action("Address", "MasterParty")" class="btn btn-primary"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
                     </div>
                 </div>
                 <div class="box-body">
 
-                    @using (Html.BeginForm("Index", "Address", FormMethod.Post, new { @class = "form-horizontal" }))
+                    @using (Html.BeginForm("insertAddress", "Address", FormMethod.Post, new { @class = "form-horizontal" }))
                     {
 
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "Party Type : ", new { @class = "control-label col-md-2" })
+                            @Html.Label("AddressType", "Address Type : ", new { @class = "control-label col-md-2" })
                             <div class="col-md-4">
-                                @Html.DropDownList("AS_MESSENGER", PartyTypeListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                                @Html.DropDownList("AddressType", AddressTypeListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
                             </div>
                         </div>
 
 
                         <div class="form-group">
-                            @Html.Label("MILE_OUT", "Address : ", new { @class = "control-label col-md-2" })
+                            @Html.Label("Address1", "Address1 : ", new { @class = "control-label col-md-2" })
                             <div class="col-md-4">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("Address1", null, new { @class = "form-control" })
                             </div>
-                            @Html.Label("MILE_OUT", "Attn : ", new { @class = "control-label col-md-1" })
+                            @Html.Label("Attn", "Attn : ", new { @class = "control-label col-md-1" })
                             <div class="col-md-4">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.Label("MILE_OUT", " : ", new { @class = "control-label col-md-2" })
-                            <div class="col-md-4">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
-                            </div>
-                            @Html.Label("MILE_OUT", "Tel : ", new { @class = "control-label col-md-1" })
-                            <div class="col-md-4">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("Attn", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("MILE_OUT", " : ", new { @class = "control-label col-md-2" })
+                            @Html.Label("Address2", "Address2 : ", new { @class = "control-label col-md-2" })
                             <div class="col-md-4">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("Address2", null, new { @class = "form-control" })
                             </div>
-                            @Html.Label("MILE_OUT", "Fax :  ", new { @class = "control-label col-md-1" })
+                            @Html.Label("Tel", "Tel : ", new { @class = "control-label col-md-1" })
                             <div class="col-md-4">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.Label("MILE_OUT", " : ", new { @class = "control-label col-md-2" })
-                            <div class="col-md-4">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
-                            </div>
-                            @Html.Label("MILE_OUT", "Web :  ", new { @class = "control-label col-md-1" })
-                            <div class="col-md-4">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "Zip Code : ", new { @class = "control-label col-md-2" })
-                            <div class="col-md-4">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("Tel", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "Area Code : ", new { @class = "control-label col-md-2" })
+                            @Html.Label("Address3", "Address3 : ", new { @class = "control-label col-md-2" })
                             <div class="col-md-4">
-                                @Html.DropDownList("AS_MESSENGER", AreacodeListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                                @Html.TextBox("Address3", null, new { @class = "form-control" })
+                            </div>
+                            @Html.Label("Fax", "Fax :  ", new { @class = "control-label col-md-1" })
+                            <div class="col-md-4">
+                                @Html.TextBox("Fax", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "E-Mail : ", new { @class = "control-label col-md-2" })
+                            @Html.Label("Address4", "Address4 : ", new { @class = "control-label col-md-2" })
                             <div class="col-md-4">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("Address4", null, new { @class = "form-control" })
+                            </div>
+                            @Html.Label("Web", "Web :  ", new { @class = "control-label col-md-1" })
+                            <div class="col-md-4">
+                                @Html.TextBox("Web", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("ZipCode", "Zip Code : ", new { @class = "control-label col-md-2" })
+                            <div class="col-md-4">
+                                @Html.TextBox("ZipCode", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("AreaCode", "Area Code : ", new { @class = "control-label col-md-2" })
+                            <div class="col-md-4">
+                                @Html.DropDownList("AreaCode", AreacodeListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("email", "E-Mail : ", new { @class = "control-label col-md-2" })
+                            <div class="col-md-4">
+                                @Html.TextBox("email", null, new { @class = "form-control" })
                             </div>
                         </div>
 

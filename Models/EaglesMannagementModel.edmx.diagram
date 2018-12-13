@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="df282b65c15a4d62b532733d87516920" Name="Diagram1">
+      <Diagram DiagramId="74a4e174cff7413b9898d73c8bdc3abd" Name="Diagram1">
         <EntityTypeShape EntityType="ITmanagementModel.dtproperty" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ITmanagementModel.RunningNumber" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ITmanagementModel.tblAccessList" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />

@@ -151,140 +151,141 @@ new List<SelectListItem>{
                         <h3></h3>
                     </div>
                     <div class="col-md-6 text-right" style="padding:initial;">
-                        <a href="@Url.Action("Index", "MasterParty")" class="btn btn-primary"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
+                        <a href="@Url.Action("Information", "MasterParty")" class="btn btn-primary"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
                     </div>
                 </div>
                 <div class="box-body">
 
-                    @using (Html.BeginForm("Index", "Information", FormMethod.Post, new { @class = "form-horizontal" }))
+                    @using (Html.BeginForm("insertInformation", "MasterParty", FormMethod.Post, new { @class = "form-horizontal" }))
                     {
 
 
                         <div class="form-group">
-                            @Html.Label("MILE_IN", "Party Code : ", new { @class = "control-label col-md-3" })
+                            @Html.Label("PartyCode", "Party Code : ", new { @class = "control-label col-md-3" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                                @Html.TextBox("PartyCode", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("MILE_OUT", "Full Name : ", new { @class = "control-label col-md-3" })
+                            @Html.Label("PartyFullName", "Party Full Name : ", new { @class = "control-label col-md-3" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("PartyFullName", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("MILE_OUT", "local Name : ", new { @class = "control-label col-md-3" })
+                            @Html.Label("PartyLocalCode", "local Name : ", new { @class = "control-label col-md-3" })
                             <div class="col-md-2">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("PartyLocalCode", null, new { @class = "form-control" })
                             </div>
-                            @Html.Label("MILE_OUT", "/  ", new { @class = "control-label col-md-1" })
+                            @Html.Label("PartyLocalName", "/  ", new { @class = "control-label col-md-1" })
                             <div class="col-md-2">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "location : ", new { @class = "control-label col-md-3" })
-                            <div class="col-md-2">
-                                @Html.DropDownList("AS_MESSENGER", BranchListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
-                            </div>
-                            @Html.Label("AS_MESSENGER", "  ", new { @class = "control-label col-md-1" })
-                            <div class="col-md-2">
-                                @Html.DropDownList("AS_MESSENGER", PartyListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                                @Html.TextBox("PartyLocalName", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("MILE_OUT", "Registartion No : ", new { @class = "control-label col-md-3" })
+                            @Html.Label("PartyLocation", "location : ", new { @class = "control-label col-md-3" })
+                            <div class="col-md-2">
+                                @Html.DropDownList("PartyLocation", BranchListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                            </div>
+                            @Html.Label("PartyCountry", "  ", new { @class = "control-label col-md-1" })
+                            <div class="col-md-2">
+                                @Html.DropDownList("PartyCountry", PartyListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("RegistrationNo", "Registartion No : ", new { @class = "control-label col-md-3" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("RegistrationNo", null, new { @class = "form-control" })
                             </div>
                         </div>
 
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "Type : ", new { @class = "control-label col-md-3" })
+                            @Html.Label("PartyTypeCode", "Type : ", new { @class = "control-label col-md-3" })
                             <div class="col-md-2">
-                                @Html.DropDownList("AS_MESSENGER", BranchListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                                @Html.DropDownList("PartyTypeCode", BranchListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
                             </div>
-                            @Html.Label("AS_MESSENGER", "  ", new { @class = "control-label col-md-1" })
+                            @Html.Label("PartyTypeName", "  ", new { @class = "control-label col-md-1" })
                             <div class="col-md-2">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("PartyTypeName", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "Commission to sales : ", new { @class = "control-label col-md-3" })
+                            @Html.Label("CommissionToSales", "Commission to sales : ", new { @class = "control-label col-md-3" })
                             <div class="form-inline">
                                 <div class="col-md-2">
-                                    @Html.CheckBox("Commission to sales", false)
+                                    @Html.CheckBox("CommissionToSales", false)
                                 </div>
-                                </div>
+                            </div>
 
                         </div>
 
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "IATA Code : ", new { @class = "control-label col-md-3" })
+                            @Html.Label("IATACode", "IATA Code : ", new { @class = "control-label col-md-3" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("IATACode", null, new { @class = "form-control" })
                             </div>
                         </div>
 
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "Remark : ", new { @class = "control-label col-md-3" })
+                            @Html.Label("Remarks", "Remark : ", new { @class = "control-label col-md-3" })
                             <div class="col-md-5">
-                                @Html.TextArea("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextArea("Remarks", null, new { @class = "form-control" })
                             </div>
                         </div>
 
 
                         <div class="form-group">
-                            @Html.Label("CUSTOMER", "Status : ", new { @class = "control-label col-md-3" })
+                            @Html.Label("PartyStatus", "Status : ", new { @class = "control-label col-md-3" })
                             <div class="col-md-5">
                                 <div class="radio">
+
                                     <label>
-                                        @Html.RadioButton("CUS_PART", 1, false, new { @onchange = "chgComPart()" }) Confrim
+                                        @Html.RadioButton("PartyStatus",  false, new { }) Confrim
                                     </label>
                                     &nbsp;&nbsp;&nbsp;
                                     <label>
-                                        @Html.RadioButton("CUS_PART", 2, false, new { @onchange = "chgComPart()" }) Pending
+                                        @Html.RadioButton("PartyStatus",  false, new { }) Pending
                                     </label>
                                     &nbsp;&nbsp;&nbsp;
                                     <label>
-                                        @Html.RadioButton("CUS_PART", 3, false, new { @onchange = "chgComPart()" }) Blacklisted
+                                        @Html.RadioButton("PartyStatus", false, new { }) Blacklisted
                                     </label>
                                     &nbsp;&nbsp;&nbsp;
                                     <label>
-                                        @Html.RadioButton("CUS_PART", 4, false, new { @onchange = "chgComPart()" }) Revoke
+                                        @Html.RadioButton("PartyStatus", false, new { }) Revoke
                                     </label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", " Branch ID : ", new { @class = "control-label col-md-3" })
+                            @Html.Label("MessageHubID", " Branch ID : ", new { @class = "control-label col-md-3" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("MessageHubID", null, new { @class = "form-control" })
                             </div>
                         </div>
 
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "Other System Party ID : ", new { @class = "control-label col-md-3" })
+                            @Html.Label("OtherSystemPartyID", "Other System Party ID : ", new { @class = "control-label col-md-3" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("OtherSystemPartyID", null, new { @class = "form-control" })
                             </div>
                         </div>
 
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "Tax ID : ", new { @class = "control-label col-md-3" })
+                            @Html.Label("FormID", "Tax ID : ", new { @class = "control-label col-md-3" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("FormID", null, new { @class = "form-control" })
                             </div>
                         </div>
 
@@ -294,9 +295,9 @@ new List<SelectListItem>{
                             <div class="col-md-2">
 
                                 <div class="form-inline">
-                                    @Html.CheckBox("Supplier", false)
+                                    @Html.CheckBox("Shipper", false)
                                     <label for="Field1">Supplier</label>
-                                    </div>
+                                </div>
 
                                 <div class="form-inline">
                                     @Html.CheckBox("Consignee", false)
@@ -304,26 +305,26 @@ new List<SelectListItem>{
                                 </div>
 
                                 <div class="form-inline">
-                                    @Html.CheckBox("Branch/Agent", false)
+                                    @Html.CheckBox("Branch_Agent", false)
                                     <label for="Field1">Branch/Agent</label>
                                 </div>
 
                                 <div class="form-inline">
-                                    @Html.CheckBox("Co-Loader", false)
+                                    @Html.CheckBox("Co_Loader", false)
                                     <label for="Field1">Co-Loader</label>
                                 </div>
 
                                 <div class="form-inline">
                                     @Html.CheckBox("Trucking", false)
                                     <label for="Field1">Trucking</label>
-                                    </div>
-
                                 </div>
+
+                            </div>
 
                             <div class="col-md-2">
 
                                 <div class="form-inline">
-                                    @Html.CheckBox("Shipping Line", false)
+                                    @Html.CheckBox("ShippingLine", false)
                                     <label for="Field1">Shipping Line</label>
                                 </div>
 
@@ -334,7 +335,7 @@ new List<SelectListItem>{
                                 </div>
 
                                 <div class="form-inline">
-                                    @Html.CheckBox("Container Yard", false)
+                                    @Html.CheckBox("ContainerYard", false)
                                     <label for="Field1">Container Yard</label>
                                 </div>
 
@@ -347,14 +348,14 @@ new List<SelectListItem>{
                                     @Html.CheckBox("Bank", false)
                                     <label for="Field1">Bank</label>
                                 </div>
-                                </div>
+                            </div>
                             <div class="col-md-2">
                                 <div class="form-inline">
                                     @Html.CheckBox("Factory", false)
                                     <label for="Field1">Factory</label>
                                 </div>
                                 <div class="form-inline">
-                                    @Html.CheckBox("Traiding Firm", false)
+                                    @Html.CheckBox("Customer", false)
                                     <label for="Field1">Traiding Firm</label>
                                 </div>
                                 <div class="form-inline">
@@ -362,18 +363,18 @@ new List<SelectListItem>{
                                     <label for="Field1">Broker</label>
                                 </div>
                                 <div class="form-inline">
-                                    @Html.CheckBox("Airline", false)
+                                    @Html.CheckBox("AirLine", false)
                                     <label for="Field1">Airline</label>
                                 </div>
                                 <div class="form-inline">
-                                    @Html.CheckBox("End Customer", false)
+                                    @Html.CheckBox("EndCustomer", false)
                                     <label for="Field1">End Customer</label>
-                                    </div>
                                 </div>
                             </div>
+                        </div>
 
-                        
-            
+
+
 
                         <div class="form-group">
                             <div class="col-md-4 col-md-offset-4">
@@ -385,9 +386,9 @@ new List<SelectListItem>{
 
                     }
 
-                    </div>
                 </div>
             </div>
         </div>
-    }
+    </div>
+}
 }

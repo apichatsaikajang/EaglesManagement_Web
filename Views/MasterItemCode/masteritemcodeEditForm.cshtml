@@ -1,0 +1,214 @@
+﻿@model dynamic
+@{
+    //ViewBag.Title = "insertForm";
+    Layout = "~/Views/Home/Index.cshtml";
+
+    string Itemcode = Model.editmasteritemcode.Itemcode;
+    string Itemname = Model.editmasteritemcode.Itemname;
+    string TypeUse = Model.editmasteritemcode.TypeUse;
+    string TypeEquipment = Model.editmasteritemcode.TypeEquipment;
+    string Vendor = Model.editmasteritemcode.Vendor;
+
+    int Price = Model.editmasteritemcode.Price;
+
+    
+
+
+    var TypeUseListItems = new SelectList(
+new List<SelectListItem>{
+
+            new SelectListItem { Selected = false, Text = "ขอเบิก", Value = "ขอเบิก" },
+            new SelectListItem { Selected = false, Text = "ขอซื้อ", Value = "ขอซื้อ" },
+
+
+        }, "Value", "Text", 1);
+
+    var TypeProduceListItems = new SelectList(
+new List<SelectListItem>{
+
+            new SelectListItem { Selected = false, Text = "อุปกรณ์นักงานที่ไม่มีใน Stock", Value = "อุปกรณ์นักงานที่ไม่มีใน Stock" },
+            new SelectListItem { Selected = false, Text = "อุปกรณ์สำหรับแพ็ค", Value = "อุปกรณ์สำหรับแพ็ค" },
+            new SelectListItem { Selected = false, Text = "อุปกรณ์ เครื่องมือต่างๆ", Value = "อุปกรณ์ เครื่องมือต่างๆ" },
+            new SelectListItem { Selected = false, Text = "เครื่องอุปโภค - บริโภค", Value = "เครื่องอุปโภค - บริโภค" },
+            new SelectListItem { Selected = false, Text = "NJR", Value = "NJR" },
+            new SelectListItem { Selected = false, Text = "BKK HUB", Value = "BKK HUB" },
+
+
+        }, "Value", "Text", 1);
+
+
+    var VendorListItems = new SelectList(
+new List<SelectListItem>{
+
+            new SelectListItem { Selected = false, Text = "A.C.C.SUPPLY LIMITED PARTNERSHIP", Value = "A.C.C.SUPPLY LIMITED PARTNERSHIP" },
+            new SelectListItem { Selected = false, Text = "A.S.WINNER CO.,LTD.", Value = "A.S.WINNER CO.,LTD." },
+            new SelectListItem { Selected = false, Text = "APJ (S) TRADING PARTNERSHIP", Value = "APJ (S) TRADING PARTNERSHIP" },
+            new SelectListItem { Selected = false, Text = "CBS PROCESSOR AND COMMUNICATION CO.,LTD.", Value = "CBS PROCESSOR AND COMMUNICATION CO.,LTD." },
+            new SelectListItem { Selected = false, Text = "COMPUTER PERIPHEAL AND SUPPLIES LIMITED", Value = "COMPUTER PERIPHEAL AND SUPPLIES LIMITED" },
+            new SelectListItem { Selected = false, Text = "MHE-DEMAG (T) LTD.", Value = "MHE-DEMAG (T) LTD." },
+            new SelectListItem { Selected = false, Text = "Pyxis Group Co.,Ltd.", Value = "Pyxis Group Co.,Ltd." },
+            new SelectListItem { Selected = false, Text = "SIAMUNIX CO.,LTD.", Value = "SIAMUNIX CO.,LTD." },
+            new SelectListItem { Selected = false, Text = "TOAE & I (THAILAND)CO.,LTD.", Value = "TOAE & I (THAILAND)CO.,LTD." },
+            new SelectListItem { Selected = false, Text = "Zerve Solution Technology Co.,Ltd.", Value = "Zerve Solution Technology Co.,Ltd." },
+            new SelectListItem { Selected = false, Text = "บริษัท คอมชัคเซ็ส จำกัด", Value = "บริษัท คอมชัคเซ็ส จำกัด" },
+            new SelectListItem { Selected = false, Text = "บริษัท จีทีเอ็ม จำกัด", Value = "บริษัท จีทีเอ็ม จำกัด" },
+            new SelectListItem { Selected = false, Text = "บริษัท เจ.ซี.พี.มาสเตอร์ แพคกิ้ง จำกัด", Value = "บริษัท เจ.ซี.พี.มาสเตอร์ แพคกิ้ง จำกัด" },
+            new SelectListItem { Selected = false, Text = "บริษัท เจนบรรเจิด จำกัด", Value = "บริษัท เจนบรรเจิด จำกัด" },
+            new SelectListItem { Selected = false, Text = "บริษัท ซี.ที.ที.เอ็น.กรุ๊ป จำกัด", Value = "บริษัท ซี.ที.ที.เอ็น.กรุ๊ป จำกัด" },
+            new SelectListItem { Selected = false, Text = "บริษัท ซีโอแอล  (มหาชน)", Value = "บริษัท ซีโอแอล  (มหาชน)" },
+            new SelectListItem { Selected = false, Text = "บริษัท เทพรดาภรณ์ แอนด์ ซัพพลาย จำกัด", Value = "บริษัท เทพรดาภรณ์ แอนด์ ซัพพลาย จำกัด" },
+            new SelectListItem { Selected = false, Text = "บริษัท บิซิเนส ซีทีเอส จำกัด", Value = "บริษัท บิซิเนส ซีทีเอส จำกัด" },
+            new SelectListItem { Selected = false, Text = "บริษัท โพรดิวส์ลาเบล แอนด์ ริบบอน จำกัด", Value = "บริษัท โพรดิวส์ลาเบล แอนด์ ริบบอน จำกัด" },
+            new SelectListItem { Selected = false, Text = "บริษัท โพรลิฟิกซ์ แซ็ค จำกัด", Value = "บริษัท โพรลิฟิกซ์ แซ็ค จำกัด" },
+            new SelectListItem { Selected = false, Text = "บริษัท ออพติมั่มเทรดดิ้ง จำกัด", Value = "บริษัท ออพติมั่มเทรดดิ้ง จำกัด" },
+            new SelectListItem { Selected = false, Text = "บริษัท อาก้า ซิสเต็มส์ (ไทยแลนด์) จำกัด", Value = "บริษัท อาก้า ซิสเต็มส์ (ไทยแลนด์) จำกัด" },
+            new SelectListItem { Selected = false, Text = "บริษัท เอ็น.วาย.เน็ทเวิร์ค จำกัด", Value = "บริษัท เอ็น.วาย.เน็ทเวิร์ค จำกัด" },
+            new SelectListItem { Selected = false, Text = "บริษัท สตาร์เฟล็กซ์ ออฟฟิศเฟอร์นิเจอร์ จำกัด", Value = "บริษัท สตาร์เฟล็กซ์ ออฟฟิศเฟอร์นิเจอร์ จำกัด" },
+            new SelectListItem { Selected = false, Text = "ฟิวเจอร์ พริ้นดึ้ง", Value = "ฟิวเจอร์ พริ้นดึ้ง" },
+            new SelectListItem { Selected = false, Text = "สมาคม ตัวแทนขนส่งสินค้า ทางอากาศไทย", Value = "สมาคม ตัวแทนขนส่งสินค้า ทางอากาศไทย" },
+            new SelectListItem { Selected = false, Text = "ห้างหุ้นส่วนจำกัด 26 กรกฏาคม", Value = "ห้างหุ้นส่วนจำกัด 26 กรกฏาคม" },
+            new SelectListItem { Selected = false, Text = "เอ็มเอ็มเอ ซิเคียวริตี้ ซิล", Value = "เอ็มเอ็มเอ ซิเคียวริตี้ ซิล" },
+        }, "Value", "Text", 1);
+
+
+
+
+}
+
+@section custom_css{
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css")">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/plugins/timepicker/bootstrap-timepicker.min.css")">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/select2/dist/css/select2.min.css")">
+}
+
+@section custom_js{
+    <!-- bootstrap datepicker -->
+    <script src="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")"></script>
+    <!-- bootstrap time picker -->
+    <script src="@Url.Content("~/Content/AdminLTE-2.4.5/plugins/timepicker/bootstrap-timepicker.min.js")"></script>
+    <!-- Select2 -->
+    <script src="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/select2/dist/js/select2.full.min.js")"></script>
+}
+
+@section custom_script{
+    <script>
+        $(document).ready(function () {
+            //Date picker
+            $('.datepicker').datepicker({
+                autoclose: true,
+                //todayBtn: true,
+                todayHighlight: true,
+                format: 'dd-mm-yyyy',
+                startDate: Date()
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            //Timepicker
+            $('.timepicker').timepicker({
+                showInputs: false,
+                defaultTime: 'current',
+                showMeridian: false,
+                minuteStep: 1,
+            });
+        });
+    </script>
+
+
+
+}
+
+@section header{
+    <h1>
+        Master Item Code
+        <small>Insert Form</small>
+    </h1>
+}
+
+@section content{
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <div class="col-md-6" style="padding:initial;">
+                        <h3></h3>
+                    </div>
+                    <div class="col-md-6 text-right" style="padding:initial;">
+                        <a href="@Url.Action("Index", "MasterItemCode")" class="btn btn-primary"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
+                    </div>
+                </div>
+                <div class="box-body">
+
+                    @using (Html.BeginForm("masteritemcodeInsertForm", "MasterItemCode", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+
+                        @Html.Hidden("Itemcode", @Itemcode)
+
+
+                        <div class="form-group">
+                            @Html.Label("Itemcode", "Item Code : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("Itemcode", @Itemcode, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Itemname", "Item Name : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("Itemname", @Itemname, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("TypeUse", "Type Use : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.DropDownList("TypeUse", TypeUseListItems.OrderBy(x => x.Text), @TypeUse, new { @class = "form-control select2" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("TypeEquipment", "Type Produce : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.DropDownList("TypeEquipment", TypeProduceListItems.OrderBy(x => x.Text), @TypeEquipment, new { @class = "form-control select2" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("Price", "Price (Bath) : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.TextBox("Price", @Price, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("Vendor", "Vendor : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.DropDownList("Vendor", VendorListItems.OrderBy(x => x.Text), @Vendor, new { @class = "form-control select2" })
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group">
+                            <div class="col-md-4 col-md-offset-4">
+                                <button type="submit" class="btn btn-success" id="btnSubmit">Save</button>&nbsp;
+                                <button type="reset" class="btn btn-default" id="btnReset">Reset</button>
+                            </div>
+                        </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

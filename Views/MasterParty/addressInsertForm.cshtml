@@ -1,0 +1,199 @@
+﻿@model dynamic
+@{
+    //ViewBag.Title = "insertForm";
+    Layout = "~/Views/Home/Index.cshtml";
+
+
+
+    var AddressTypeListItems = new SelectList(
+    new List<SelectListItem>{
+            new SelectListItem { Selected = false, Text = " ", Value = " " },
+            new SelectListItem { Selected = false, Text = "PARTYTYPE1", Value = "PARTYTYPE1" },
+
+
+        }, "Value", "Text", 1);
+
+
+    var AreacodeListItems = new SelectList(
+new List<SelectListItem>{
+
+            new SelectListItem { Selected = false, Text = " ", Value = " " },
+            new SelectListItem { Selected = false, Text = "AREACODE", Value = "AREACODE" },
+
+
+        }, "Value", "Text", 1);
+
+
+}
+
+@section custom_css{
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css")">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/plugins/timepicker/bootstrap-timepicker.min.css")">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/select2/dist/css/select2.min.css")">
+}
+
+@section custom_js{
+    <!-- bootstrap datepicker -->
+    <script src="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")"></script>
+    <!-- bootstrap time picker -->
+    <script src="@Url.Content("~/Content/AdminLTE-2.4.5/plugins/timepicker/bootstrap-timepicker.min.js")"></script>
+    <!-- Select2 -->
+    <script src="@Url.Content("~/Content/AdminLTE-2.4.5/bower_components/select2/dist/js/select2.full.min.js")"></script>
+}
+
+@section custom_script{
+    <script>
+        $(document).ready(function () {
+            //Date picker
+            $('.datepicker').datepicker({
+                autoclose: true,
+                //todayBtn: true,
+                todayHighlight: true,
+                format: 'dd-mm-yyyy',
+                startDate: Date()
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            //Timepicker
+            $('.timepicker').timepicker({
+                showInputs: false,
+                defaultTime: 'current',
+                showMeridian: false,
+                minuteStep: 1,
+            });
+        });
+    </script>
+
+
+
+}
+
+@section header{
+    <h1>
+        Address
+        <small>Insert Form</small>
+    </h1>
+}
+
+@section content{
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <div class="col-md-6" style="padding:initial;">
+                        <h3></h3>
+                    </div>
+                    <div class="col-md-6 text-right" style="padding:initial;">
+                        <a href="@Url.Action("Address", "MasterParty")" class="btn btn-primary"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
+                    </div>
+                </div>
+                <div class="box-body">
+
+                    @using (Html.BeginForm("insertAddress", "MasterParty", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+
+
+                        <div class="form-group">
+                            @Html.Label("PartyCode", "PartyCode : ", new { @class = "control-label col-md-2" })
+                            <div class="col-md-4">
+                                @Html.TextBox("PartyCode", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("AddressType", "Address Type : ", new { @class = "control-label col-md-2" })
+                            <div class="col-md-4">
+                                @Html.DropDownList("AddressType", AddressTypeListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("Address1", "Address1 : ", new { @class = "control-label col-md-2" })
+                            <div class="col-md-4">
+                                @Html.TextBox("Address1", null, new { @class = "form-control" })
+                            </div>
+                            @Html.Label("Attn", "Attn : ", new { @class = "control-label col-md-1" })
+                            <div class="col-md-4">
+                                @Html.TextBox("Attn", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Address2", "Address2 : ", new { @class = "control-label col-md-2" })
+                            <div class="col-md-4">
+                                @Html.TextBox("Address2", null, new { @class = "form-control" })
+                            </div>
+                            @Html.Label("Tel", "Tel : ", new { @class = "control-label col-md-1" })
+                            <div class="col-md-4">
+                                @Html.TextBox("Tel", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Address3", "Address3 : ", new { @class = "control-label col-md-2" })
+                            <div class="col-md-4">
+                                @Html.TextBox("Address3", null, new { @class = "form-control" })
+                            </div>
+                            @Html.Label("Fax", "Fax :  ", new { @class = "control-label col-md-1" })
+                            <div class="col-md-4">
+                                @Html.TextBox("Fax", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Address4", "Address4 : ", new { @class = "control-label col-md-2" })
+                            <div class="col-md-4">
+                                @Html.TextBox("Address4", null, new { @class = "form-control" })
+                            </div>
+                            @Html.Label("Web", "Web :  ", new { @class = "control-label col-md-1" })
+                            <div class="col-md-4">
+                                @Html.TextBox("Web", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("ZipCode", "Zip Code : ", new { @class = "control-label col-md-2" })
+                            <div class="col-md-4">
+                                @Html.TextBox("ZipCode", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("AreaCode", "Area Code : ", new { @class = "control-label col-md-2" })
+                            <div class="col-md-4">
+                                @Html.DropDownList("AreaCode", AreacodeListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("email", "E-Mail : ", new { @class = "control-label col-md-2" })
+                            <div class="col-md-4">
+                                @Html.TextBox("email", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-4 col-md-offset-3">
+                                <button type="submit" class="btn btn-success" id="btnSubmit">Save</button>&nbsp;
+                                <button type="reset" class="btn btn-default" id="btnReset">Reset</button>
+                            </div>
+                        </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

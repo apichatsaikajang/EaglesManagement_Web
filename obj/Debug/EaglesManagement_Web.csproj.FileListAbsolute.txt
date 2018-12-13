@@ -37,3 +37,5 @@ D:\EaglesManagement_Web\EaglesManagement_Web\bin\System.Web.Mvc.xml
 D:\EaglesManagement_Web\EaglesManagement_Web\obj\Debug\EaglesManagement_Web.dll
 D:\EaglesManagement_Web\EaglesManagement_Web\obj\Debug\EaglesManagement_Web.pdb
 D:\EaglesManagement_Web\EaglesManagement_Web\obj\Debug\EaglesManagement_Web.csprojResolveAssemblyReference.cache
+D:\EaglesManagement_Web\EaglesManagement_Web\bin\EntityFramework.SqlServer.dll
+D:\EaglesManagement_Web\EaglesManagement_Web\bin\EntityFramework.SqlServer.xml

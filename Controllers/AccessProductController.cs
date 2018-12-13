@@ -13,7 +13,7 @@ namespace EaglesManagement_Web.Controllers
         // GET: AccessProduct
         public ActionResult Index()
         {
-            using (ITmanagementEntities1 db = new ITmanagementEntities1())
+            using (ITmanagementEntities db = new ITmanagementEntities())
             {
 
                 TempData.Keep("username");
@@ -29,7 +29,7 @@ namespace EaglesManagement_Web.Controllers
 
         public ActionResult Access()
         {
-            using (ITmanagementEntities1 db = new ITmanagementEntities1())
+            using (ITmanagementEntities db = new ITmanagementEntities())
             {
                 TempData.Keep("username");
 
@@ -45,7 +45,7 @@ namespace EaglesManagement_Web.Controllers
 
         public ActionResult Maintenance()
         {
-            using (ITmanagementEntities1 db = new ITmanagementEntities1())
+            using (ITmanagementEntities db = new ITmanagementEntities())
             {
                 TempData.Keep("username");
 
@@ -61,7 +61,7 @@ namespace EaglesManagement_Web.Controllers
 
         public ActionResult SoftWare()
         {
-            using (ITmanagementEntities1 db = new ITmanagementEntities1())
+            using (ITmanagementEntities db = new ITmanagementEntities())
             {
                 TempData.Keep("username");
 

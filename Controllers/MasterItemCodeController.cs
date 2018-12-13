@@ -15,14 +15,15 @@ namespace EaglesManagement_Web.Controllers
         public ActionResult Index()
         {
 
-            using (ITmanagementEntities1 db = new ITmanagementEntities1())
+            using (ITmanagementEntities db = new ITmanagementEntities())
             {
 
                 TempData.Keep("username");
                 string user_by = TempData["username"].ToString();
 
                 dynamic model = new ExpandoObject();
-                model.Working = db.tblUsers.Where(x => x.UserName == user_by).OrderByDescending(y => y.UserName).ToList();
+                model.masteritemcode = db.tblInventoryItems
+                    .ToList();
 
                 return View(model);
             }
@@ -30,18 +31,171 @@ namespace EaglesManagement_Web.Controllers
 
         public ActionResult masteritemcodeInsertForm()
         {
-            using (ITmanagementEntities1 db = new ITmanagementEntities1())
-            {
                 TempData.Keep("username");
+
+                return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult insertMasterItemCode(tblInventoryItem masteritemcode_obj)
+        {
+            TempData.Keep("username");
+
+            using (ITmanagementEntities db = new ITmanagementEntities())
+            {
+                using (var transaction = db.Database.BeginTransaction())
+                {
+                    string user_by = TempData["username"].ToString();
+
+                    tblInventoryItem masteritemcode = new tblInventoryItem();
+
+                    int Price = int.Parse(Request["Price"]);
+
+
+                    masteritemcode.Itemcode = masteritemcode_obj.Itemcode;
+                    masteritemcode.Itemname = masteritemcode_obj.Itemname;
+                    masteritemcode.TypeUse = masteritemcode_obj.TypeUse;
+                    masteritemcode.TypeEquipment = masteritemcode_obj.TypeEquipment;
+                    masteritemcode.Vendor = masteritemcode_obj.Vendor;
+
+                    masteritemcode.Userby = user_by;
+                    masteritemcode.Lastupdate = DateTime.Now;
+
+
+
+
+                    try
+                    {
+                        db.tblInventoryItems.Add(masteritemcode);
+                        db.SaveChanges();
+
+                        transaction.Commit();
+
+                        TempData["alert_msg"] = "Saved";
+                        return RedirectToAction("Index", "MasterItemCode");
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+
+                        TempData["alert_msg"] = "System Error";
+                        return RedirectToAction("Index", "MasterItemCode");
+                    }
+                }
+            }
+
+        }
+
+
+
+        public ActionResult masteritemcodeEditForm(string itemcode)
+        {
+            using (ITmanagementEntities db = new ITmanagementEntities())
+            {
+                TempData.Keep("UserName");
 
                 string user_by = TempData["username"].ToString();
 
                 dynamic model = new ExpandoObject();
-                model.Customer = db.tblUsers.Where(x => x.UserName == user_by).ToList();
+
+                model.editmasteritemcode = db.tblInventoryItems
+                    .Where(x => x.Itemcode == itemcode)
+                    .FirstOrDefault();
 
                 return View(model);
             }
         }
+
+
+        [HttpPost]
+        public ActionResult editMasterItemcode(tblInventoryItem edititemcode)
+        {
+            TempData.Keep("username");
+
+            using (ITmanagementEntities db = new ITmanagementEntities())
+            {
+                using (var transaction = db.Database.BeginTransaction())
+                {
+                    string user_by = TempData["username"].ToString();
+
+                    tblInventoryItem masteritemcode = db.tblInventoryItems
+                    .Where(x => x.Itemcode == edititemcode.Itemcode)
+                    .FirstOrDefault();
+
+                    int Price = int.Parse(Request["Price"]);
+
+                    masteritemcode.Itemcode = edititemcode.Itemcode;
+                    masteritemcode.Itemname = edititemcode.Itemname;
+                    masteritemcode.TypeUse = edititemcode.TypeUse;
+                    masteritemcode.TypeEquipment = edititemcode.TypeEquipment;
+                    masteritemcode.Vendor = edititemcode.Vendor;
+
+                    
+ 
+                    masteritemcode.Userby = user_by;
+                    masteritemcode.Lastupdate = DateTime.Now;
+
+                    try
+                    {
+                        db.SaveChanges();
+
+                        transaction.Commit();
+
+                        TempData["alert_msg"] = "Updated";
+                        return RedirectToAction("Index", "MasterItemCode");
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+
+                        TempData["alert_msg"] = "System Error";
+                        return RedirectToAction("Index", "MasterItemCode");
+                    }
+                }
+            }
+        }
+
+
+
+
+        [HttpPost]
+        public ActionResult deletemasteritemcode(tblInventoryItem masteritemcode_obj)
+        {
+            using (ITmanagementEntities db = new ITmanagementEntities())
+            {
+                using (var transaction = db.Database.BeginTransaction())
+                {
+                    TempData.Keep("username");
+
+                    string user_by = TempData["username"].ToString();
+
+
+                    tblInventoryItem del_masteritemcode = db.tblInventoryItems
+                    .Where(x => x.Itemcode == masteritemcode_obj.Itemcode)
+                        .FirstOrDefault();
+                    try
+                    {
+                        db.tblInventoryItems.Remove(del_masteritemcode);
+                        db.SaveChanges();
+
+                        transaction.Commit();
+
+                        TempData["alert_msg"] = "Delete";
+                        return RedirectToAction("Index", "MasterItemCode");
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+
+                        TempData["alert_msg"] = "System Error";
+                        return RedirectToAction("Index", "MasterItemCode");
+
+                    }
+                }
+            }
+        }
+
 
     }
 }

@@ -65,7 +65,7 @@ namespace EaglesManagement_Web.Controllers
 
             string PwdwithEncrypt = Convert.ToBase64String(ms.ToArray());
 
-            using (ITmanagementEntities1 db = new ITmanagementEntities1())
+            using (ITmanagementEntities db = new ITmanagementEntities())
             {
                 var userDetails = db.tblUsers.Where(x => x.UserName == usernameToUpper && x.Password == PwdwithEncrypt).FirstOrDefault();
                 if (userDetails != null)

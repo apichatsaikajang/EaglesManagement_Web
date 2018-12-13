@@ -2,6 +2,37 @@
 @{
     //ViewBag.Title = "insertForm";
     Layout = "~/Views/Home/Index.cshtml";
+    int i = 0;
+
+    string Program = Model.menu.Program;
+    string Description = Model.menu.Description;
+
+    var programListItems = new SelectList(
+new List<SelectListItem>{
+            new SelectListItem { Selected = false, Text = "Access Product", Value = "Access Product" },
+            new SelectListItem { Selected = false, Text = "Check Daily", Value = "Check Daily" },
+            new SelectListItem { Selected = false, Text = "Master Code", Value = "Master Code" },
+            new SelectListItem { Selected = false, Text = "Master Department", Value = "Master Department" },
+            new SelectListItem { Selected = false, Text = "Master Itemcode", Value = "Master Itemcode" },
+            new SelectListItem { Selected = false, Text = "Master Party", Value = "Master Party" },
+            new SelectListItem { Selected = false, Text = "Payday", Value = "Payday" },
+            new SelectListItem { Selected = false, Text = "Rent", Value = "Rent" },
+            new SelectListItem { Selected = false, Text = "Repair", Value = "Repair" },
+            new SelectListItem { Selected = false, Text = "Requisition - pays", Value = "Requisition - pays" },
+            new SelectListItem { Selected = false, Text = "Service", Value = "Service" },
+            new SelectListItem { Selected = false, Text = "User Menu", Value = "User Menu" },
+            new SelectListItem { Selected = false, Text = "User Profiles", Value = "User Profiles" },
+            new SelectListItem { Selected = false, Text = "Work Order", Value = "Work Order" },
+
+        }, "Value", "Text", 1);
+
+    var activeListItems = new SelectList(
+new List<SelectListItem>{
+            new SelectListItem { Selected = false, Text = "ใช้งาน", Value = "1" },
+            new SelectListItem { Selected = false, Text = "ไม่ใช่งาน", Value = "0" },
+
+
+        }, "Value", "Text", 1);
 
 
 
@@ -59,7 +90,7 @@
 
 @section header{
     <h1>
-        User Profile
+        Menu Edit
         <small>Insert Form</small>
     </h1>
 }
@@ -73,28 +104,32 @@
                         <h3></h3>
                     </div>
                     <div class="col-md-6 text-right" style="padding:initial;">
-                        <a href="@Url.Action("Index", "Menu")" class="btn btn-primary"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
+                        <a href="@Url.Action("User", "UserMenu")" class="btn btn-primary"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
                     </div>
                 </div>
                 <div class="box-body">
 
-                    @using (Html.BeginForm("menuInsertForm", "Menu", FormMethod.Post, new { @class = "form-horizontal" }))
+                    @using (Html.BeginForm("insertMenu", "UserMenu", FormMethod.Post, new { @class = "form-horizontal" }))
                     {
 
+                        @Html.Hidden("Program", @Program)
 
                         <div class="form-group">
-                            @Html.Label("MILE_IN", "Program : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Program", "Program : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                                @Html.TextBox("Program", @Program, new { @class = "form-control" })
                             </div>
                         </div>
 
+
                         <div class="form-group">
-                            @Html.Label("MILE_OUT", "Description : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Description", "Description : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("Description", @Description, new { @class = "form-control" })
                             </div>
                         </div>
+
+
 
 
                         <div class="form-group">

@@ -854,73 +854,73 @@ warning 6002: The table/view 'ITmanagement.dbo.tblUserGroup' does not have a pri
           <EntitySet Name="tblUserMenu" EntityType="Self.tblUserMenu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblParty" EntityType="Self.tblParty" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-[tblParty].[PartyCode] AS [PartyCode], 
-[tblParty].[PartyFullName] AS [PartyFullName], 
-[tblParty].[PartyLocalCode] AS [PartyLocalCode], 
-[tblParty].[PartyLocalName] AS [PartyLocalName], 
-[tblParty].[PartyLocation] AS [PartyLocation], 
-[tblParty].[PartyCountry] AS [PartyCountry], 
-[tblParty].[RegistrationNo] AS [RegistrationNo], 
-[tblParty].[PartyTypeCode] AS [PartyTypeCode], 
-[tblParty].[PartyTypeName] AS [PartyTypeName], 
-[tblParty].[CommissionToSales] AS [CommissionToSales], 
-[tblParty].[IATACode] AS [IATACode], 
-[tblParty].[Remarks] AS [Remarks], 
-[tblParty].[PartyStatus] AS [PartyStatus], 
-[tblParty].[MessageHubID] AS [MessageHubID], 
-[tblParty].[OtherSystemPartyID] AS [OtherSystemPartyID], 
-[tblParty].[FormID] AS [FormID], 
-[tblParty].[Shipper] AS [Shipper], 
-[tblParty].[Consignee] AS [Consignee], 
-[tblParty].[Branch_Agent] AS [Branch_Agent], 
-[tblParty].[Co_Loader] AS [Co_Loader], 
-[tblParty].[Trucking] AS [Trucking], 
-[tblParty].[ShippingLine] AS [ShippingLine], 
-[tblParty].[Vendor] AS [Vendor], 
-[tblParty].[ContainerYard] AS [ContainerYard], 
-[tblParty].[Warehouse] AS [Warehouse], 
-[tblParty].[Bank] AS [Bank], 
-[tblParty].[Factory] AS [Factory], 
-[tblParty].[Customer] AS [Customer], 
-[tblParty].[Broker] AS [Broker], 
-[tblParty].[AirLine] AS [AirLine], 
-[tblParty].[EndCustomer] AS [EndCustomer], 
-[tblParty].[CreateBy] AS [CreateBy], 
-[tblParty].[CreateDate] AS [CreateDate], 
-[tblParty].[UpdateBy] AS [UpdateBy], 
-[tblParty].[UpdateDate] AS [UpdateDate], 
-[tblParty].[rowguid] AS [rowguid]
-FROM [dbo].[tblParty] AS [tblParty]</DefiningQuery>
+    [tblParty].[PartyCode] AS [PartyCode], 
+    [tblParty].[PartyFullName] AS [PartyFullName], 
+    [tblParty].[PartyLocalCode] AS [PartyLocalCode], 
+    [tblParty].[PartyLocalName] AS [PartyLocalName], 
+    [tblParty].[PartyLocation] AS [PartyLocation], 
+    [tblParty].[PartyCountry] AS [PartyCountry], 
+    [tblParty].[RegistrationNo] AS [RegistrationNo], 
+    [tblParty].[PartyTypeCode] AS [PartyTypeCode], 
+    [tblParty].[PartyTypeName] AS [PartyTypeName], 
+    [tblParty].[CommissionToSales] AS [CommissionToSales], 
+    [tblParty].[IATACode] AS [IATACode], 
+    [tblParty].[Remarks] AS [Remarks], 
+    [tblParty].[PartyStatus] AS [PartyStatus], 
+    [tblParty].[MessageHubID] AS [MessageHubID], 
+    [tblParty].[OtherSystemPartyID] AS [OtherSystemPartyID], 
+    [tblParty].[FormID] AS [FormID], 
+    [tblParty].[Shipper] AS [Shipper], 
+    [tblParty].[Consignee] AS [Consignee], 
+    [tblParty].[Branch_Agent] AS [Branch_Agent], 
+    [tblParty].[Co_Loader] AS [Co_Loader], 
+    [tblParty].[Trucking] AS [Trucking], 
+    [tblParty].[ShippingLine] AS [ShippingLine], 
+    [tblParty].[Vendor] AS [Vendor], 
+    [tblParty].[ContainerYard] AS [ContainerYard], 
+    [tblParty].[Warehouse] AS [Warehouse], 
+    [tblParty].[Bank] AS [Bank], 
+    [tblParty].[Factory] AS [Factory], 
+    [tblParty].[Customer] AS [Customer], 
+    [tblParty].[Broker] AS [Broker], 
+    [tblParty].[AirLine] AS [AirLine], 
+    [tblParty].[EndCustomer] AS [EndCustomer], 
+    [tblParty].[CreateBy] AS [CreateBy], 
+    [tblParty].[CreateDate] AS [CreateDate], 
+    [tblParty].[UpdateBy] AS [UpdateBy], 
+    [tblParty].[UpdateDate] AS [UpdateDate], 
+    [tblParty].[rowguid] AS [rowguid]
+    FROM [dbo].[tblParty] AS [tblParty]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="tblPartyAddress" EntityType="Self.tblPartyAddress" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-[tblPartyAddress].[PartyAddressCode] AS [PartyAddressCode], 
-[tblPartyAddress].[PartyCode] AS [PartyCode], 
-[tblPartyAddress].[AddressType] AS [AddressType], 
-[tblPartyAddress].[Address1] AS [Address1], 
-[tblPartyAddress].[Address2] AS [Address2], 
-[tblPartyAddress].[Address3] AS [Address3], 
-[tblPartyAddress].[Address4] AS [Address4], 
-[tblPartyAddress].[ZipCode] AS [ZipCode], 
-[tblPartyAddress].[AreaCode] AS [AreaCode], 
-[tblPartyAddress].[Attn] AS [Attn], 
-[tblPartyAddress].[Tel] AS [Tel], 
-[tblPartyAddress].[Fax] AS [Fax], 
-[tblPartyAddress].[Web] AS [Web], 
-[tblPartyAddress].[email] AS [email], 
-[tblPartyAddress].[CreateBy] AS [CreateBy], 
-[tblPartyAddress].[CreateDate] AS [CreateDate], 
-[tblPartyAddress].[UpdateBy] AS [UpdateBy], 
-[tblPartyAddress].[UpdateDate] AS [UpdateDate], 
-[tblPartyAddress].[rowguid] AS [rowguid]
-FROM [dbo].[tblPartyAddress] AS [tblPartyAddress]</DefiningQuery>
+    [tblPartyAddress].[PartyAddressCode] AS [PartyAddressCode], 
+    [tblPartyAddress].[PartyCode] AS [PartyCode], 
+    [tblPartyAddress].[AddressType] AS [AddressType], 
+    [tblPartyAddress].[Address1] AS [Address1], 
+    [tblPartyAddress].[Address2] AS [Address2], 
+    [tblPartyAddress].[Address3] AS [Address3], 
+    [tblPartyAddress].[Address4] AS [Address4], 
+    [tblPartyAddress].[ZipCode] AS [ZipCode], 
+    [tblPartyAddress].[AreaCode] AS [AreaCode], 
+    [tblPartyAddress].[Attn] AS [Attn], 
+    [tblPartyAddress].[Tel] AS [Tel], 
+    [tblPartyAddress].[Fax] AS [Fax], 
+    [tblPartyAddress].[Web] AS [Web], 
+    [tblPartyAddress].[email] AS [email], 
+    [tblPartyAddress].[CreateBy] AS [CreateBy], 
+    [tblPartyAddress].[CreateDate] AS [CreateDate], 
+    [tblPartyAddress].[UpdateBy] AS [UpdateBy], 
+    [tblPartyAddress].[UpdateDate] AS [UpdateDate], 
+    [tblPartyAddress].[rowguid] AS [rowguid]
+    FROM [dbo].[tblPartyAddress] AS [tblPartyAddress]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="tblUserGroup" EntityType="Self.tblUserGroup" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-[tblUserGroup].[UserGroupCode] AS [UserGroupCode], 
-[tblUserGroup].[UserGroupName] AS [UserGroupName], 
-[tblUserGroup].[rowguid] AS [rowguid]
-FROM [dbo].[tblUserGroup] AS [tblUserGroup]</DefiningQuery>
+    [tblUserGroup].[UserGroupCode] AS [UserGroupCode], 
+    [tblUserGroup].[UserGroupName] AS [UserGroupName], 
+    [tblUserGroup].[rowguid] AS [rowguid]
+    FROM [dbo].[tblUserGroup] AS [tblUserGroup]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema>
@@ -1730,7 +1730,7 @@ FROM [dbo].[tblUserGroup] AS [tblUserGroup]</DefiningQuery>
           <Property Name="UserGroupName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="rowguid" Type="Guid" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="ITmanagementEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ITmanagementEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="dtproperties" EntityType="Self.dtproperty" />
           <EntitySet Name="RunningNumbers" EntityType="Self.RunningNumber" />
           <EntitySet Name="tblAccessLists" EntityType="Self.tblAccessList" />
@@ -1778,7 +1778,7 @@ FROM [dbo].[tblUserGroup] AS [tblUserGroup]</DefiningQuery>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ITmanagementModelStoreContainer" CdmEntityContainer="ITmanagementEntities1">
+        <EntityContainerMapping StorageEntityContainer="ITmanagementModelStoreContainer" CdmEntityContainer="ITmanagementEntities">
           <EntitySetMapping Name="dtproperties">
             <EntityTypeMapping TypeName="ITmanagementModel.dtproperty">
               <MappingFragment StoreEntitySet="dtproperties">
@@ -2607,7 +2607,7 @@ FROM [dbo].[tblUserGroup] AS [tblUserGroup]</DefiningQuery>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

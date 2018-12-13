@@ -365,6 +365,58 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        @Html.Label("MILE_IN", "ชื่ออุปกรณ์ : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.Label("AS_MESSENGER", "ประเภทของอุปกรณ์ : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.DropDownList("AS_MESSENGER", BranchListItemsListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("MILE_IN", "ราคา : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("MILE_IN", "จำนวนที่รับประกัน : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("AS_MESSENGER", "หน่่วยที่รับประกัน : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.DropDownList("AS_MESSENGER", BranchListItemsListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.Label("AS_DATE", "วันเริ่มรับประกัน : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.TextBox("AS_DATE", null, new { @class = "form-control datepicker", @autocomplete = "off" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.Label("AS_DATE", "วันหมดประกัน : ", new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.TextBox("AS_DATE", null, new { @class = "form-control datepicker", @autocomplete = "off" })
+                        </div>
+                    </div>
+
 
 
 
