@@ -4,6 +4,7 @@
     Layout = "~/Views/Home/Index.cshtml";
 
 
+
     var TypeUseListItems = new SelectList(
 new List<SelectListItem>{
 
@@ -134,51 +135,51 @@ new List<SelectListItem>{
                 </div>
                 <div class="box-body">
 
-                    @using (Html.BeginForm("editMasterItemcode", "MasterItemCode", FormMethod.Post, new { @class = "form-horizontal" }))
+                    @using (Html.BeginForm("insertMasterItemCode", "MasterItemCode", FormMethod.Post, new { @class = "form-horizontal" }))
                     {
 
 
                         <div class="form-group">
-                            @Html.Label("MILE_IN", "Item Code : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Itemcode", "Item Code : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                                @Html.TextBox("Itemcode", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("MILE_OUT", "Item Name : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Itemname", "Item Name : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextBox("MILE_OUT", null, new { @class = "form-control" })
+                                @Html.TextBox("Itemname", null, new { @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "Type Use : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("TypeUse", "Type Use : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.DropDownList("AS_MESSENGER", TypeUseListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                                @Html.DropDownList("TypeUse", TypeUseListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "Type Produce : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("TypeEquipment", "Type Produce : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.DropDownList("AS_MESSENGER", TypeProduceListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            @Html.Label("MILE_IN", "Price (Bath) : ", new { @class = "control-label col-md-4" })
-                            <div class="col-md-5">
-                                @Html.TextBox("MILE_IN", null, new { @class = "form-control" })
+                                @Html.DropDownList("TypeEquipment", TypeProduceListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
                             </div>
                         </div>
 
 
                         <div class="form-group">
-                            @Html.Label("AS_MESSENGER", "Vendor : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Price", "Price (Bath) : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.DropDownList("AS_MESSENGER", VendorListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
+                                @Html.TextBox("Price", null, new { @class = "form-control",@autocomplete="off" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.Label("Vendor", "Vendor : ", new { @class = "control-label col-md-4" })
+                            <div class="col-md-5">
+                                @Html.DropDownList("Vendor", VendorListItems.OrderBy(x => x.Text), null, new { @class = "form-control select2" })
                             </div>
                         </div>
 

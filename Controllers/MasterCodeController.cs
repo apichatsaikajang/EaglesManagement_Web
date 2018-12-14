@@ -55,9 +55,8 @@ namespace EaglesManagement_Web.Controllers
 
                     tblMasterCode mastercode = new tblMasterCode();
 
-                    int LisenceSum = int.Parse(Request["LisenceSum"]);
 
-
+                    mastercode.LisenceSum = mastercode_obj.LisenceSum;
                     mastercode.Type = mastercode_obj.Type;
                     mastercode.Code = mastercode_obj.Code;
                     mastercode.Description = mastercode_obj.Description;
@@ -130,8 +129,7 @@ namespace EaglesManagement_Web.Controllers
                     .Where(x => x.Type == editmastercode.Type && x.Code == editmastercode.Code)
                     .FirstOrDefault();
 
-                    int LisenceSum = int.Parse(Request["LisenceSum"]);
-
+                    mc.LisenceSum = editmastercode.LisenceSum;
 
                     mc.Type = editmastercode.Type;
                     mc.Code = editmastercode.Code;

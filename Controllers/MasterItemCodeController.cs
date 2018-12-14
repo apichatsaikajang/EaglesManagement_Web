@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using EaglesManagement_Web.Models;
 using System.Dynamic;
+using System.Text;
 
 
 namespace EaglesManagement_Web.Controllers
@@ -50,8 +51,10 @@ namespace EaglesManagement_Web.Controllers
 
                     tblInventoryItem masteritemcode = new tblInventoryItem();
 
-                    int Price = int.Parse(Request["Price"]);
 
+                    //double Price = double.Parse(Request["Price"]);
+
+                    masteritemcode.Price = masteritemcode_obj.Price;
 
                     masteritemcode.Itemcode = masteritemcode_obj.Itemcode;
                     masteritemcode.Itemname = masteritemcode_obj.Itemname;
@@ -123,8 +126,9 @@ namespace EaglesManagement_Web.Controllers
                     .Where(x => x.Itemcode == edititemcode.Itemcode)
                     .FirstOrDefault();
 
-                    int Price = int.Parse(Request["Price"]);
-
+                    //double Price = double.Parse(Request["Price"]);
+                   // masteritemcode.Price = '0';
+                    masteritemcode.Price = edititemcode.Price;
                     masteritemcode.Itemcode = edititemcode.Itemcode;
                     masteritemcode.Itemname = edititemcode.Itemname;
                     masteritemcode.TypeUse = edititemcode.TypeUse;

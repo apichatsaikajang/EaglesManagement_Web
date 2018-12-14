@@ -9,7 +9,7 @@
     string TypeEquipment = Model.editmasteritemcode.TypeEquipment;
     string Vendor = Model.editmasteritemcode.Vendor;
 
-    int Price = Model.editmasteritemcode.Price;
+    decimal Price = Model.editmasteritemcode.Price;
 
     
 
@@ -144,7 +144,7 @@ new List<SelectListItem>{
                 </div>
                 <div class="box-body">
 
-                    @using (Html.BeginForm("masteritemcodeInsertForm", "MasterItemCode", FormMethod.Post, new { @class = "form-horizontal" }))
+                    @using (Html.BeginForm("editMasterItemcode", "MasterItemCode", FormMethod.Post, new { @class = "form-horizontal" }))
                     {
 
                         @Html.Hidden("Itemcode", @Itemcode)
@@ -180,9 +180,9 @@ new List<SelectListItem>{
 
 
                         <div class="form-group">
-                            @Html.Label("Price", "Price (Bath) : ", new { @class = "control-label col-md-4" })
+                            @Html.Label("Price", "Price : ", new { @class = "control-label col-md-4" })
                             <div class="col-md-5">
-                                @Html.TextBox("Price", @Price, new { @class = "form-control" })
+                                @Html.TextBox("Price", @Price, new { @class = "form-control"})
                             </div>
                         </div>
 
